@@ -1,0 +1,21 @@
+.cart {
+	display: flex;
+	margin-left: 25px;
+	cursor: pointer;
+	position: relative;
+}
+
+.cartSvg {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	stroke: #333;
+}
+
+.cartCounter {
+	position: absolute;
+	top: -5px;
+	right: -6px;
+	font-size: 9px;
+	line-height: 11px;
+}

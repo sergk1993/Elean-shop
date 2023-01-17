@@ -1,0 +1,25 @@
+.button {
+	background-color: transparent;
+	border-color: transparent;
+	width: 27px;
+	height: 17px;
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0;
+	cursor: pointer;
+}
+
+.button span {
+	width: 100%;
+	height: 1px;
+	display: block;
+	background-color: #000;
+}
+
+.button span:nth-last-child(1) {
+	width: 70%;
+}
+
+
+

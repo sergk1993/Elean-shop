@@ -1,0 +1,21 @@
+.favorites {
+	display: flex;
+	margin-left: 50px;
+	cursor: pointer;
+	position: relative;
+}
+
+.favoritesSvg {
+	display: inline-block;
+	width: 23px;
+	height: 19px;
+	stroke: #333;
+}
+
+.favoritesCounter {
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	font-size: 9px;
+	line-height: 11px;
+}
