@@ -1,8 +1,22 @@
 .header {
 	display: flex;
 	align-items: center;
+	margin-bottom: 30px;
 }
 
-.header__phone {
-	color: #222;
+.spaceLeft {
+	display: inline-flex;
+	margin-left: 60px;
 }
+
+
+
+
+
+
+
+
+
+
+
+

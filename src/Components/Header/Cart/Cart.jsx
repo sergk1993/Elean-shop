@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Cart.module.css';
 
-function Cart() {
+function Cart(){
 	return (
 		<a className={styles.cart} href="/" aria-label="Cart link">
 			<svg className={styles.cartSvg}  viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">

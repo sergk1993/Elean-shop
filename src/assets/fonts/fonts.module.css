@@ -40,7 +40,7 @@
 
 
 @font-face {
-	font-family: "futurabookc";
+	font-family: "FuturaBookc";
 	src: url("./futurabookc.woff2") format("woff2"),
 			url("./futurabookc.woff") format("woff");
 	font-display: swap;

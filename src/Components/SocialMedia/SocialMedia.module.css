@@ -1,7 +1,6 @@
 .SocialMedia {
 	display: inline-flex;
 	align-items: center;
-	margin-left: 60px;
 }
 
 .SocialMedia a {
@@ -26,8 +25,6 @@
 	width: 20px;
 	height: 12px;
 }
-
-
 
 
 .SocialMediaFacebook {
