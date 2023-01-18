@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Favorites.module.css';
-function Favorites() {
+
+function Favorites(){
 	return (
 		<a className={styles.favorites} href="/" aria-label="favorites link">
 			<svg className={styles.favoritesSvg} viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">

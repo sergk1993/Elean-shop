@@ -1,3 +1,4 @@
+
 .button {
 	background-color: transparent;
 	border-color: transparent;
@@ -20,6 +21,3 @@
 .button span:nth-last-child(1) {
 	width: 70%;
 }
-
-
-
