@@ -26,7 +26,6 @@ function SocialMedia() {
 				</svg>
 
 			</a>
-
 		</div>
 	);
 }

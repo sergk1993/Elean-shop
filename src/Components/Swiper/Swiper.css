@@ -1,0 +1,88 @@
+:root {
+	--color-button: rgba(255, 255, 255, 0.45);
+}
+
+.swiper {
+	width: 100%;
+	margin-bottom: 60px;
+}
+
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+
+.swiperOne img {
+	display: block;
+	width: 100%;
+	height: 760px;
+	object-fit: cover;
+	object-position: top;
+	aspect-ratio: 3/1;
+
+}
+
+.headerSwiper .swiper-pagination-bullet {
+	background: var(--color-button);
+	opacity: 1;
+	transition: width 0.1s ease-in-out;
+}
+
+.headerSwiper .swiper-pagination-bullet-active {
+	width: 26px;
+	border-radius: 5px;
+}
+
+.headerSwiper .swiper-button-next {
+	right: 65px;
+}
+
+.headerSwiper .swiper-button-next:after {
+	font-size: 0;
+	width: 27px;
+	height: 10px;
+	background-image: url('../../assets//img//swiper//arrow-swiper.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+
+}
+
+.headerSwiper .swiper-button-prev {
+	left: 65px;
+}
+
+.headerSwiper .swiper-button-prev:after {
+	font-size: 0;
+	width: 27px;
+	height: 10px;
+	background-image: url('../../assets//img//swiper//arrow-swiper.svg');
+	transform: rotate(180deg);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+
+.swiperPhotoText {
+	position: absolute;
+	width: 300px;
+	transform: translate(330px, 200px);
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 26px;
+	font-family: 'FuturaBookC';
+	text-align: start;
+	color: #fff;
+}
