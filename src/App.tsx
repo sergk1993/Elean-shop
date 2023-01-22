@@ -4,6 +4,7 @@ import Header from './Components/Header/Header'
 import React from 'react';
 import Nav from './Components/Nav/Nav';
 import SwiperElena from './Components/Swiper/Swiper';
+import SocialSideMenu from './Components/SocialSideMenu/SocialSideMenu';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Nav />
     </div>
     <SwiperElena />
+    <SocialSideMenu />
   </>
   );
 }

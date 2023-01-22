@@ -1,0 +1,137 @@
+.SocialSideMenuWrapper {
+	position: fixed;
+	right: 42px;
+	bottom: 100px;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+
+}
+
+
+
+.arrowUpBox {
+	display: inline-flex;
+	text-align: center;
+	flex-direction: column;
+	width: 40px;
+	margin: 0 auto;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.arrowUp {
+	margin-bottom: 10px;
+	padding: 0 5px;
+}
+
+.menuText {
+	writing-mode: vertical-lr;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 20px;
+	letter-spacing: 0.1em;
+	font-family: 'Lato';
+	color: #B6B1B1;
+}
+
+.menuTextSlash {
+	margin-bottom: 10px;
+}
+
+.SocialSideMenuPhone {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 59px;
+	height: 59px;
+	background-color: #E1C4A9;
+	border-radius: 23px;
+	border: none;
+	cursor: pointer;
+}
+
+.SocialSideMenuPhone {
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.SocialSideMenuPhone span {
+	width: 36px;
+	height: 36px;
+	background-color: #FFFFFF;
+	border-radius: 14px;
+}
+
+.SocialSideMenuPhoneSpan::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 16px;
+	height: 26px;
+	background-color: #E1C4A9;
+	border-radius: 3px;
+}
+
+
+.SocialSideMenuPhoneSpan::before {
+	content: '';
+	position: absolute;
+	transform: translate(-2px, 24px);
+	width: 4px;
+	height: 4px;
+	background-color: #fff;
+	border-radius: 3px;
+	z-index: 2;
+}
+
+
+.SocialSideMenuMessage {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 59px;
+	height: 59px;
+	background-color: #E1C4A9;
+	border-radius: 23px;
+	border: none;
+	cursor: pointer;
+}
+
+
+.SocialSideMenuMessageSpan {
+	display: block;
+	width: 36px;
+	height: 36px;
+	background-color: #FFFFFF;
+	border-radius: 14px;
+}
+
+.SocialSideMenuMessageSpan::after {
+	content: '';
+	position: absolute;
+	bottom: 31px;
+	left: 27px;
+	width: 6px;
+	height: 6px;
+	background: #E1C4A9;
+	z-index: 2;
+	border-radius: 50%;
+}
+
+.SocialSideMenuMessageSpan::before {
+	content: '';
+	position: absolute;
+	bottom: 20px;
+	left: 27px;
+	width: 6px;
+	height: 6px;
+	background: #E1C4A9;
+	z-index: 2;
+	border-radius: 50%;
+}

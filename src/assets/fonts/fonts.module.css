@@ -1,3 +1,19 @@
+/* 
+Все шрифты которые есть
+
+FuturaMediumC    400, 
+FuturaDemiC      500, 
+HelveticaNeueCyr 400, 500
+FuturaBookc      400, 
+FuturicaLt       600, 
+Lato             400, 500, 600, 700
+ProximaNova      400, 600, 
+
+*/
+
+
+
+
 @font-face {
 	font-family: "FuturaMediumC";
 	src: url("./futuramediumc.woff2") format("woff2"),
@@ -53,10 +69,10 @@
 
 
 @font-face {
-	font-family: "FuturicaLt_SemiBold";
+	font-family: "FuturicaLt";
 	src: url("./FuturicaLt-SemiBold.woff2") format("woff2");
 	font-display: swap;
-	font-weight: 400;
+	font-weight: 600;
 	font-style: normal;
 }
 
@@ -104,7 +120,14 @@
 
 
 
-
+@font-face {
+	font-family: "Lato";
+	src: url("./Lato-Bold.woff2") format("woff2"),
+			url("./Lato-Bold.woff") format("woff");
+	font-display: swap;
+	font-weight: 700;
+	font-style: normal;
+}
 
 
 @font-face {
@@ -116,11 +139,4 @@
 	font-style: normal;
 }
 
-@font-face {
-	font-family: "Lato";
-	src: url("./Lato-Bold.woff2") format("woff2"),
-			url("./Lato-Bold.woff") format("woff");
-	font-display: swap;
-	font-weight: 700;
-	font-style: normal;
-}
+
