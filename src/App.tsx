@@ -7,6 +7,7 @@ import SwiperElena from './Components/Swiper/Swiper';
 import SocialSideMenu from './Components/SocialSideMenu/SocialSideMenu';
 import Catalog from './Components/Catalog/Catalog';
 import { JsxAttribute } from 'typescript';
+import AboutBlock from './Components/AboutBlock/AboutBlock';
 
 
 function App(): JSX.Element {
@@ -20,7 +21,7 @@ function App(): JSX.Element {
     <main>
       <div className={styles.container}>
         <Catalog />
-        
+        <AboutBlock />
       </div>
     </main>
   </>

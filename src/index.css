@@ -37,4 +37,5 @@ img {
 
 body {
 	font-family: 'FuturaMediumC', sans-serif;
+  background-color: var(--mainBackgroundColor);
 }

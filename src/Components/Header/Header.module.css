@@ -4,6 +4,11 @@
 	margin-bottom: 30px;
 }
 
+.visuallyHidden {
+  position: fixed;
+  transform: scale(0);
+}
+
 .spaceLeft {
 	display: inline-flex;
 	margin-left: 60px;

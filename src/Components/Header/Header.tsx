@@ -10,6 +10,7 @@ import React from 'react';
 function Header():JSX.Element {
 	return (
 		<header className={styles.header}>
+			<h1 className={styles.visuallyHidden}>Купить женскую одежду</h1>
 			<Button />
 			<div className={styles.spaceLeft}>
 				<SocialMedia />

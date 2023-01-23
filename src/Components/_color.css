@@ -1,0 +1,11 @@
+:root {
+	/* главный фон*/
+	--mainBackgroundColor: #fafafa;
+
+	/* переменные для файлов из AboutBlock*/
+	--colorAboutBlockText: #171717;
+
+/* глобальные цвета */
+	--grayColor: #c0c0c0;
+	
+}
