@@ -7,7 +7,7 @@ import SocialMedia from '../SocialMedia/SocialMedia';
 import Title from './Title/Title';
 import React from 'react';
 
-function Header() {
+function Header():JSX.Element {
 	return (
 		<header className={styles.header}>
 			<Button />

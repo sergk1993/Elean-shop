@@ -5,9 +5,11 @@ import React from 'react';
 import Nav from './Components/Nav/Nav';
 import SwiperElena from './Components/Swiper/Swiper';
 import SocialSideMenu from './Components/SocialSideMenu/SocialSideMenu';
+import Catalog from './Components/Catalog/Catalog';
+import { JsxAttribute } from 'typescript';
 
 
-function App() {
+function App(): JSX.Element {
   return (<>
     <div className={styles.container}>
       <Header />
@@ -15,6 +17,12 @@ function App() {
     </div>
     <SwiperElena />
     <SocialSideMenu />
+    <main>
+      <div className={styles.container}>
+        <Catalog />
+        
+      </div>
+    </main>
   </>
   );
 }

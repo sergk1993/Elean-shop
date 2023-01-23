@@ -11,7 +11,7 @@ function SocialSideMenu(): JSX.Element {
 				<div className={styles.arrowUpBox}>
 
 					<a href="/" className={styles.arrowUp}>
-						<img src={socialSideMenu} alt="" />
+						<img src={socialSideMenu} alt="arrow up" />
 					</a>
 
 					<h2 className={styles.menuText}>
