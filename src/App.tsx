@@ -8,7 +8,8 @@ import SocialSideMenu from './Components/SocialSideMenu/SocialSideMenu';
 import Catalog from './Components/Catalog/Catalog';
 import { JsxAttribute } from 'typescript';
 import AboutBlock from './Components/AboutBlock/AboutBlock';
-
+import Showroom from './Components/Showroom/Showroom';
+import './Components/_color.css'
 
 function App(): JSX.Element {
   return (<>
@@ -22,6 +23,7 @@ function App(): JSX.Element {
       <div className={styles.container}>
         <Catalog />
         <AboutBlock />
+        <Showroom />
       </div>
     </main>
   </>

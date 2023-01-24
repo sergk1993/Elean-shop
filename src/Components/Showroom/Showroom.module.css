@@ -1,0 +1,38 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	margin-bottom: 70px;
+}
+
+.showroomTitle {
+	font-family: 'FuturaBookC';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 21px;
+	line-height: 20px;
+	text-align: center;
+	letter-spacing: 0.05em;
+	color: var(--blackTextColor);
+	text-transform: uppercase;
+}
+
+.showRoomImgBox {
+	display: block;
+}
+
+.showRoomImgBox img {
+	display: block;
+	width: 450px;
+	height: 520px;
+}
+
+
+
+.imgTwo {
+	margin-bottom: 20px;
+}
+
+.imgThree {
+	margin-bottom: 40px;
+}

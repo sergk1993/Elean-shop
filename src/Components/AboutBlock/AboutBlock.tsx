@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './AboutBlock.module.css';
 import aboutJpg from '../../assets/img/aboutBlog/about.jpg';
 import aboutWebp from '../../assets/img/aboutBlog/about.webp';
-import '../../Components/_color.css'
+
 
 
 function AboutBlock() {
