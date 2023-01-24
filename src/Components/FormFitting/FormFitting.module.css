@@ -1,0 +1,152 @@
+.formFitting {
+	padding: 70px;
+	border: 1px solid var(--blackColor);
+	margin-bottom: 70px;
+}
+
+
+.formFittingSvgTop {
+	width: 44px;
+	height: 49px;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 23px;
+}
+
+
+.title {
+	font-family: 'FuturaBookC';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 21px;
+	line-height: 20px;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	text-align: center;
+	color: var(--blackTextColor);
+	margin-bottom: 30px;
+}
+
+
+.form {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.formInputTopBox {
+	margin-bottom: 20px;
+}
+
+.formInputTopBox input {
+	width: 100%;
+	display: inline-block;
+	padding: 20px;
+	background-color: transparent;
+	border: 1px solid var(--blackColor);
+}
+
+.formInputTopBox input::placeholder {
+	font-family: 'FuturaMediumC';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 25px;
+	letter-spacing: 0.06em;
+	color: var(--grayColor);
+	text-transform: uppercase;
+	border-radius: 0;
+}
+
+
+
+.formInputTopBox input:focus {
+	border-radius: 0;
+}
+
+.formInputTopBox {
+	display: flex;
+
+}
+
+
+.inputName {
+	border-right-width: 0.5px;
+	border-right-color: var(--blackColor);
+	position: relative;
+}
+
+
+
+.inputPhone {
+	border-left-width: 0.5px;
+	border-left-color: var(--blackColor);
+	border-right-width: 0.5px;
+	border-right-color: var(--blackColor);
+}
+
+.inputTime {
+	border-left-width: 0.5px;
+	border-left-color: var(--blackColor);
+}
+
+.formFittingArea {
+	display: inline-block;
+	width: 100%;
+	resize: none;
+	background-color: transparent;
+	padding: 18px;
+	border-right-width: 0.5px;
+	border-right-color: var(--blackColor);
+}
+
+.formFittingArea::placeholder {
+	font-family: 'FuturaMediumC';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 25px;
+	letter-spacing: 0.06em;
+	color: var(--grayColor);
+	text-transform: uppercase;
+	border-radius: 0;
+	text-transform: uppercase;
+}
+
+.formFittingArea::placeholder {
+	text-transform: uppercase;
+}
+
+.formFittingButton {
+	font-family: 'FuturaMediumC';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 25px;
+	text-align: center;
+	letter-spacing: 0.1em;
+	color: var(--blackColor);
+	background-color: transparent;
+	border: 1px solid var(--blackColor);
+	padding: 10px;
+	cursor: pointer;
+	display: block;
+	height: 100%;
+	width: 100%;
+	border-right-width: 0.5px;
+	border-right-color: var(--blackColor);
+	flex-shrink: 4;
+	text-transform: uppercase;
+}
+
+.formInputBottomBox {
+	display: flex;
+}
+
+.textSub {
+	font-family: 'FuturaMediumC';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 18px;
+	color: var(--grayColor);
+}

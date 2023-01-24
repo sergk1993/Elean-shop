@@ -6,10 +6,10 @@ import Nav from './Components/Nav/Nav';
 import SwiperElena from './Components/Swiper/Swiper';
 import SocialSideMenu from './Components/SocialSideMenu/SocialSideMenu';
 import Catalog from './Components/Catalog/Catalog';
-import { JsxAttribute } from 'typescript';
 import AboutBlock from './Components/AboutBlock/AboutBlock';
 import Showroom from './Components/Showroom/Showroom';
 import './Components/_color.css'
+import FormFitting from './Components/FormFitting/FormFitting';
 
 function App(): JSX.Element {
   return (<>
@@ -24,6 +24,7 @@ function App(): JSX.Element {
         <Catalog />
         <AboutBlock />
         <Showroom />
+        <FormFitting/>
       </div>
     </main>
   </>
