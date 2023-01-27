@@ -12,6 +12,7 @@ import './Components/_color.css'
 import FormFitting from './Components/FormFitting/FormFitting';
 import ClientsSwiper from './Components/ClientsSwiper/ClientsSwiper';
 import ClientsReviews from './Components/ClientsSwiper/ClientsReviews/ClientsReviews';
+import InstagramCards from './Components/InstagramCards/InstagramCards';
 
 function App(): JSX.Element {
   return (<>
@@ -29,6 +30,7 @@ function App(): JSX.Element {
         <FormFitting />
         <ClientsSwiper />
         <ClientsReviews />
+        <InstagramCards />
       </div>
     </main>
   </>
