@@ -5,8 +5,16 @@
 	/* переменные для файлов из AboutBlock*/
 	--colorAboutBlockText: #171717;
 
-/* глобальные цвета */
+	/* пагинация у свайпера */
+	--color-button: #d9dbe1;
+
+/* цвет кнопки ссылки ClientsReviews отзывы */
+--colorBtnReviews: #d7b494;
+
+
+	/* глобальные цвета */
 	--grayColor: #c0c0c0;
 	--blackTextColor: #000;
-	--blackColor:#000;
+	--blackColor: #000;
+	--whiteColor: #fff;
 }

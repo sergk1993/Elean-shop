@@ -1,0 +1,103 @@
+.swiperMainBottomWrapper {
+	margin-bottom: 70px;
+	position: relative;
+}
+
+.ClientsSwiperImageBox p {
+	margin: 0;
+	margin-top: 20px;
+	text-align: start;
+	font-family: 'FuturaMediumC';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 22px;
+	color: var(--blackTextColor);
+}
+
+.ClientsSwiperImageBox {
+	width: 100%;
+	height: 370px;
+}
+
+.ClientsSwiperImageBox img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+
+}
+
+.swiperMainBottom .swiper-wrapper {
+	padding-bottom: 90px;
+}
+
+
+
+
+.swiperMainBottom .swiper-pagination-bullet {
+	background-color: var(--color-button);
+	opacity: 1;
+	transition: width 0.1s ease-in-out;
+}
+
+.swiperMainBottomWrapper .ClientsSwiperNext,
+.swiperMainBottomWrapper .ClientsSwiperPrev {
+	position: absolute;
+	top: 35%;
+	width: 56px;
+	height: 56px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--whiteColor);
+	opacity: 1;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.swiperMainBottomWrapper .ClientsSwiperPrev {
+	left: -30px;
+	z-index: 4;
+	transform: rotate(180deg);
+}
+
+.swiperMainBottomWrapper .ClientsSwiperNext {
+	right: -30px;
+	z-index: 4;
+}
+
+.swiperMainBottomWrapper .ClientsSwiperNext::after,
+.swiperMainBottomWrapper .ClientsSwiperPrev::after {
+	content: '';
+	position: absolute;
+	font-size: 0;
+	width: 60%;
+	height: 60%;
+	border-radius: 50%;
+	background-image: url('../../assets//img//ClientsSwiper/swiperArrow.png');
+	background-repeat: no-repeat;
+	background-size: 25%;
+	background-position: 50% 50%;
+	background-color: var(--color-button);
+	background-color: transparent;
+	border: 2px solid #e1e1e1;
+	opacity: 1;
+}
+
+
+
+.swiperMainBottomWrapper .swiper-button-disabled,
+.swiperMainBottomWrapper .swiper-button-disabled::after {
+	opacity: 0.5;
+	cursor: initial;
+}
+
+.swiperMainBottomWrapper .swiper-pagination {
+	bottom: 0;
+}
+
+.swiperMainBottomWrapper .swiper-pagination-bullet-active {
+	width: 43px;
+	border-radius: 5px;
+	background-color: var(--color-button);
+}

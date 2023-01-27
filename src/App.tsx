@@ -3,13 +3,15 @@ import './assets/fonts/fonts.module.css'
 import Header from './Components/Header/Header'
 import React from 'react';
 import Nav from './Components/Nav/Nav';
-import SwiperElena from './Components/Swiper/Swiper';
+import SwiperTop from './Components/Swiper/Swiper';
 import SocialSideMenu from './Components/SocialSideMenu/SocialSideMenu';
 import Catalog from './Components/Catalog/Catalog';
 import AboutBlock from './Components/AboutBlock/AboutBlock';
 import Showroom from './Components/Showroom/Showroom';
 import './Components/_color.css'
 import FormFitting from './Components/FormFitting/FormFitting';
+import ClientsSwiper from './Components/ClientsSwiper/ClientsSwiper';
+import ClientsReviews from './Components/ClientsSwiper/ClientsReviews/ClientsReviews';
 
 function App(): JSX.Element {
   return (<>
@@ -17,14 +19,16 @@ function App(): JSX.Element {
       <Header />
       <Nav />
     </div>
-    <SwiperElena />
+    <SwiperTop />
     <SocialSideMenu />
     <main>
       <div className={styles.container}>
         <Catalog />
         <AboutBlock />
         <Showroom />
-        <FormFitting/>
+        <FormFitting />
+        <ClientsSwiper />
+        <ClientsReviews />
       </div>
     </main>
   </>

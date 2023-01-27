@@ -19,7 +19,7 @@ import "swiper/css/navigation";
 
 
 
-const SwiperElena = (): JSX.Element => {
+const SwiperTop = (): JSX.Element => {
 	return (
 		<>
 			<Swiper
@@ -79,4 +79,4 @@ const SwiperElena = (): JSX.Element => {
 };
 
 
-export default SwiperElena;
+export default SwiperTop;
