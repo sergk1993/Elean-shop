@@ -1,4 +1,4 @@
-
+import React from 'react'
 import styles from './Title.module.css';
 
 
@@ -23,10 +23,8 @@ function Title() {
 				<svg className={styles.titleA} viewBox="0 0 27 26" xmlns="http://www.w3.org/2000/svg">
 					<path d="M12.2339 17.1761V16.4135H16.8927L12.2339 3.38331V0.000333066H14.8586L19.2281 11.7809L23.5976 23.5614L26.6122 25.1893V25.5283H16.5883V25.1893L19.4625 23.5433L17.1789 17.1764L12.2339 17.1761ZM12.2339 0.000333066V3.38331L7.5754 16.4135H12.2339V17.1761H7.28917L5.02343 23.543H5.04196L8.79337 25.189V25.528H0.888672V25.189L4.07966 23.5611L11.6072 2.7295L9.91389 0.339009V0L12.2339 0.000333066Z" />
 				</svg>
-			<p className={styles.titleText}>ЖЕНСКИЙ <span className={styles.subtext}>смокинг</span></p>
-		</a>
-	);
+			</a>
+	)
 }
-
 
 export default Title;

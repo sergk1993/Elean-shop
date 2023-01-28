@@ -1,39 +1,14 @@
-.title {
+
+.titleWrapper {
 	display: flex;
 	margin-right: auto;
 	margin-left: auto;
 }
-
-.title svg {
-	display: inline-block;
-	fill: #333;
-}
-
-.title svg:not(:last-child) {
-	margin-right: 8px;
-}
-
-.titleE {
-	width: 20px;
-	height: 26px;
-}
-
-.titleL {
-	width: 20px;
-	height: 26px;
+.title {
 	
 }
 
-.titleN {
-	width: 25px;
-	height: 26px;
-	
-}
 
-.titleA {
-	width: 27px;
-	height: 26px;
-}
 
 .titleText {
 	display: inline-block;

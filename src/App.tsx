@@ -13,6 +13,7 @@ import FormFitting from './Components/FormFitting/FormFitting';
 import ClientsSwiper from './Components/ClientsSwiper/ClientsSwiper';
 import ClientsReviews from './Components/ClientsSwiper/ClientsReviews/ClientsReviews';
 import InstagramCards from './Components/InstagramCards/InstagramCards';
+import Footer from './Components/Footer/Footer';
 
 function App(): JSX.Element {
   return (<>
@@ -33,6 +34,9 @@ function App(): JSX.Element {
         <InstagramCards />
       </div>
     </main>
+    <div className={styles.container}>
+      <Footer />
+    </div>
   </>
   );
 }

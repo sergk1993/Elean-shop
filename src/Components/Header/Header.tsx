@@ -4,7 +4,7 @@ import Favorites from './Favorites/Favorites';
 import styles from './Header.module.css'
 import Phone from './Phone/Phone';
 import SocialMedia from '../SocialMedia/SocialMedia';
-import Title from './Title/Title';
+import HeaderTitle from './HeaderTitle/HeaderTitle';
 import React from 'react';
 
 function Header():JSX.Element {
@@ -15,7 +15,7 @@ function Header():JSX.Element {
 			<div className={styles.spaceLeft}>
 				<SocialMedia />
 			</div>
-			<Title />
+			<HeaderTitle />
 			<Phone />
 			<Favorites />
 			<Cart />
