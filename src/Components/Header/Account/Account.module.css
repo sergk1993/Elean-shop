@@ -1,0 +1,10 @@
+.profile {
+	margin-left: 40px;
+	display: flex;
+}
+
+.profileIcon {
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+}

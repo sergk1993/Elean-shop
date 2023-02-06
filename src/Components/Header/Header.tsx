@@ -6,8 +6,9 @@ import Phone from './Phone/Phone';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import HeaderTitle from './HeaderTitle/HeaderTitle';
 import React from 'react';
+import Account from './Account/Account';
 
-function Header():JSX.Element {
+function Header(): JSX.Element {
 	return (
 		<header className={styles.header}>
 			<h1 className={styles.visuallyHidden}>Купить женскую одежду</h1>
@@ -17,6 +18,8 @@ function Header():JSX.Element {
 			</div>
 			<HeaderTitle />
 			<Phone />
+			<Account />
+
 			<Favorites />
 			<Cart />
 		</header>
