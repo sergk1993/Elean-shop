@@ -17,24 +17,30 @@
 	text-align: center;
 	flex-direction: column;
 	width: 40px;
-	margin: 0 auto;
 	align-items: center;
-	margin-bottom: 15px;
+	margin-bottom: 25px;
 }
 
 .arrowUp {
+	width: 30px;
+	object-fit: contain;
 	margin-bottom: 10px;
-	padding: 0 5px;
+	color: var(--grayColor);
 }
 
+
+.arrowUp path {
+	fill: var(--grayColor);
+}
 .menuText {
 	writing-mode: vertical-lr;
 	font-weight: 400;
-	font-size: 13px;
+	font-size: 15px;
 	line-height: 20px;
 	letter-spacing: 0.1em;
 	font-family: 'Lato';
-	color: #B6B1B1;
+	color: var(--grayColor);
+	margin: 0;
 }
 
 .menuTextSlash {
