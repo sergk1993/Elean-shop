@@ -3,9 +3,13 @@
 	padding: 0 15px;
 	width: 100%;
 	margin: 0 auto;
+
 }
 
-
-.appMain {
+.layoutWrapper {
 	display: grid;
+	min-height: 100vh;
+	min-height: 100dvh;
+	grid-template-rows: auto 1fr auto;
+
 }

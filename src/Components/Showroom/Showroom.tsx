@@ -13,13 +13,13 @@ import showroomThreeJpj from '../../assets/img/showroom/showroomThree.jpg'
 
 function Showroom() {
 	return (
-		<section className={styles.showroom}> 
+		<section> 
 			<h2 className={styles.showroomTitle}>НАШ ШОУРУм</h2>
 				<div className={styles.wrapper}>
 
 			<picture className={styles.showRoomImgBox}>
 				<source srcSet={showroomOneWebp}/>
-				<img className={styles.imgOne} src={showroomOneJpj} alt="" />
+				<img  src={showroomOneJpj} alt="" />
 			</picture>
 
 			<picture className={styles.showRoomImgBox}>

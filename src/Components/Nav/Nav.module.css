@@ -4,26 +4,66 @@
 
 .list {
 	display: flex;
+	align-items: center;
 	justify-content: center;
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
 }
 
-.list li {
+.list li,
+.list button {
 	font-family: 'FuturaBookc';
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 20px;
 	color: #000;
 	text-transform: uppercase;
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	cursor: pointer;
 }
 
 
-.list li:not(:last-child) {
+.list>li:not(:last-child) {
 	margin-right: 60px;
 }
 
 .list li a {
 	cursor: pointer;
 }
+
+
+
+
+.navDropDownBtn {
+	cursor: pointer;
+}
+
+.navDropDown {
+	position: absolute;
+	width: 250px;
+	z-index: 4;
+	padding: 0;
+	margin: 0;
+	padding-top: 13px;
+	background-color: #fafafa;
+	list-style-type: none;
+}
+
+
+.navDropDown li:hover {
+	background-color: #d5d5d5;
+}
+
+.navDropDown li a {
+	display: block;
+	padding: 10px 10px 10px 10px;
+}
+
+
+.navDropDown li:not(:last-child) {
+	margin-bottom: 5px;
+}
+

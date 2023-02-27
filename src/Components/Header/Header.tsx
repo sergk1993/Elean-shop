@@ -6,7 +6,7 @@ import Phone from './Phone/Phone';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import HeaderTitle from './HeaderTitle/HeaderTitle';
 import React from 'react';
-import Account from './Account/Account';
+import Profile from './Profile/Profile';
 
 function Header(): JSX.Element {
 	return (
@@ -18,7 +18,7 @@ function Header(): JSX.Element {
 			</div>
 			<HeaderTitle />
 			<Phone />
-			<Account />
+			<Profile />
 
 			<Favorites />
 			<Cart />

@@ -18,28 +18,44 @@
 	position: relative;
 }
 
-
-.hasImage {
+.clientsImageWrapper {
 	position: absolute;
-	content: '';
 	left: -90px;
 	top: -30px;
-	object-fit: contain;
+
+}
+
+.clientsImageWrapper::before {
+	position: absolute;
+	content: '';
+	bottom: 4px;
+	right: -4px;
+	border-top: 12px solid transparent;
+	border-left: 15px solid #D0D4DC;
+	border-bottom: 12px solid transparent;
+	transform: rotate(38deg);
+	z-index: 1;
+}
+
+.clientsImage {
+	position: relative;
+	object-fit: cover;
 	width: 60px;
 	height: 60px;
-	z-index: 3;
 	border-radius: 50%;
+	z-index: 2;
 }
 
 
-.descr::after {
+/* .descr::after {
 	position: absolute;
 	content: '';
 	left: -46px;
 	top: 11px;
 	border-bottom: 14px solid var(--grayColor);
 	border-left: 14px solid transparent;
-}
+} */
+
 
 .emptyImage {
 	position: absolute;

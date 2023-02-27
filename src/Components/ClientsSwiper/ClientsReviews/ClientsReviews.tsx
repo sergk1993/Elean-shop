@@ -1,11 +1,12 @@
 import { url } from 'inspector'
 import React from 'react'
 import styles from './ClientsReviews.module.css'
-import peopleReviews from '../../../assets//img/clientsReviews/clientReviews.png';
+import peopleReviews from '../../../assets//img/clientsReviews/clientReviews.jpg';
 import emptyPeopleReviews from '../../../assets//img/clientsReviews/emptyPeopleReviews.svg'
+import hidePeopleReviews from '../../../assets//img/clientsReviews/clientsHiddenPicture.svg'
 
 function ClientsReviews() {
-	
+
 	return (
 		<section className={styles.clientsReviews}>
 
@@ -14,8 +15,9 @@ function ClientsReviews() {
 
 				<article className={styles.descr}>
 
-				<img className={styles.hasImage} src={peopleReviews} alt="people review img" aria-hidden='true' />
-
+					<div className={styles.clientsImageWrapper}>
+						<img className={styles.clientsImage} src={peopleReviews} alt="people review img" aria-hidden='true' />
+					</div>
 					<div className={styles.descrTitle}>
 						<h3>Ирина <span>г. Москва</span></h3>
 						<time dateTime="2017-03-26">26 Марта 2017</time>
@@ -24,8 +26,9 @@ function ClientsReviews() {
 				</article>
 
 				<article className={styles.descr}>
-				<img className={styles.hasImage} src={peopleReviews} alt="people review img" aria-hidden='true' />
-
+					<div className={styles.clientsImageWrapper}>
+						<img className={styles.clientsImage} src={peopleReviews} alt="people review img" aria-hidden='true' />
+					</div>
 					<div className={styles.descrTitle}>
 						<h3>Ирина <span>г. Москва</span></h3>
 						<time dateTime="2017-03-26">26 Марта 2017</time>
@@ -34,8 +37,9 @@ function ClientsReviews() {
 				</article>
 
 				<article className={styles.descr}>
-				<img className={styles.hasImage} src={peopleReviews} alt="people review img" aria-hidden='true' />
-
+					<div className={styles.clientsImageWrapper}>
+						<img className={styles.clientsImage} src={peopleReviews} alt="people review img" aria-hidden='true' />
+					</div>
 					<div className={styles.descrTitle}>
 						<h3>Ирина <span>г. Москва</span></h3>
 						<time dateTime="2017-03-26">26 Марта 2017</time>
@@ -44,8 +48,9 @@ function ClientsReviews() {
 				</article>
 
 				<article className={styles.descr}>
-				<img className={styles.hasImage} src={peopleReviews} alt="people review img" aria-hidden='true' />
-
+					<div className={styles.clientsImageWrapper}>
+						<img className={styles.clientsImage} src={peopleReviews} alt="people review img" aria-hidden='true' />
+					</div>
 					<div className={styles.descrTitle}>
 						<h3>Ирина <span>г. Москва</span></h3>
 						<time dateTime="2017-03-26">26 Марта 2017</time>

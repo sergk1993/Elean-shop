@@ -5,7 +5,7 @@
 	font-weight: 500;
 	font-size: 14px;
 	color: var(--blackTextColor);
-	margin-bottom: 40px;
+	padding-bottom: 40px;
 }
 
 .footerWrapper {}

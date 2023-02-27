@@ -24,9 +24,9 @@ function FormFitting() {
 			<form className={styles.form} method='_post'>
 
 				<div className={styles.formInputTopBox}>
-					<input className={styles.inputName} type='input' placeholder='ВВЕДИТЕ ИМя' required/>
-					<input className={styles.inputPhone} type='input' placeholder='ВВЕДИТЕ ТЕЛЕФОн' required/>
-					<input className={styles.inputTime} type='input' placeholder='ВВЕДИТЕ УДОБНОЕ ВРЕМя' required/>
+					<input className={styles.inputName} type='text' placeholder='ВВЕДИТЕ ИМя' required/>
+					<input className={styles.inputPhone} type='text' placeholder='ВВЕДИТЕ ТЕЛЕФОн' required/>
+					<input className={styles.inputTime} type='text' placeholder='ВВЕДИТЕ УДОБНОЕ ВРЕМя' required/>
 				</div>
 
 				<div className={styles.formInputBottomBox}>

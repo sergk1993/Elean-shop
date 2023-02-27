@@ -6,7 +6,8 @@ import aboutWebp from '../../assets/img/aboutBlog/about.webp';
 
 
 
-function AboutBlock() {
+function AboutBlock(props:any) {
+
 	return (
 		<section className={styles.aboutBlock}>
 			<h2 className={styles.title}>О Бренде</h2>
@@ -41,8 +42,7 @@ function AboutBlock() {
 			
 			</div>
 		</section >
-
 	)
 }
 
-export default AboutBlock
+export default AboutBlock;
