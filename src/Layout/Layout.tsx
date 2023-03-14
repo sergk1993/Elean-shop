@@ -11,17 +11,16 @@ import Nav from '../Components/Nav/Nav'
 const Layout = () => {
 	return (
 		<>
-
 			<div className={styles.layoutWrapper}>
 
 				<div className={styles.container} >
 					<Header />
-
-				</div>
 					<Nav />
+				</div>
 
-				<Outlet />
-
+				<main className={styles.mainLayout}>
+					<Outlet />
+				</main>
 
 				<div className={styles.container}>
 					<Footer />

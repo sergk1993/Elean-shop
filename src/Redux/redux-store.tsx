@@ -1,14 +1,24 @@
 import { applyMiddleware, combineReducers, compose } from 'redux';
 import { createStore } from 'redux';
+import AboutBlockReducer from './AboutBlock-reducer';
 import CatalogPage from './CatalogPage-reducer';
+import ClientsSwiperReducer from './ClientsSwiper-reducer';
+import dialogsReducer from './Dialogs-reducer';
+import FooterReducer from './Footer-reducer';
 import NavCategory from './NavCategory-reducer';
 
 
 
 
-const rootReducer:any = combineReducers({
+
+
+const rootReducer = combineReducers({
 	catalogListPage: CatalogPage,
 	navCategory: NavCategory,
+	dialogsPage: dialogsReducer,
+	AboutBlock: AboutBlockReducer,
+	ClientsSwiper: ClientsSwiperReducer,
+	footerPage: FooterReducer,
 });
 
 

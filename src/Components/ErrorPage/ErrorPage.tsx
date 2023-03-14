@@ -6,7 +6,6 @@ import styles from './ErrorPage.module.css'
 
 export function ErrorPage() {
 	const error: any = useRouteError();
-	debugger
 	return (
 		<section id="errorPage">
 			<h1>Oops!</h1>

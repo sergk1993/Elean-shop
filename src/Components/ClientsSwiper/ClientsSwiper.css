@@ -1,5 +1,12 @@
-.swiperMainBottomWrapper {
+.swiperMainBott {
+	position: relative;
+}
+
+.swiperMainBott_MarginBottom {
 	margin-bottom: 70px;
+}
+
+.swiperMainBottomWrapper {
 	position: relative;
 }
 

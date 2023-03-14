@@ -1,27 +1,30 @@
-import { NavCategoryType } from '../types/types'
+import { NavCategoryInterface } from '../types/types'
 
-let initialState:NavCategoryType = {
+let initialState: NavCategoryInterface = {
 	headerNavPage: [
-		{ id: 0, text: 'навигация' },
-		{ id: 1, text: 'категории' },
-		{ id: 2, text: 'наши коллекции' },
-		{ id: 3, text: 'покупателям' },
-		{ id: 4, text: 'о бренде' },
-		{ id: 5, text: 'шоурум' },
-		{ id: 6, text: 'контакты' }
-	] ,
+		{ id: 0, text: 'навигация', path: '/navigation' },
+		{ id: 1, text: 'категории', path: '/category' },
+		{ id: 2, text: 'наши коллекции', path: '/collections' },
+		{ id: 3, text: 'покупателям', path: '/shopper' },
+		{ id: 4, text: 'о бренде', path: '/brand' },
+		{ id: 5, text: 'шоурум', path: '/showroom' },
+		{ id: 6, text: 'контакты', path: '/contacts' },
+		{ id: 7, text: 'Диалоги', path: '/dialogs' },
+	],
 
 	dropDownMenu: [
-		{ id: 0, name: 'Доставка' },
-		{ id: 1, name: 'Оплата' },
-		{ id: 2, name: 'Возврат' },
-		{ id: 3, name: 'Размерная таблица' },
-		{ id: 4, name: 'Примерка' },
-		{ id: 5, name: 'Оптовым покупателям' },
+		{ id: 0, name: 'Доставка' , path: '/delivery'},
+		{ id: 1, name: 'Оплата' , path: '/payment'},
+		{ id: 2, name: 'Возврат' , path: '/refund'},
+		{ id: 3, name: 'Размерная таблица' , path: '/table-size'},
+		{ id: 4, name: 'Примерка', path: '/fitting' },
+		{ id: 5, name: 'Оптовым покупателям', path: '/wholesale' },
 	],
 }
 
-const NavCategory = (state = initialState, action: unknown) => {
+type StateNavType = typeof initialState;
+
+const NavCategory = (state = initialState, action: any):StateNavType => {
 	return state
 }
 

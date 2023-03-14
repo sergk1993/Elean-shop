@@ -1,16 +1,13 @@
 import styles from './Catalog.module.css';
 import React from 'react';
 import { connect } from 'react-redux';
-import { CatalogPageType } from '../../types/types';
+import { CatalogInterface } from '../../types/types';
 import { RootType } from '../../Redux/redux-store';
 
 
 
 
-function Catalog(props: CatalogPageType): JSX.Element {
-
-
-
+function Catalog(props: CatalogInterface): JSX.Element {
 
 	let CatalogNames = props.catalogPage.catalogList.map((e) => {
 		return (

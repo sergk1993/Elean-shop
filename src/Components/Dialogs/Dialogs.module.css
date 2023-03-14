@@ -1,0 +1,122 @@
+.dialogs {
+	padding-bottom: 50px;
+}
+
+.dialogsTitle {
+	font-family: 'FuturaBookC';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 21px;
+	line-height: 20px;
+	text-align: center;
+	letter-spacing: 0.05em;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+.dialogsBox {
+	display: flex;
+	min-height: 500px;
+}
+
+/* Начало боковой панели с users */
+.dialogsContacts {
+	width: 400px;
+	background-color: #e7e6e6;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+
+.dialogsUsersBox {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	padding: 15px;
+	transition:	background-color 0.5ms ease-in-out ;
+}
+.dialogsUsersBox:hover {
+	background-color: #7a7a7a5e;
+}
+
+
+.dialogsUserMessageBox {
+	font-family: 'FuturaBookc';
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 25px;
+	margin-left: 20px;
+	
+}
+
+.dialogsUserImg {
+	width: 60px;
+	height: 60px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+
+.dialogsUserName {
+	font-family: 'FuturaBookc';
+	font-weight: 400;
+	margin: 0;
+	margin-bottom: 8px;
+	color: var(--blackTextColor);
+}
+
+.dialogsUserMessage {
+	font-size: 20px;
+	line-height: 20px;
+	color: var(--blackTextColor);
+	
+}
+
+/* Конец боковой панели с users */
+
+
+.dialogsMessageBox {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background-color: #a7a3a3;
+	color: var(--blackTextColor);
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	padding-top: 20px;
+}
+
+.dialogsMessage {
+	padding: 10px;
+
+}
+
+
+.dialogsWrapperTextArea {
+	display: flex;
+	width: 100%;
+	border-bottom-right-radius: 15px;
+	margin-top: auto;
+}
+
+
+
+.dialogsTextarea {
+	width: 100%;	
+	height: 60px;
+	padding: 10px;
+	background-color: rgb(255, 255, 255);
+	resize: none;
+}
+
+
+/* кнопка у textarea */
+
+.dialogsTextAreaBtn {
+display: block;
+width: 50px;
+border-bottom-right-radius: 15px;
+border: none;
+cursor: pointer;
+}

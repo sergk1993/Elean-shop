@@ -1,28 +1,22 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { RootType } from '../../Redux/redux-store';
-import { NavCategoryType } from '../../types/types';
+import { NavCategoryInterface} from '../../types/types';
 import styles from './Nav.module.css'
 
 
 type NavType = {
-	nav: NavCategoryType
+	nav: NavCategoryInterface
 }
 
-type NavOpenType = {
-
-}
-const handleChange = (e: MouseEventInit) => {
-
-}
-
-function Nav(props:NavType): JSX.Element  {
+function Nav(props: NavType): JSX.Element {
 
 	let [open, setOpen] = useState<Boolean>(false)
 
 	const showDropDown = () => {
 		setOpen(true);
-		
+
 	}
 
 	const hideDropDown = () => {
@@ -32,8 +26,9 @@ function Nav(props:NavType): JSX.Element  {
 
 
 	let findCategoryName = props.nav.headerNavPage.map((name) => {
+
 		let letterCase = name.text.toString().toLowerCase();
-	
+
 		if (letterCase === 'покупателям') {
 			return (
 				<li onMouseEnter={showDropDown} onMouseLeave={hideDropDown} key={name.id}>
@@ -42,9 +37,9 @@ function Nav(props:NavType): JSX.Element  {
 						{props.nav.dropDownMenu.map((e) => {
 							return (
 								<li key={e.id}>
-									<a href="/">
+									<Link to={e.path}>
 										{e.name}
-									</a>
+									</Link>
 								</li>
 							);
 						})}
@@ -56,9 +51,12 @@ function Nav(props:NavType): JSX.Element  {
 
 		return (
 			<li key={name.id}>
-				<a href="/catalog">{name.text}</a>
+				<Link to={name.path}>{name.text}</Link >
 			</li>
 		);
+
+
+
 	});
 
 
@@ -77,7 +75,7 @@ function Nav(props:NavType): JSX.Element  {
 
 
 
-function mapStateToProps(store:RootType) {
+function mapStateToProps(store: RootType) {
 	return {
 		nav: store.navCategory
 	}

@@ -19,10 +19,10 @@ import img9Jpg from '../assets/img/catalog/catalog_9.jpg';
 import img7Webp from '../assets/img/catalog/catalog_7.webp';
 import img8Webp from '../assets/img/catalog/catalog_8.webp';
 import img9Webp from '../assets/img/catalog/catalog_9.webp';
-import { CatalogPageType } from '../types/types';
+import { CatalogInterface } from '../types/types';
 
 
-let initialState:CatalogPageType = {
+let initialState:CatalogInterface = {
 	catalogPage: {
 		catalogList:
 			[
@@ -31,46 +31,52 @@ let initialState:CatalogPageType = {
 					title: 'Новинки',
 					photoImgJpeg: img1Jpg,
 					photoImgWebp: img1Webp,
+					path: '/new-products',
 				},
 				{
 					id: 2,
 					title: 'Акции',
 					photoImgJpeg: img2Jpg,
 					photoImgWebp: img2Webp,
+					path: '/stocks',
 				},
 				{
 					id: 3,
 					title: 'Костюмы',
 					photoImgJpeg: img3Jpg,
 					photoImgWebp: img3Webp,
+					path: '/costumes',
 				},
 				{
 					id: 4,
 					title: 'Смокинги',
 					photoImgJpeg: img4Jpg,
 					photoImgWebp: img4Webp,
+					path: '/tuxedos',
 				},
 				{
 					id: 5,
 					title: 'Брюки',
 					photoImgJpeg: img5Jpg,
 					photoImgWebp: img5Webp,
+					path: '/trousers',
 				},
 				{
 					id: 6,
 					title: 'Платья',
 					photoImgJpeg: img6Jpg,
 					photoImgWebp: img6Webp,
+					path: '/dresses',
 				}
 			],
 
 
 
 			catalogListDown: [
-				{id: 1, title: 'Блузы', photoImgJpeg: img2Jpg, photoImgWebp: img2Webp},
-				{id: 2, title: 'Юбки', photoImgJpeg: img9Jpg, photoImgWebp: img9Webp},
-				{id: 3, title: 'Топы и жилеты', photoImgJpeg: img8Jpg, photoImgWebp: img8Webp},
-				{id: 4, title: 'Аксессуары', photoImgJpeg: img7Jpg, photoImgWebp: img7Webp},
+				{id: 1, title: 'Блузы', photoImgJpeg: img2Jpg, photoImgWebp: img2Webp, path: '/blouses'},
+				{id: 2, title: 'Юбки', photoImgJpeg: img9Jpg, photoImgWebp: img9Webp, path: '/skirts'},
+				{id: 3, title: 'Топы и жилеты', photoImgJpeg: img8Jpg, photoImgWebp: img8Webp, path: '/tops-and-vests'},
+				{id: 4, title: 'Аксессуары', photoImgJpeg: img7Jpg, photoImgWebp: img7Webp, path: '/accessories'},
 			]
 		// catalogImages: {
 		// 	imgJpeg: [

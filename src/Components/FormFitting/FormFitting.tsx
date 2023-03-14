@@ -1,9 +1,12 @@
-import React from 'react'
+import { RootType } from '../../Redux/redux-store'
 import styles from './FormFitting.module.css'
 
 
 
+
 function FormFitting() {
+
+
 	return (
 		<section className={styles.formFitting}>
 
@@ -24,13 +27,14 @@ function FormFitting() {
 			<form className={styles.form} method='_post'>
 
 				<div className={styles.formInputTopBox}>
-					<input className={styles.inputName} type='text' placeholder='ВВЕДИТЕ ИМя' required/>
-					<input className={styles.inputPhone} type='text' placeholder='ВВЕДИТЕ ТЕЛЕФОн' required/>
-					<input className={styles.inputTime} type='text' placeholder='ВВЕДИТЕ УДОБНОЕ ВРЕМя' required/>
+
+					<input className={styles.inputName}  type='text' placeholder='ВВЕДИТЕ ИМя' required />
+					<input className={styles.inputPhone} type='text' placeholder='ВВЕДИТЕ ТЕЛЕФОн' required />
+					<input className={styles.inputTime} type='text' placeholder='ВВЕДИТЕ УДОБНОЕ ВРЕМя' required />
 				</div>
 
 				<div className={styles.formInputBottomBox}>
-					<textarea className={styles.formFittingArea} placeholder='ДОБАВИТЬ КОММЕНТАРИй'/>
+					<textarea className={styles.formFittingArea} placeholder='ДОБАВИТЬ КОММЕНТАРИй' />
 					<button className={styles.formFittingButton}>ОТПРАВИТь</button>
 				</div>
 				<p className={styles.textSub}>Поля отмеченные “*” обязательны для заполнения</p>
@@ -41,4 +45,23 @@ function FormFitting() {
 	)
 }
 
+
+
+
+
 export default FormFitting
+
+
+
+/* 
+This expression is not callable.
+	Type 'CombinedState<{ catalogListPage: any; 
+		navCategory: NavCategoryInterface; 
+		dialogsPage: DialogsPageInterface; 
+		AboutBlock: { aboutBlockText: { id: number; info: string; }[];
+		aboutBlockBtn: { ...; }[]; }; 
+		ClientsSwiper: { ...; }; 
+		footerPage: FooterInitialState; }>'
+		 has no call signatures.ts(2349)
+
+*/

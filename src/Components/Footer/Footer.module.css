@@ -8,7 +8,7 @@
 	padding-bottom: 40px;
 }
 
-.footerWrapper {}
+
 
 .footerNavigate {
 	display: flex;
@@ -52,7 +52,7 @@
 	margin-bottom: 40px;
 }
 
-.contacts {
+.contactsPhoneWrapper {
 	width: 250px;
 }
 
@@ -103,126 +103,7 @@
 }
 
 
-.form {
-	width: 300px;
+
+.form_left {
 	margin-left: 100px;
-	font-family: 'FuturaMediumC';
-	font-weight: 500;
-}
-
-.formStyleInput {
-	display: block;
-	width: 100%;
-	border: 1px solid #D7B494;
-	background-color: transparent;
-	padding: 7px 15px;
-	margin-bottom: 10px;
-
-}
-
-
-.formStyleInput::placeholder {
-	font-family: 'FuturaMediumC';
-	font-weight: 500;
-	text-transform: uppercase;
-	font-size: 13px;
-	line-height: 20px;
-}
-
-.formCheckboxWrapper {
-	position: relative;
-	display: flex;
-	align-items: center;
-	margin-bottom: 10px;
-	padding-left: 30px;
-	cursor: pointer;
-}
-
-
-.formCheck {
-	position: absolute;
-	left: 10px;
-	bottom: 0;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-	clip: rect(0 0 0 0);
-	margin: -1px;
-	border: 0;
-	padding: 0;
-}
-
-
-
-.formCheckbox {
-	content: '';
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 14px;
-	height: 14px;
-	margin-left: -28px;
-	background-color: var(--whiteColor);
-	box-shadow: 0 0 0 2.6px var(--colorFormBtn);
-}
-
-
-
-
-.formCheck:checked~.formCheckbox::before {
-	content: '';
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	background-image: url('../../assets//img/footer/formCheck.svg');
-	width: 10px;
-	height: 10px;
-	background-repeat: no-repeat;
-	background-size: contain;
-
-}
-
-.formCheck:focus~.formCheckbox {
-	outline: 4px solid red;
-	border-radius: 2px;
-}
-
-.formCheck:checked:focus~.formCheckbox {
-	outline: 4px solid green;
-	border-radius: 2px;
-}
-
-.formCheckPartText {
-	color: var(--colorFormBtn);
-	margin-right: 4px;
-}
-
-.formBtnSubscribe {
-	position: relative;
-	font-size: 12px;
-	font-weight: 500;
-	font-family: 'FuturaMediumC';
-	line-height: 20px;
-	display: block;
-	width: 100%;
-	padding: 7px 15px;
-	background-color: transparent;
-	cursor: pointer;
-	text-align: start;
-	border: 1px solid #D7B494;
-	text-transform: uppercase;
-}
-
-.formBtnSubscribe::after {
-	content: '';
-	position: absolute;
-	background-image: url('../../assets//img/footer/footerFormButton.svg');
-	background-repeat: no-repeat;
-	background-size: contain;
-	width: 23px;
-	height: 8px;
-	top: 50%;
-	right: 15px;
-	transform: translateY(-50%);
 }

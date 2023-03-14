@@ -1,127 +1,81 @@
 import { Navigation, Pagination } from 'swiper';
-import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import './ClientsSwiper.css';
-import ClientsSwiperJpg1 from '../../assets/img/ClientsSwiper/ClientsSwiper1.jpg'
-import ClientsSwiperWebp1 from '../../assets/img/ClientsSwiper/ClientsSwiper1.webp'
-
-import ClientsSwiperJpg2 from '../../assets/img/ClientsSwiper/ClientsSwiper2.jpg'
-import ClientsSwiperWebp2 from '../../assets/img/ClientsSwiper/ClientsSwiper2.webp'
+import { RootType } from '../../Redux/redux-store';
+import { connect } from 'react-redux';
+import ClientsReviews from './ClientsReviews/ClientsReviews';
+import 'swiper/css';
 import 'swiper/css/navigation';
+import './ClientsSwiper.css';
+import { ClientsReviewsInterface, ClientsSwiperInterface } from '../../types/types';
 
-function ClientsSwiper(): JSX.Element {
 
 
+type ClientsSwiperType = {
+	clientsSwiper: {
+		clientsSwiper: Array<ClientsSwiperInterface>
+		clientsReviews: Array<ClientsReviewsInterface>
+	}
+}
+
+function ClientsSwiper(props: ClientsSwiperType): JSX.Element {
 	return (
-		<section className='swiperMainBottomWrapper'>
+		<section className='swiperMainBottom swiperMainBott_MarginBottom'>
+			<div className='swiperMainBottomWrapper'>
+				<Swiper
+					modules={[Pagination, Navigation]}
+					spaceBetween={10}
+					slidesPerView={5}
+					pagination={{ clickable: true }}
+
+					navigation={{
+						prevEl: '.ClientsSwiperPrev',
+						nextEl: '.ClientsSwiperNext',
+					}}
+
+					grabCursor={true}
+					className='swiperMainBottom'
+				>
 
 
-			<Swiper
-				modules={[Pagination, Navigation]}
-				spaceBetween={10}
-				slidesPerView={5}
-				pagination={{ clickable: true }}
 
-				navigation={{
-					prevEl: '.ClientsSwiperPrev',
-					nextEl: '.ClientsSwiperNext',
-				}}
-
-				grabCursor={true}
-				className='swiperMainBottom'
-			>
-
-
-				<SwiperSlide>
-					<div className='ClientsSwiperImageBox'>
-						<picture>
-							<source srcSet={ClientsSwiperWebp1} />
-							<img src={ClientsSwiperJpg1} alt="" />
-						</picture>
-						<p >Альбина Джанабаева </p>
-					</div>
-				</SwiperSlide>
-
-				<SwiperSlide>
-					<div className='ClientsSwiperImageBox'>
-						<picture>
-							<source srcSet={ClientsSwiperWebp2} />
-							<img src={ClientsSwiperJpg2} alt="" />
-						</picture>
-						<p>Екатерина Данилова</p>
-					</div>
-				</SwiperSlide>
-
-				<SwiperSlide>
-					<div className='ClientsSwiperImageBox'>
-						<picture>
-							<source srcSet={ClientsSwiperWebp1} />
-							<img src={ClientsSwiperJpg1} alt="" />
-						</picture>
-						<p >Альбина Джанабаева </p>
-					</div>
-				</SwiperSlide>
-
-				<SwiperSlide>
-					<div className='ClientsSwiperImageBox'>
-						<picture>
-							<source srcSet={ClientsSwiperWebp2} />
-							<img className='ClientsSwiperImage' src={ClientsSwiperJpg2} alt="" />
-						</picture>
-						<p>Екатерина Данилова</p>
-					</div>
-				</SwiperSlide>
-
-				<SwiperSlide>
-					<div className='ClientsSwiperImageBox'>
-						<picture>
-							<source srcSet={ClientsSwiperWebp1} />
-							<img src={ClientsSwiperJpg1} alt="" />
-						</picture>
-						<p >Альбина Джанабаева </p>
-					</div>
-				</SwiperSlide>
-
-				<SwiperSlide>
-					<div className='ClientsSwiperImageBox'>
-						<picture>
-							<source srcSet={ClientsSwiperWebp2} />
-							<img src={ClientsSwiperJpg2} alt="" />
-						</picture>
-						<p>Екатерина Данилова</p>
-					</div>
-				</SwiperSlide>
-
-				<SwiperSlide>
-					<div className='ClientsSwiperImageBox'>
-						<picture>
-							<source srcSet={ClientsSwiperWebp1} />
-							<img src={ClientsSwiperJpg1} alt="" />
-						</picture>
-						<p >Альбина Джанабаева </p>
-					</div>
-				</SwiperSlide>
-
-				<SwiperSlide>
-					<div className='ClientsSwiperImageBox'>
-						<picture>
-							<source srcSet={ClientsSwiperWebp2} />
-							<img src={ClientsSwiperJpg2} alt="" />
-						</picture>
-						<p>Екатерина Данилова</p>
-					</div>
-				</SwiperSlide>
-			</Swiper>
-
-			<div className="ClientsSwiperPrev" />
-			<div className="ClientsSwiperNext" />
+					{
+						props.clientsSwiper.clientsSwiper.map(e => {
+							return (
+								<SwiperSlide key={e.id}>
+									<div className='ClientsSwiperImageBox'>
+										<picture>
+											<source srcSet={e.imgWebp} />
+											<img src={e.imgJpg} alt="" />
+										</picture>
+										<p >{e.name}</p>
+									</div>
+								</SwiperSlide>
+							);
+						})
+					}
 
 
-				<div >
-					
-				</div>
+				</Swiper>
+				<div className="ClientsSwiperPrev" />
+				<div className="ClientsSwiperNext" />
+
+			</div>
+
+			<div >
+
+			</div>
+
+
+			<ClientsReviews clientsReviews={props.clientsSwiper.clientsReviews} />
 		</section>
 	)
 }
 
-export default ClientsSwiper;
+
+const mapStateToProps = (state: RootType) => {
+	return {
+		clientsSwiper: state.ClientsSwiper
+	}
+}
+
+export default connect(mapStateToProps)(ClientsSwiper);

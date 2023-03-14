@@ -1,72 +1,49 @@
-import { url } from 'inspector'
-import React from 'react'
-import styles from './ClientsReviews.module.css'
+import { url } from 'inspector';
+import styles from './ClientsReviews.module.css';
 import peopleReviews from '../../../assets//img/clientsReviews/clientReviews.jpg';
-import emptyPeopleReviews from '../../../assets//img/clientsReviews/emptyPeopleReviews.svg'
-import hidePeopleReviews from '../../../assets//img/clientsReviews/clientsHiddenPicture.svg'
+import emptyPeopleReviews from '../../../assets//img/clientsReviews/emptyPeopleReviews.svg';
+import hidePeopleReviews from '../../../assets//img/clientsReviews/clientsHiddenPicture.svg';
+import { Link } from 'react-router-dom';
+import { ClientsReviewsInterface } from '../../../types/types';
 
-function ClientsReviews() {
 
+
+type ClientsReviewsType = {
+	clientsReviews: Array<ClientsReviewsInterface>
+}
+
+function ClientsReviews(props: ClientsReviewsType) {
 	return (
 		<section className={styles.clientsReviews}>
 
 			<div className={styles.clientsReviewsWrapper}>
+				{
+					props.clientsReviews.map((e: any) => {
+						return (
+							<article className={styles.descr} key={e.id}>
 
-
-				<article className={styles.descr}>
-
-					<div className={styles.clientsImageWrapper}>
-						<img className={styles.clientsImage} src={peopleReviews} alt="people review img" aria-hidden='true' />
-					</div>
-					<div className={styles.descrTitle}>
-						<h3>Ирина <span>г. Москва</span></h3>
-						<time dateTime="2017-03-26">26 Марта 2017</time>
-					</div>
-					<p>Да, доставка заграницу осуществляется курьерской службой до двери. Доставка заграницу оплачивается при оформлении заказа, фиксированная стоимость 1 200₽.</p>
-				</article>
-
-				<article className={styles.descr}>
-					<div className={styles.clientsImageWrapper}>
-						<img className={styles.clientsImage} src={peopleReviews} alt="people review img" aria-hidden='true' />
-					</div>
-					<div className={styles.descrTitle}>
-						<h3>Ирина <span>г. Москва</span></h3>
-						<time dateTime="2017-03-26">26 Марта 2017</time>
-					</div>
-					<p>Да, доставка заграницу осуществляется курьерской службой до двери. Доставка заграницу оплачивается при оформлении заказа, фиксированная стоимость 1 200₽.</p>
-				</article>
-
-				<article className={styles.descr}>
-					<div className={styles.clientsImageWrapper}>
-						<img className={styles.clientsImage} src={peopleReviews} alt="people review img" aria-hidden='true' />
-					</div>
-					<div className={styles.descrTitle}>
-						<h3>Ирина <span>г. Москва</span></h3>
-						<time dateTime="2017-03-26">26 Марта 2017</time>
-					</div>
-					<p>Да, доставка заграницу осуществляется курьерской службой до двери. Доставка заграницу оплачивается при оформлении заказа, фиксированная стоимость 1 200₽.</p>
-				</article>
-
-				<article className={styles.descr}>
-					<div className={styles.clientsImageWrapper}>
-						<img className={styles.clientsImage} src={peopleReviews} alt="people review img" aria-hidden='true' />
-					</div>
-					<div className={styles.descrTitle}>
-						<h3>Ирина <span>г. Москва</span></h3>
-						<time dateTime="2017-03-26">26 Марта 2017</time>
-					</div>
-					<p>Да, доставка заграницу осуществляется курьерской службой до двери. Доставка заграницу оплачивается при оформлении заказа, фиксированная стоимость 1 200₽.</p>
-				</article>
-
+								<div className={styles.clientsImageWrapper}>
+									<img className={styles.clientsImage} src={e.img} alt="" />
+								</div>
+								<div className={styles.descrTitle}>
+									<h3>{e.name} <span>{e.city}</span></h3>
+									<time dateTime={e.dataTime}>{e.data}</time>
+								</div>
+								<p>{e.textInfo}</p>
+							</article>
+						)
+					}
+					)
+				}
 
 			</div>
-
-
-			<a className={styles.clientsShowAllBtn} href="/">
+			<Link className={styles.clientsShowAllBtn} to="/reviews">
 				СМОТРЕТЬ ВСе
-			</a>
+			</Link>
 		</section>
 	)
 }
+
+
 
 export default ClientsReviews

@@ -11,12 +11,28 @@
 	grid-template-rows: 1fr 1fr;
 	gap: 90px 120px;
 	margin: 0 auto;
+	padding-top: 40px;
 	margin-bottom: 40px;
 }
 
 .descr {
 	position: relative;
+	box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
+
+.descr p {
+	padding: 25px 28px;
+
+	font-size: 18px;
+	line-height: 23px;
+	margin: 0;
+	border: 1px dashed var(--grayColor);
+	height: 100%;
+}
+
+
 
 .clientsImageWrapper {
 	position: absolute;
@@ -93,13 +109,6 @@
 	font-weight: 400;
 }
 
-.descr p {
-	padding: 25px 28px;
-	font-size: 18px;
-	line-height: 23px;
-	margin: 0;
-	border: 1px dashed var(--grayColor);
-}
 
 .descrTitle time {
 	font-size: 13px;

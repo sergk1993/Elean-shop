@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
@@ -6,38 +6,28 @@ import './Components/_color.css';
 import reportWebVitals from './reportWebVitals';
 import store from './Redux/redux-store';
 import { Provider } from 'react-redux/es/exports';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { ErrorPage } from './Components/ErrorPage/ErrorPage';
-import { BrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import Layout from './Layout/Layout';
+import { ErrorPage } from './Components/ErrorPage/ErrorPage';
+import Dialogs from './Components/Dialogs/Dialogs';
 
 
-
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Layout />,
-        errorElement: <ErrorPage />,
-        children: [
-            {
-                path: "/app",
-                element: <App />,
-            }
-        ]
-    }
-])
-
+const router = createBrowserRouter(
+    createRoutesFromElements(
+        <Route element={<Layout />} path="/" errorElement={<ErrorPage />}>
+            <Route path="/app" element={<App />} />
+            <Route path="/dialogs" element={<Dialogs />} />
+        </Route>
+    )
+);
 
 
 const rootElem = document.getElementById('root');
 if (rootElem) {
-
     const root = ReactDOM.createRoot(rootElem);
     root.render(
         <Provider store={store}>
-            <React.StrictMode>
-                <RouterProvider router={router} />
-            </React.StrictMode>
+            <RouterProvider router={router} />
         </Provider>
     );
 
