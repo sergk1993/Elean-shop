@@ -1,0 +1,39 @@
+.categoriesAside {
+	width: 200px;
+	font-family: 'FuturaMediumC';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 15px;
+}
+
+/* верхний title у Aside */
+.categoriesAsideTitle {
+	font-family: 'FuturaMediumC';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 16px;
+	letter-spacing: 0.05em;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+
+/* верхний Ul список  */
+.categoryAsideUpList {
+	/* margin-bottom: 20px; */
+}
+
+/* верхние  лишки у Aside */
+.categoryAsideUpLists:not(:last-child) {
+	margin-bottom: 5px;
+}
+
+.categoryAsideUpLists  a{
+	padding: 2px 0;
+	display: inline-block;
+}
+
+.categoryAsideUpLists a.active {
+	color: #ae9177;
+	border-bottom: 1px solid currentColor;
+}

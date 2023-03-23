@@ -2,18 +2,18 @@ import { NavCategoryInterface } from '../types/types'
 
 let initialState: NavCategoryInterface = {
 	headerNavPage: [
-		{ id: 0, text: 'навигация', path: '/navigation' },
-		{ id: 1, text: 'категории', path: '/category' },
-		{ id: 2, text: 'наши коллекции', path: '/collections' },
-		{ id: 3, text: 'покупателям', path: '/shopper' },
-		{ id: 4, text: 'о бренде', path: '/brand' },
-		{ id: 5, text: 'шоурум', path: '/showroom' },
-		{ id: 6, text: 'контакты', path: '/contacts' },
-		{ id: 7, text: 'Диалоги', path: '/dialogs' },
+		{ id: 0, text: 'навигация', path: 'navigation' },
+		{ id: 1, text: 'категории', path: 'categories' },
+		{ id: 2, text: 'наши коллекции', path: 'collections' },
+		{ id: 3, text: 'покупателям', path: 'shopper' },
+		{ id: 4, text: 'о бренде', path: 'brand' },
+		{ id: 5, text: 'шоурум', path: 'showroom' },
+		{ id: 6, text: 'контакты', path: 'contacts' },
+		{ id: 7, text: 'Диалоги', path: 'dialogs' },
 	],
 
 	dropDownMenu: [
-		{ id: 0, name: 'Доставка' , path: '/delivery'},
+		{ id: 0, name: 'Доставка' , path: 'categories/news'},
 		{ id: 1, name: 'Оплата' , path: '/payment'},
 		{ id: 2, name: 'Возврат' , path: '/refund'},
 		{ id: 3, name: 'Размерная таблица' , path: '/table-size'},

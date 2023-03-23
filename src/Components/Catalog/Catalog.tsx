@@ -1,5 +1,4 @@
 import styles from './Catalog.module.css';
-import React from 'react';
 import { connect } from 'react-redux';
 import { CatalogInterface } from '../../types/types';
 import { RootType } from '../../Redux/redux-store';

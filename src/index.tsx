@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
@@ -10,16 +9,28 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Layout from './Layout/Layout';
 import { ErrorPage } from './Components/ErrorPage/ErrorPage';
 import Dialogs from './Components/Dialogs/Dialogs';
+import CategoriesContainer from './Components/Categories/CategoriesContainer';
+import NewsCategories from './Components/Categories/NewsCategories';
+import SkirtsCategories from './Components/Categories/SkirtsCategories';
+
+
 
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route element={<Layout />} path="/" errorElement={<ErrorPage />}>
-            <Route path="/app" element={<App />} />
-            <Route path="/dialogs" element={<Dialogs />} />
+        <Route path="/" element={<Layout />} errorElement={<ErrorPage />}>
+            <Route index element={<App />} />
+            <Route path="dialogs" element={<Dialogs />} />
+
+            <Route path="categories" element={<CategoriesContainer />} >
+                <Route path="news" element={<NewsCategories />} />
+                <Route path="skirts" element={<SkirtsCategories />} />
+            </Route>
         </Route>
     )
 );
+
+
 
 
 const rootElem = document.getElementById('root');

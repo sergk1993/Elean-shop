@@ -2,6 +2,7 @@ import { applyMiddleware, combineReducers, compose } from 'redux';
 import { createStore } from 'redux';
 import AboutBlockReducer from './AboutBlock-reducer';
 import CatalogPage from './CatalogPage-reducer';
+import Categories from './Categories-reducer';
 import ClientsSwiperReducer from './ClientsSwiper-reducer';
 import dialogsReducer from './Dialogs-reducer';
 import FooterReducer from './Footer-reducer';
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
 	AboutBlock: AboutBlockReducer,
 	ClientsSwiper: ClientsSwiperReducer,
 	footerPage: FooterReducer,
+	categories: Categories,
 });
 
 
@@ -30,6 +32,7 @@ const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ||
 const store = createStore(rootReducer, composeEnhancers(
 	applyMiddleware()
 ))
+
 
 
 export default store;

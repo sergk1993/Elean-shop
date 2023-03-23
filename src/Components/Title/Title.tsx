@@ -6,7 +6,7 @@ import styles from './Title.module.css';
 
 function Title() {
 	return (
-		<Link className={styles.title} to='/app' aria-label='Main title'>
+		<Link className={styles.title} to='/' aria-label='Main title'>
 			<svg className={styles.titleE} viewBox="0 0 21 26" xmlns="http://www.w3.org/2000/svg">
 				<path d="M0 25.189L2.90476 23.5611V1.98531L0 0.33902V0H18.2148V6.48798H18.0504L14.9813 0.762617H6.66853V12.0558H12.0583L14.1957 8.79389H14.5005V16.1713H14.1957L12.0583 12.8184H6.66853V24.7654H16.1993L20.1943 19.0219L20.3526 19.04L19.4088 25.528H0.000343002L0 25.189Z" />
 			</svg>

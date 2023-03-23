@@ -1,0 +1,21 @@
+.categories {
+	display: flex;
+}
+
+.categoriesTitle {
+	text-align: center;
+	text-transform: lowercase;
+	padding-top: 15px;
+	font-family: 'FuturaBookC';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 21px;
+	text-align: center;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	margin-bottom: 40px;
+}
+
+.categoriesTitle::first-letter {
+	text-transform: uppercase;
+}
