@@ -32,7 +32,7 @@ function Nav(props: NavType): JSX.Element {
 		if (letterCase === 'покупателям') {
 			return (
 				<li onMouseEnter={showDropDown} onMouseLeave={hideDropDown} key={name.id}>
-					<button >ПОКУПАТЕлЯМ</button>
+					<button className={styles.dropDownMenuBtn}>ПОКУПАТЕлЯМ</button>
 					{open && <ol className={styles.navDropDown} >
 						{props.nav.dropDownMenu.map((e) => {
 							return (

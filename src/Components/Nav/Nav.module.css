@@ -1,5 +1,5 @@
 .nav {
-	margin-bottom: 13px;
+	padding-bottom: 13px;
 }
 
 .list {
@@ -9,6 +9,7 @@
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
+	position: relative;
 }
 
 .list li,
@@ -32,24 +33,27 @@
 
 .list li a {
 	cursor: pointer;
+	padding-bottom: 5px;
 }
 
 
-
-
-.navDropDownBtn {
-	cursor: pointer;
+button.dropDownMenuBtn {
+	padding-bottom: 5px;
+	display: inline-block;
 }
 
-.navDropDown {
+
+ol .navDropDown {
 	position: absolute;
 	width: 250px;
 	z-index: 4;
 	padding: 0;
 	margin: 0;
-	padding-top: 13px;
-	background-color: #fafafa;
+	top: 25px;
+
+	background-color: #e3e3e3;
 	list-style-type: none;
+	cursor: pointer;
 }
 
 
@@ -66,4 +70,3 @@
 .navDropDown li:not(:last-child) {
 	margin-bottom: 5px;
 }
-
