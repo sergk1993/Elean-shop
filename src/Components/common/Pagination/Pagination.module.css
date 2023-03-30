@@ -1,0 +1,66 @@
+
+.paginationLeft {
+	display: inline-block;
+	width: 100px;
+	margin-right: 20px;
+	padding: 5px;
+	border: none;
+	background-color: var(--grayColorBtn);
+	color: var(--blackTextColor);
+	border-radius: 5px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.paginationLeft:disabled {
+	color: var(--grayTextColor);
+	cursor: inherit;
+}
+
+.pagination {
+	text-align: center;
+}
+
+
+.paginationBtnWrapper {
+	display: inline-block;
+}
+
+.paginationBtnWrapper span {
+	display: inline-block;
+	width: 30px;
+	margin: 5px;
+	border-radius: 5px;
+	padding: 5px;
+	background-color: var(--grayColorBtn);
+	cursor: pointer;
+}
+
+
+.activeCurrentBtn {
+	color: var(--blackTextColor);
+	border: 1px solid var(--grayColorBtn);
+}
+.paginationBtn {
+	color: var(--blackTextColor);
+
+}
+
+.paginationRight {
+	display: inline-block;
+	width: 100px;
+	margin-left: 20px;
+	padding: 5px;
+	border: none;
+	background-color: var(--grayColorBtn);
+	color: var(--blackTextColor);
+	border-radius: 5px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.paginationRight:disabled {
+	color: var(--grayTextColor);
+	cursor: inherit;
+}
+

@@ -7,7 +7,8 @@ import ClientsSwiperReducer from './ClientsSwiper-reducer';
 import dialogsReducer from './Dialogs-reducer';
 import FooterReducer from './Footer-reducer';
 import NavCategory from './NavCategory-reducer';
-
+import thunkMiddleware from 'redux-thunk'
+import UsersReducer from './Users-reducer';
 
 
 
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
 	ClientsSwiper: ClientsSwiperReducer,
 	footerPage: FooterReducer,
 	categories: Categories,
+	usersPage: UsersReducer,
 });
 
 
@@ -30,7 +32,7 @@ const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ||
 
 
 const store = createStore(rootReducer, composeEnhancers(
-	applyMiddleware()
+	applyMiddleware(thunkMiddleware)
 ))
 
 

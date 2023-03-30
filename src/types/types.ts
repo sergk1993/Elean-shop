@@ -31,7 +31,7 @@ export interface NavCategoryInterface {
 	dropDownMenu: {
 		id: number,
 		name: string,
-		path: string ,
+		path: string,
 	}[],
 }
 
@@ -78,7 +78,7 @@ export interface ClientsReviewsInterface {
 /* типизация DialogsPage */
 export interface DialogsPageInterface {
 	users: {
-		id:number, 
+		id: number,
 		name: string,
 		message: string,
 		img: string | undefined,
@@ -87,4 +87,17 @@ export interface DialogsPageInterface {
 }
 
 
+/* типы для users начало */
+export type PhotosType = {
+	small: string | null,
+	large: string | null,
+}
 
+export type UserType = {
+	id: number,
+	name: string ,
+	status: string ,
+	uniqueUrlName: string | null,
+	photos: PhotosType,
+}
+/* типы для users конец */

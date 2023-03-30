@@ -1,0 +1,93 @@
+.skeletons {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.skeletonCard {
+	padding: 20px;
+	border-radius: 20px;
+	text-align: center;
+	font-family: 'FuturaMediumC';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 19px;
+
+	background-color: var(--colorCardsBackground);
+	animation: skeleton 600ms ease-in-out infinite ;
+}
+
+.skeletonInfo h3 {
+	margin-bottom: 20px;
+	color: #777;
+	width: 60%;
+	height: 20px;
+	background-color: #bfbfbf;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
+
+
+.skeletonInfoImg {
+	width: 150px;
+	height: 150px;
+	display: block;
+	border-radius: 50%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	object-fit: cover;
+}
+
+.skeletonInfoImg {
+	width: 150px;
+	height: 150px;
+	display: block;
+	border-radius: 50%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	object-fit: cover;
+	background-color: #bfbfbf;
+}
+
+
+.skeletonCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+
+
+.skeletonCard button {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 15px;
+	cursor: pointer;
+	border-radius: 10px;
+	border: none;
+	background-color: var(--grayColor);
+	transition: background-color 0.1s ease-in-out;
+	color: var(--whiteTextColor);
+	padding: 20px;
+	font-family: 'FuturaMediumC';
+	font-style: normal;
+	text-transform: uppercase;
+}
+
+
+
+@keyframes skeleton {
+	0% {
+		background-color: rgb(183, 181, 181);
+		background-position: 0 0;
+	}
+
+	100% {
+		background-color: rgb(161, 159, 159);
+		background-position: cubic-bezier(0, 0, 1, 1);
+	}
+}

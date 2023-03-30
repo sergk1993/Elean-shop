@@ -12,15 +12,17 @@ import Dialogs from './Components/Dialogs/Dialogs';
 import CategoriesContainer from './Components/Categories/CategoriesContainer';
 import NewsCategories from './Components/Categories/NewsCategories';
 import SkirtsCategories from './Components/Categories/SkirtsCategories';
+import UsersContainer from './Components/Users/UsersContainer';
 
 
 
-
+// https://www.youtube.com/watch?v=D0kB1IvCKrI&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8&index=57
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<Layout />} errorElement={<ErrorPage />}>
             <Route index element={<App />} />
             <Route path="dialogs" element={<Dialogs />} />
+            <Route path="users" element={<UsersContainer />} />
 
             <Route path="categories" element={<CategoriesContainer />} >
                 <Route path="news" element={<NewsCategories />} />

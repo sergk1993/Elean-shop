@@ -1,0 +1,72 @@
+.users {
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+
+.usersWrapperCards {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	flex-wrap: wrap; 
+	gap: 20px;
+}
+
+.usersCard {
+	padding: 20px;
+	border-radius: 20px;
+	text-align: center;
+	font-family: 'FuturaMediumC';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 19px;
+	min-height: 150px;
+	background-color: var(--colorCardsBackground);
+}
+
+.userCardInfo img {
+	width: 150px;
+	height: 150px;
+	display: block;
+	border-radius: 50%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	object-fit: cover;
+}
+
+
+
+.userCardInfo h3 {
+	margin-bottom: 20px;
+	color: #777;
+}
+.userCardInfo h3::first-letter {
+	text-transform: uppercase;
+}
+
+
+.usersCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+
+.usersCard button {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 15px;
+	cursor: pointer;
+	border-radius: 10px;
+	border: none;
+	background-color: var(--grayColor);
+	transition: background-color 0.1s ease-in-out;
+	color: var(--whiteTextColor);
+	padding: 10px;
+	font-family: 'FuturaMediumC';
+	font-style: normal;
+	text-transform: uppercase;
+}
+
+.usersCard button:hover {
+	background-color: rgb(169, 167, 167);
+}
