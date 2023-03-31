@@ -37,17 +37,16 @@ const Pagination = ({ props, currentPage, portionSize = 5 }: any) => {
 						<button className={styles.paginationLeft} disabled>PREV</button>
 				}
 
-				{
-					pages.filter((e: number) => e >= leftPortionPageNumber && e <= rightPortionPageNumber)
-						.map((item: number, i) => {
-							debugger
-							return (
-								<div className={styles.paginationBtnWrapper}>
-									<span className={props.currentPage === item ? styles.activeCurrentBtn : styles.paginationBtn } key={i} onClick={() =>	currentPage(item)}>{item}</span>
-								</div>
-							)
-						})
-				}
+				<div className={styles.paginationBtnWrapper} >
+					{
+						pages.filter((e: number) => e >= leftPortionPageNumber && e <= rightPortionPageNumber)
+							.map((item: number, i) => {
+								return (
+									<span className={props.currentPage === item ? styles.activeCurrentBtn : styles.paginationBtn} key={i} onClick={() => currentPage(item)} >{item}</span>
+								)
+							})
+					}
+				</div>
 
 				{portionCount > portionNumber &&
 					<button className={styles.paginationRight} onClick={() => {
