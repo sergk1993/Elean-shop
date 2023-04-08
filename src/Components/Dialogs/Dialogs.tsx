@@ -1,17 +1,20 @@
 
 import { Dispatch, MutableRefObject, useRef } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { compose } from 'redux';
 import { addNewMessageAC } from '../../Redux/Dialogs-reducer';
 import { RootType } from '../../Redux/redux-store';
 import { DialogsPageInterface } from '../../types/types';
+import WithAuthRedirect from '../common/withAuthRedirect/WithAuthRedirect';
 import styles from './Dialogs.module.css';
 
 
 type DialogsType = {
 	dialogsPage: DialogsPageInterface
-	addUsersMessage: any
+	addUsersMessage: any,
 }
+
 
 
 
@@ -75,7 +78,7 @@ function Dialogs(props: DialogsType) {
 const mapStateToProps = (store: RootType) => {
 
 	return {
-		dialogsPage: store.dialogsPage
+		dialogsPage: store.dialogsPage,
 	}
 
 }
@@ -92,4 +95,7 @@ const mapDispatchToProps = (dispatch: any) => {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dialogs)
+export default compose(
+	WithAuthRedirect,
+	connect(mapStateToProps, mapDispatchToProps)
+)(Dialogs)
