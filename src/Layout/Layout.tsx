@@ -6,7 +6,6 @@ import styles from './Layout.module.css';
 import Footer from '../Components/Footer/Footer';
 import Header from '../Components/Header/Header'
 import Nav from '../Components/Nav/Nav'
-import '../index.css'
 
 const Layout = (): JSX.Element => {
 

@@ -8,7 +8,7 @@
 	margin-right: 20px;
 	padding: 5px;
 	border: none;
-	background-color: var(--grayColorBtn);
+	background-color: var(--colorBtn);
 	color: var(--blackTextColor);
 	border-radius: 5px;
 	text-transform: uppercase;
@@ -31,7 +31,7 @@
 	/* margin: 5px; */
 	border-radius: 5px;
 	padding: 5px;
-	background-color: var(--grayColorBtn);
+	background-color: var(--colorBtn);
 	cursor: pointer;
 	font-size: 15px;
 	border: 1px solid transparent;
@@ -43,7 +43,7 @@
 
 .activeCurrentBtn {
 	color: var(--blackTextColor);
-	border: 1px solid var(--grayColorBtn);
+	border: 1px solid var(--colorBtn);
 }
 
 .paginationBtn {
@@ -56,7 +56,7 @@
 	margin-left: 20px;
 	padding: 5px;
 	border: none;
-	background-color: var(--grayColorBtn);
+	background-color: var(--colorBtn);
 	color: var(--blackTextColor);
 	border-radius: 5px;
 	text-transform: uppercase;

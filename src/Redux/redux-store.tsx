@@ -9,6 +9,7 @@ import FooterReducer from './Footer-reducer';
 import NavCategory from './NavCategory-reducer';
 import thunkMiddleware from 'redux-thunk'
 import UsersReducer from './Users-reducer';
+import AuthReducer from './Auth-reducer';
 
 
 
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
 	footerPage: FooterReducer,
 	categories: Categories,
 	usersPage: UsersReducer,
+	AuthPage: AuthReducer,
 });
 
 

@@ -6,7 +6,7 @@ import Phone from './Phone/Phone';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import HeaderTitle from './HeaderTitle/HeaderTitle';
 import React from 'react';
-import Profile from './Profile/Profile';
+import Profile from './Profile/ProfileIcon';
 
 function Header(): JSX.Element {
 	return (

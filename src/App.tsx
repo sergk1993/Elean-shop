@@ -12,22 +12,6 @@ import InstagramCards from './Components/InstagramCards/InstagramCards';
 
 
 
-
-// let url = 'https://63c6490edcdc478e15be59ac.mockapi.io/products'
-// export const instance = fetch(url, {
-// 	method: 'POST',
-// }).then((res) => {
-
-// 	console.log(res);
-// 	console.log('ура');
-// }, (reason) => {
-
-// 	console.log('не ура')
-// })
-
-
-
-
 function App() {
   return (
     <>

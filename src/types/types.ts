@@ -95,9 +95,12 @@ export type PhotosType = {
 
 export type UserType = {
 	id: number,
-	name: string ,
-	status: string ,
+	name: string,
+	status: string | null,
 	uniqueUrlName: string | null,
 	photos: PhotosType,
+	followed?: false | true,
 }
+
+
 /* типы для users конец */
