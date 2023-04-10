@@ -1,5 +1,6 @@
 import React from 'react'
-
+import ButtonLogin from '../../common/ButtonLogin/ButtonLogin'
+import styles from './Profile.module.css' 
 
 type ProfileType = {
 	id: number | null,
@@ -11,10 +12,14 @@ type ProfileType = {
 function Profile(props: ProfileType) {
 	
 	return (
-		<div>
-			<div>{props.login}</div>
+		<section >
+			<h3>{props.login}</h3>
+				<div className={styles.profileWrapper}>
 
-		</div>
+					
+				</div>
+			<ButtonLogin titleBtn='Выйти' />
+		</section >
 	)
 }
 

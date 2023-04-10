@@ -14,6 +14,7 @@ import SkirtsCategories from './Components/Categories/SkirtsCategories';
 import UsersContainer from './Components/Users/UsersContainer';
 import { ErrorPage } from './Components/common/ErrorPage/ErrorPage';
 import ProfilePageContainer from './Components/ProfilePage/ProfilePageContainer';
+import Login from './Components/common/Login/Login';
 
 
 const router = createBrowserRouter(
@@ -23,7 +24,7 @@ const router = createBrowserRouter(
             <Route path="dialogs" element={<Dialogs />} />
             <Route path="users/:id?" element={<UsersContainer />} />
             <Route path="profile" element={<ProfilePageContainer />} />
-
+            
             <Route path="categories" element={<CategoriesContainer />} >
                 <Route path="news" element={<NewsCategories />} />
                 <Route path="skirts" element={<SkirtsCategories />} />

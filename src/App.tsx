@@ -9,20 +9,8 @@ import './Components/_color.css'
 import FormFitting from './Components/FormFitting/FormFitting';
 import ClientsSwiper from './Components/ClientsSwiper/ClientsSwiper';
 import InstagramCards from './Components/InstagramCards/InstagramCards';
-import { connect } from 'react-redux';
-import { useEffect } from 'react';
-import { getProfileTH } from './Redux/Auth-reducer';
 
-type AppType = {
-  getProfileTH: () => void
-}
-
-function App(props: AppType) {
-
-  useEffect(() => {
-    props.getProfileTH()
-  }, [])
-
+function App() {
   return (
     <>
       <SwiperTop />
@@ -42,4 +30,4 @@ function App(props: AppType) {
 }
 
 
-export default connect(null, { getProfileTH })(App);
+export default App;

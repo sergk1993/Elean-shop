@@ -5,10 +5,23 @@ import styles from './Header.module.css'
 import Phone from './Phone/Phone';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import HeaderTitle from './HeaderTitle/HeaderTitle';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Profile from './Profile/ProfileIcon';
+import { connect } from 'react-redux';
+import { getProfileTH } from '../../Redux/Auth-reducer';
 
-function Header(): JSX.Element {
+
+type HeaderType = {
+  getProfileTH: () => void
+}
+
+
+function Header(props:HeaderType): JSX.Element {
+
+  useEffect(() => {
+    props.getProfileTH()
+  }, [])
+
 	return (
 		<header className={styles.header}>
 			<h1 className={styles.visuallyHidden}>Купить женскую одежду</h1>
@@ -26,4 +39,4 @@ function Header(): JSX.Element {
 	);
 }
 
-export default Header;
+export default connect(null, {getProfileTH})(Header);

@@ -12,9 +12,9 @@ const mapStateToProps = (state: RootType) => {
 export function WithAuthRedirect(Component: any) {
 
 	function RedirectComponent(props: any) {
-		/* если пользователь не вошел в аккаунт, перекинь его на profile, там логин*/
+		/* если пользователь не вошел в аккаунт, перекинь его на login*/
 		if (!props.isAuth) { /* <--- проверка на вход в аккаунт */
-			return <Navigate to='profile' />
+			return <Navigate to='/profile' />
 		}
 		/* если человек зашел в аккаунт выводится компонент */
 		return <Component {...props} />
