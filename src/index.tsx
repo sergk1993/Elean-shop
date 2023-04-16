@@ -14,8 +14,6 @@ import SkirtsCategories from './Components/Categories/SkirtsCategories';
 import UsersContainer from './Components/Users/UsersContainer';
 import { ErrorPage } from './Components/common/ErrorPage/ErrorPage';
 import ProfilePageContainer from './Components/ProfilePage/ProfilePageContainer';
-import Login from './Components/common/Login/Login';
-
 
 const router = createBrowserRouter(
     createRoutesFromElements(

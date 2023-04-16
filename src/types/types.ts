@@ -101,6 +101,16 @@ export type UserType = {
 	photos: PhotosType,
 	followed?: false | true,
 }
-
-
 /* типы для users конец */
+
+
+
+
+/* типизация авторизации Profile */
+
+export interface IProfile {
+	email: string | null,
+	id: number | null,
+	login: string | null,
+	isAuth: boolean,
+}

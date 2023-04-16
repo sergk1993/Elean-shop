@@ -1,0 +1,59 @@
+.formLogin {
+	width: 500px;
+	position: relative;
+}
+
+.formLogin>input {
+	font-family: 'FuturaBookc';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 21px;
+	line-height: 20px;
+	letter-spacing: 0.05em;
+	margin-bottom: 20px;
+
+}
+
+.formLogin>input[type="text"],
+.formLogin>input[type="password"] {
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+	border: 1px solid var(--colorBtn);
+	padding: 20px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+
+.formError {
+	margin-bottom: 10px;
+	background-color: var(--errorBg);
+	padding: 5px;
+	color: var(--errorText);
+	margin-bottom: 15px;
+	
+}
+
+
+
+.loginFormBtn {
+	font-family: 'Lato';
+	background-color: var(--colorBtn);
+	width: 100%;
+	font-size: 25px;
+	text-transform: uppercase;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	display: inline-block;
+	margin: 0 auto;
+	padding: 15px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.loginFormBtn[type='submit']:disabled {
+	background-color: var(--colorBtnDis);
+	color: var(--colorBtnDisText);
+	cursor: inherit;
+}

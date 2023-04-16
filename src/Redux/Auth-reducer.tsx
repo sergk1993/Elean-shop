@@ -1,26 +1,28 @@
+import { Dispatch } from 'redux';
+import { ThunkAction } from 'redux-thunk';
 import { authApi } from '../API/api';
+import { IProfile } from '../types/types';
+import { RootType } from './redux-store';
+const SET_USER_DATA = 'SET_USER_DATA';
 
-const GET_PROFILE = 'GET_PROFILE';
 
 
 let initialState = {
 	isAuth: false,
 	id: null,
-	login: null,
-	email: null,
+	login: null  as string | null,
+	email: null  as string | null,
 }
 
+export type InitialStateType = typeof initialState;
 
-function AuthReducer(state = initialState, action: any) {
+function AuthReducer(state = initialState, action: AllAuthActionType) {
 	switch (action.type) {
-		case GET_PROFILE:
+		case SET_USER_DATA:
 			return {
 				...state,
 				...action.items,
-				isAuth: true,
 			}
-
-
 
 		default:
 			return state;
@@ -29,29 +31,53 @@ function AuthReducer(state = initialState, action: any) {
 }
 
 
-export const getProfileAC = (items: any) => {
-	
+type AllAuthActionType =  SetProfileACType ;
+type DispatchAuthType = Dispatch<AllAuthActionType>
+
+type ThunkType = ThunkAction<Promise<void>, RootType, unknown, AllAuthActionType>
+
+
+/* получаю свойства профиля */
+type SetProfileACType = {
+	type: typeof SET_USER_DATA,
+	items: IProfile
+}
+
+const setProfileAC = (email: string | null , id: number | null, login: string | null , isAuth: boolean):SetProfileACType => {
 	return {
-		type: GET_PROFILE,
-		items
+		type: SET_USER_DATA,
+		items: { email, id, login, isAuth }
 	}
 }
-
-
-
-
-export const getProfileTH = () => async (dispatch: any) => {
+export const getProfileTH = () => async (dispatch: DispatchAuthType) => {
 	const resp = await authApi.me()
-	
 	if (resp.resultCode === 0) {
-		dispatch(getProfileAC(resp.data))
+		let { email, id, login } = resp.data;
+		dispatch(setProfileAC(email, id, login, true))
 	}
 }
 
 
+export type LoginTHType = {
+	login: string,
+	password: string,
+}
 
+export const loginTH = (data: LoginTHType):ThunkType => async (dispatch) => {
+	let { login, password } = data
+	const resp = await authApi.login(login, password);
+	if (resp.resultCode === 0) {
+		dispatch(getProfileTH())
+	}
+}
 
+export const logOutTH = ():ThunkType => async (dispatch) => {
+	const resp = await authApi.logOut();
+	if (resp.data.resultCode === 0) {
 
+		dispatch(setProfileAC(null,  null,  null, false))
+	}
+}
 
 
 export default AuthReducer;

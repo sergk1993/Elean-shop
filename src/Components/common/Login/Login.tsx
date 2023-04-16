@@ -1,17 +1,17 @@
-import React from 'react'
-import ButtonLogin from '../ButtonLogin/ButtonLogin'
+import LoginForm from './LoginForm/LoginForm'
+import styles from './Login.module.css'
+import { LoginTHType } from '../../../Redux/Auth-reducer'
 
-
-
-const Login = () => {
+type LoginType = {
+	isLogin: (items: LoginTHType) => void
+}
+/* пропсы приходят из ProfilePage */
+const Login = (props: LoginType) => {
 	return (
-		<section>
-			<div className='container'>
-
-			<ButtonLogin titleBtn='Login' />
-			</div>
+		<section className={styles.login}>
+			<LoginForm login={props.isLogin} />
 		</section>
 	)
 }
 
-export default Login
+export default Login;
