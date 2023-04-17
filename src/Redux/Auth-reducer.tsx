@@ -4,14 +4,15 @@ import { authApi } from '../API/api';
 import { IProfile } from '../types/types';
 import { RootType } from './redux-store';
 const SET_USER_DATA = 'SET_USER_DATA';
-
+const INITIALIZE_PAGE = 'INITIALIZE_PAGE'
 
 
 let initialState = {
 	isAuth: false,
 	id: null,
-	login: null  as string | null,
-	email: null  as string | null,
+	login: null as string | null,
+	email: null as string | null,
+	initializePage: true,
 }
 
 export type InitialStateType = typeof initialState;
@@ -24,6 +25,13 @@ function AuthReducer(state = initialState, action: AllAuthActionType) {
 				...action.items,
 			}
 
+		case INITIALIZE_PAGE:
+
+			return {
+				...state,
+				initializePage: false
+			}
+
 		default:
 			return state;
 	}
@@ -31,10 +39,22 @@ function AuthReducer(state = initialState, action: AllAuthActionType) {
 }
 
 
-type AllAuthActionType =  SetProfileACType ;
+type AllAuthActionType = SetProfileACType | InitializeACType;
 type DispatchAuthType = Dispatch<AllAuthActionType>
 
 type ThunkType = ThunkAction<Promise<void>, RootType, unknown, AllAuthActionType>
+
+
+
+type InitializeACType = {
+	type: typeof INITIALIZE_PAGE,
+
+}
+const initializeAC = (): InitializeACType => {
+	return {
+		type: INITIALIZE_PAGE,
+	}
+}
 
 
 /* получаю свойства профиля */
@@ -43,18 +63,20 @@ type SetProfileACType = {
 	items: IProfile
 }
 
-const setProfileAC = (email: string | null , id: number | null, login: string | null , isAuth: boolean):SetProfileACType => {
+const setProfileAC = (email: string | null, id: number | null, login: string | null, isAuth: boolean): SetProfileACType => {
 	return {
 		type: SET_USER_DATA,
 		items: { email, id, login, isAuth }
 	}
 }
 export const getProfileTH = () => async (dispatch: DispatchAuthType) => {
-	const resp = await authApi.me()
-	if (resp.resultCode === 0) {
-		let { email, id, login } = resp.data;
-		dispatch(setProfileAC(email, id, login, true))
-	}
+	await authApi.me().then(resp => {
+			dispatch(initializeAC())
+			if (resp.resultCode === 0) {
+				let { email, id, login } = resp.data;
+				dispatch(setProfileAC(email, id, login, true))
+			}
+	})
 }
 
 
@@ -63,7 +85,7 @@ export type LoginTHType = {
 	password: string,
 }
 
-export const loginTH = (data: LoginTHType):ThunkType => async (dispatch) => {
+export const loginTH = (data: LoginTHType): ThunkType => async (dispatch) => {
 	let { login, password } = data
 	const resp = await authApi.login(login, password);
 	if (resp.resultCode === 0) {
@@ -71,11 +93,11 @@ export const loginTH = (data: LoginTHType):ThunkType => async (dispatch) => {
 	}
 }
 
-export const logOutTH = ():ThunkType => async (dispatch) => {
+export const logOutTH = (): ThunkType => async (dispatch) => {
 	const resp = await authApi.logOut();
 	if (resp.data.resultCode === 0) {
 
-		dispatch(setProfileAC(null,  null,  null, false))
+		dispatch(setProfileAC(null, null, null, false))
 	}
 }
 

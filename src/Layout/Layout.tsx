@@ -1,36 +1,60 @@
 
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Outlet } from 'react-router-dom';
 import styles from './Layout.module.css';
 import Footer from '../Components/Footer/Footer';
 import Header from '../Components/Header/Header'
 import Nav from '../Components/Nav/Nav'
+import { connect } from 'react-redux';
+import { getProfileTH } from '../Redux/Auth-reducer';
+import Preloader from '../Components/common/Preloader/Preloader';
 
-const Layout = (): JSX.Element => {
+type LayoutType = {
+	getProfileTH: () => void,
+	initialize: any
+}
+
+
+const Layout = (props: LayoutType): JSX.Element => {
+	useEffect(() => {
+		/* setTimeout для preloader */
+		 setTimeout(() => {
+			props.getProfileTH()
+		}, 500);
+	}, [])
+
+
 
 	return (
 		<>
-			<div className={styles.layoutWrapper}>
+			{props.initialize.initializePage ? <Preloader /> :
 
-				<div className='container'>
-					<Header />
-					<Nav />
+
+				<div className={styles.layoutWrapper}>
+
+					<div className='container'>
+						<Header />
+						<Nav />
+					</div>
+
+					<main className='main'>
+						<Outlet />
+					</main>
+
+					<div className='container'>
+						<Footer />
+					</div>
+
 				</div>
 
-				<main className='main'>
-					<Outlet />
-				</main>
-
-				<div className='container'>
-					<Footer />
-				</div>
-
-			</div>
-
-
+			}
 		</>
 	)
 }
 
-export default Layout;
+let mapStateToProps = (state: any) => ({
+	initialize: state.AuthPage
+})
+
+export default connect(mapStateToProps, { getProfileTH })(Layout);

@@ -8,7 +8,7 @@ import styles from './ProfilePageContainer.module.css'
 
 
 type ProfilePageType = {
-	login: IProfile ,
+	auth: IProfile ,
 	loginTH: (items: LoginTHType) => void,
 	logOutTH: () => void,
 } 
@@ -21,9 +21,9 @@ function ProfilePage(props: ProfilePageType) {
 				<div className={styles.profilePageWrapper}>
 					<h3>Profile</h3>
 
-					{!props.login.isAuth ? <Login isLogin={props.loginTH} />
+					{!props.auth.isAuth ? <Login isLogin={props.loginTH} />
 						:
-						<Profile logout={props.logOutTH} {...props.login} />
+						<Profile logout={props.logOutTH} {...props.auth} />
 					}
 				</div>
 			</div>
@@ -33,7 +33,7 @@ function ProfilePage(props: ProfilePageType) {
 
 let mapStateToProps = (state: RootType) => {
 	return {
-		login: state.AuthPage
+		auth: state.AuthPage
 	}
 }
 

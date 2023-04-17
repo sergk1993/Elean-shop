@@ -5,22 +5,10 @@ import styles from './Header.module.css'
 import Phone from './Phone/Phone';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import HeaderTitle from './HeaderTitle/HeaderTitle';
-import React, { useEffect } from 'react';
 import Profile from './Profile/ProfileIcon';
-import { connect } from 'react-redux';
-import { getProfileTH } from '../../Redux/Auth-reducer';
 
 
-type HeaderType = {
-  getProfileTH: () => void
-}
-
-
-function Header(props:HeaderType): JSX.Element {
-
-  useEffect(() => {
-    props.getProfileTH()
-  }, [])
+function Header(): JSX.Element {
 
 	return (
 		<header className={styles.header}>
@@ -31,6 +19,7 @@ function Header(props:HeaderType): JSX.Element {
 			</div>
 			<HeaderTitle />
 			<Phone />
+			
 			<Profile />
 
 			<Favorites />
@@ -39,4 +28,4 @@ function Header(props:HeaderType): JSX.Element {
 	);
 }
 
-export default connect(null, {getProfileTH})(Header);
+export default Header;

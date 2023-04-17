@@ -40,5 +40,9 @@
 		/* ошибки */
 		--errorText: #fff;
 		--errorBg: #d84646;
+
+		/* preloader загрузка */
+	--preloader:#0fadc9;
+
 }
 
