@@ -26,7 +26,7 @@ const initialState = {
 
 }
 
-export type CategoryAside = typeof initialState.categoryAsideCollections;
+export type CategoryAsideType = typeof initialState;
 
 type CategoryType = typeof initialState;
 

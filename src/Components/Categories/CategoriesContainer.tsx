@@ -5,7 +5,8 @@ import { Navigate, NavLink, Outlet, useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Route, Router, Routes } from 'react-router-dom'
 import { compose } from 'redux'
-import { CategoryAside } from '../../Redux/Categories-reducer'
+import { CategoryAsideType } from '../../Redux/Categories-reducer'
+import { getCategories } from '../../Redux/selectors/Categories-selectors'
 import { RootType } from '../../Redux/redux-store'
 import WithAuthRedirect from '../common/withAuthRedirect/WithAuthRedirect'
 import styles from './Categories.module.css'
@@ -15,13 +16,13 @@ import News from './NewsCategories'
 
 
 type CategoriesAsideType = {
-	categoryAside: CategoryAside,
+	categoryAside: CategoryAsideType,
 }
 
 
 
 function CategoriesContainer(props: CategoriesAsideType): JSX.Element {
-	const { categoryListTitle } = props.categoryAside;
+	const { categoryListTitle } = props.categoryAside.categoryAsideCollections;
 	const [nameTitle, setNameTitle] = useState('Категории')
 
 
@@ -43,7 +44,7 @@ function CategoriesContainer(props: CategoriesAsideType): JSX.Element {
 			<h3 className={styles.categoriesTitle} >{nameTitle}</h3>
 			<section className={styles.categories}>
 
-				<CategoriesAside state={props.categoryAside} findTitle={findTheSameTitle} />
+				<CategoriesAside categoryAside={props.categoryAside} findTitle={findTheSameTitle} />
 
 
 				<Outlet />
@@ -54,7 +55,7 @@ function CategoriesContainer(props: CategoriesAsideType): JSX.Element {
 
 const mapStateToProps = (state: RootType) => {
 	return {
-		categoryAside: state.categories.categoryAsideCollections,
+		categoryAside: getCategories(state)
 	}
 }
 

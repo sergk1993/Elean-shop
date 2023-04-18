@@ -6,6 +6,7 @@ import aboutWebp from '../../assets/img/aboutBlog/about.webp';
 import { connect } from 'react-redux';
 import { AboutBlockInterface } from '../../types/types';
 import { RootType } from '../../Redux/redux-store';
+import { getAboutBlock } from '../../Redux/selectors/AboutBlock-selectors';
 
 
 type AboutBlockType = {
@@ -57,7 +58,7 @@ function AboutBlock(props: AboutBlockType): JSX.Element {
 
 const mapStateToPropr = (state: RootType) => {
 	return {
-		AboutBlock: state.AboutBlock
+		AboutBlock: getAboutBlock(state)
 	}
 }
 

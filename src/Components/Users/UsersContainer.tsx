@@ -9,6 +9,7 @@ import Users from './Users';
 import { redirect } from "react-router-dom";
 import { compose } from 'redux';
 import WithAuthRedirect from '../common/withAuthRedirect/WithAuthRedirect';
+import { getUsers } from '../../Redux/selectors/Users-selectors';
 
 
 
@@ -66,7 +67,7 @@ const UsersContainer = (props: UsersContainerType): JSX.Element => {
 
 const mapStateToProps = (state: RootType) => {
 	return {
-		usersState: state.usersPage,
+		usersState: getUsers(state),
 	}
 }
 

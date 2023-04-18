@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { getProfileTH, loginTH, LoginTHType, logOutTH } from '../../Redux/Auth-reducer'
+import { getAuth } from '../../Redux/selectors/Auth-selectors'
 import { RootType } from '../../Redux/redux-store'
 import { IProfile } from '../../types/types'
 import Login from '../common/Login/Login'
@@ -8,13 +9,13 @@ import styles from './ProfilePageContainer.module.css'
 
 
 type ProfilePageType = {
-	auth: IProfile ,
+	auth: IProfile,
 	loginTH: (items: LoginTHType) => void,
 	logOutTH: () => void,
-} 
+}
 
 function ProfilePage(props: ProfilePageType) {
-	
+
 	return (
 		<section className={styles.profilePage}>
 			<div className="container">
@@ -33,7 +34,7 @@ function ProfilePage(props: ProfilePageType) {
 
 let mapStateToProps = (state: RootType) => {
 	return {
-		auth: state.AuthPage
+		auth: getAuth(state)
 	}
 }
 

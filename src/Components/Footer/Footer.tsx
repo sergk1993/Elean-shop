@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { InitialStateType } from '../../Redux/Footer-reducer';
+import { getFooter } from '../../Redux/selectors/Footer-selectors';
 import { RootType } from '../../Redux/redux-store';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import Title from '../Title/Title';
@@ -78,13 +79,13 @@ function Footer(props: FooterPageType): JSX.Element {
 				</div>
 
 				<div className={styles.socialLink}>
-					
+
 
 					{
 						props.footerPage.socialLinkBox.map(e => {
 							return (
-								<a className={styles.socialLinkEmail} 
-								href={e.socialLink} key={e.id}>{e.socialLinkText}
+								<a className={styles.socialLinkEmail}
+									href={e.socialLink} key={e.id}>{e.socialLinkText}
 								</a>
 							);
 						})
@@ -106,7 +107,7 @@ function Footer(props: FooterPageType): JSX.Element {
 
 const mapStateToProps = (state: RootType) => {
 	return {
-		footerPage: state.footerPage
+		footerPage: getFooter(state)
 	}
 }
 

@@ -2,6 +2,7 @@ import styles from './Catalog.module.css';
 import { connect } from 'react-redux';
 import { CatalogInterface } from '../../types/types';
 import { RootType } from '../../Redux/redux-store';
+import { CatalogPage } from '../../Redux/selectors/CatalogPage-selectors';
 
 
 
@@ -64,7 +65,7 @@ function Catalog(props: CatalogInterface): JSX.Element {
 
 function mapStateToProps(state: RootType) {
 	return {
-		catalogPage: state.catalogListPage.catalogPage
+		catalogPage: CatalogPage(state)
 	}
 }
 

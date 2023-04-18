@@ -7,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import './ClientsSwiper.css';
 import { ClientsReviewsInterface, ClientsSwiperInterface } from '../../types/types';
+import { getClientsSwiper } from '../../Redux/selectors/ClientsSwiper-selectors';
 
 
 
@@ -74,7 +75,7 @@ function ClientsSwiper(props: ClientsSwiperType): JSX.Element {
 
 const mapStateToProps = (state: RootType) => {
 	return {
-		clientsSwiper: state.ClientsSwiper
+		clientsSwiper: getClientsSwiper(state)
 	}
 }
 

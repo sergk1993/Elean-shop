@@ -1,9 +1,10 @@
 
-import { Dispatch, MutableRefObject, useRef } from 'react';
+import { MutableRefObject, useRef } from 'react';
 import { connect } from 'react-redux';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { compose } from 'redux';
 import { addNewMessageAC } from '../../Redux/Dialogs-reducer';
+import { getDialogs } from '../../Redux/selectors/Dialogs-selectors';
 import { RootType } from '../../Redux/redux-store';
 import { DialogsPageInterface } from '../../types/types';
 import WithAuthRedirect from '../common/withAuthRedirect/WithAuthRedirect';
@@ -12,7 +13,7 @@ import styles from './Dialogs.module.css';
 
 type DialogsType = {
 	dialogsPage: DialogsPageInterface
-	addUsersMessage: any,
+	addNewMessageAC: (item: string | undefined) => void,
 }
 
 
@@ -22,7 +23,7 @@ function Dialogs(props: DialogsType) {
 	const refUser = useRef<HTMLTextAreaElement | null>(null);
 
 	const addMessage = () => {
-		props.addUsersMessage(refUser.current?.value);
+		props.addNewMessageAC(refUser.current?.value);
 		if (refUser.current !== null) {
 			refUser.current.value = '';
 		}
@@ -75,27 +76,18 @@ function Dialogs(props: DialogsType) {
 }
 
 
-const mapStateToProps = (store: RootType) => {
+const mapStateToProps = (state: RootType) => {
 
 	return {
-		dialogsPage: store.dialogsPage,
+		dialogsPage: getDialogs(state)
 	}
 
 }
 
-
-const mapDispatchToProps = (dispatch: any) => {
-
-	return {
-		addUsersMessage: (text: string) => {
-			dispatch(addNewMessageAC(text))
-		}
-	}
-}
 
 
 
 export default compose(
 	WithAuthRedirect,
-	connect(mapStateToProps, mapDispatchToProps)
+	connect(mapStateToProps, { addNewMessageAC })
 )(Dialogs)

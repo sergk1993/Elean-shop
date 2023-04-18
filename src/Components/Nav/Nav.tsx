@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { getNavCategory } from '../../Redux/selectors/Nav-selectors';
 import { RootType } from '../../Redux/redux-store';
-import { NavCategoryInterface} from '../../types/types';
+import { NavCategoryInterface } from '../../types/types';
 import styles from './Nav.module.css'
 
 
@@ -75,9 +76,9 @@ function Nav(props: NavType): JSX.Element {
 
 
 
-function mapStateToProps(store: RootType) {
+function mapStateToProps(state: RootType) {
 	return {
-		nav: store.navCategory
+		nav: getNavCategory(state)
 	}
 }
 
