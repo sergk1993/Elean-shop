@@ -5,7 +5,7 @@ import './Components/_color.css';
 import reportWebVitals from './reportWebVitals';
 import store from './Redux/redux-store';
 import { Provider } from 'react-redux/es/exports';
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, createHashRouter, createRoutesFromElements, HashRouter, Route, RouterProvider } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import Dialogs from './Components/Dialogs/Dialogs';
 import CategoriesContainer from './Components/Categories/CategoriesContainer';
@@ -15,14 +15,14 @@ import UsersContainer from './Components/Users/UsersContainer';
 import { ErrorPage } from './Components/common/ErrorPage/ErrorPage';
 import ProfilePageContainer from './Components/ProfilePage/ProfilePageContainer';
 
-const router = createBrowserRouter(
+const router = createHashRouter(
     createRoutesFromElements(
         <Route path="/" element={<Layout />} errorElement={<ErrorPage />}>
             <Route index element={<App />} />
             <Route path="dialogs" element={<Dialogs />} />
             <Route path="users/:id?" element={<UsersContainer />} />
             <Route path="profile" element={<ProfilePageContainer />} />
-            
+
             <Route path="categories" element={<CategoriesContainer />} >
                 <Route path="news" element={<NewsCategories />} />
                 <Route path="skirts" element={<SkirtsCategories />} />
