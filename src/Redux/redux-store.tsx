@@ -28,6 +28,12 @@ const rootReducer = combineReducers({
 });
 
 
+/* тип для обьекта экшенов */
+type PropertyType<T> = T extends { [key:string]: infer U } ? U : never
+export type InferActionType<T extends {[key:string]: (...arg:any[]) => any } > = ReturnType<PropertyType<T>>
+
+
+
 
 export type RootType = ReturnType<typeof rootReducer>
 const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -37,6 +43,7 @@ const store = createStore(rootReducer, composeEnhancers(
 	applyMiddleware(thunkMiddleware)
 ))
 
-
+// @ts-ignore
+window._store__ = store
 
 export default store;

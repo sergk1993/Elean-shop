@@ -22,7 +22,7 @@ type Props = {
 const Users = (props: Props): JSX.Element => {
 
 	return (
-		<div className='container'>
+		<>
 			<section className={styles.users}>
 				<div className={styles.usersWrapperCards}>
 					{props.users.map((items: any) => {
@@ -56,7 +56,7 @@ const Users = (props: Props): JSX.Element => {
 						portionSize={props.pageSize}
 					/>
 				}
-		</div>
+		</>
 	)
 }
 

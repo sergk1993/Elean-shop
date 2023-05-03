@@ -1,0 +1,40 @@
+.filterUserMain {
+	padding-top: 20px;
+}
+
+.filterUserInput {
+	font-family: 'Lato';
+	font-weight: 600;
+	display: inline-block;
+	width: 200px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid var(--colorBtbBorder);
+	cursor: pointer;
+	margin-right: 15px;
+}
+
+.filterUserInput::placeholder {
+	color: var(--blackColor);
+	font-family: 'ProximaNova';
+}
+
+.filterUserInputsWrapper {
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+}
+
+
+
+.filterUserSubmitBtn{
+	display: inline-block;
+	margin-left: 15px;
+	width: 150px;
+	padding: 10px;
+	text-transform: uppercase;
+	cursor: pointer;
+	background-color: var(--colorBtn);
+	border: 1px solid var(--colorBtbBorder);
+	border-radius: 5px;
+}

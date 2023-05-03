@@ -1,16 +1,22 @@
 :root {
 	/* главный фон*/
 	--mainBackgroundColor: #fafafa;
+
 	/* переменные для файлов из AboutBlock*/
 	--colorAboutBlockText: #171717;
+
 	/* пагинация у свайпера */
 	--color-button: #d9dbe1;
+
 	/* цвет кнопки ссылки ClientsReviews отзывы */
 	--colorBtnReviews: #d7b494;
+
 	/* цвет input у формы */
 	--colorFormBtn: #d7b494;
+
 	/* бэкграунд карточек  */
 	--colorCardsBackground: #e3e3e3;
+
 	/* глобальные цвета */
 	--grayColor: #c0c0c0;
 	--blackTextColor: #000;
@@ -18,13 +24,17 @@
 	--whiteColor: #fff;
 	--whiteTextColor: #fff;
 	--grayTextColor: #c0c0c0;
+
 	/* кнопки */
 	--colorBtn: #d4d2d2;
 	--colorBtnDis: #aca9a927;
 	--colorBtnDisText: #d1d1d1;
+	--colorBtbBorder: #d1d1d1;
+
 	/* ошибки */
 	--errorText: #fff;
 	--errorBg: #d84646;
+
 	/* preloader загрузка */
 	--preloader: #0fadc9;
 
