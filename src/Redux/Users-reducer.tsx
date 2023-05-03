@@ -7,7 +7,7 @@ import { InferActionType } from './redux-store';
 
 const initialState = {
 	users: [] as Array<number>,
-	pageSize: 10 as number,
+	pageSize: 12 as number,
 	quantityUsers: 20 as number,
 	currentPage: 1 as number,
 	isFetching: true as boolean,
@@ -29,7 +29,6 @@ function UsersReducer(state = initialState, action: AllActionType) {
 			}
 
 		case 'GET_QUANTITY_USERS':
-
 			return {
 				...state,
 				quantityUsers: action.count

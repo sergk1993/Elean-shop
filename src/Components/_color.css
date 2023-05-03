@@ -30,7 +30,8 @@
 	--colorBtnDis: #aca9a927;
 	--colorBtnDisText: #d1d1d1;
 	--colorBtbBorder: #d1d1d1;
-
+	--colorActionBtn:#617170d6; 
+	--colorActionBtnText: #d1d1d1;
 	/* ошибки */
 	--errorText: #fff;
 	--errorBg: #d84646;

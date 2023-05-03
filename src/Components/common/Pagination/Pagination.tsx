@@ -1,69 +1,55 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
+import ReactPaginate from 'react-paginate';
 import styles from './Pagination.module.css';
 
 type PaginationType = {
 	pageSize: number,
-	children?: React.ReactNode,
-	onPageChange: (firstNumber: number, sercondNumber: number) => void,
-	quantityUsers: number,
-	currentPage: number,
-	portionSize: number,
+	onPageChange: (firstNumber: number) => void,
+	totalCount: number,
 }
 
-const Pagination = (props: PaginationType) => {
-
-	let { quantityUsers, pageSize, currentPage, portionSize} = props;
 
 
-	let [portionNumber, setPortionNumber] = useState(1);
+const Pagination: React.FC<PaginationType> = (props) => {
+	const { totalCount, pageSize } = props;
 
-	let pagesCount = Math.ceil(quantityUsers / pageSize);
-	let pages: Array<number> = [];
-	for (let i = 1; i <= pagesCount; i++) {
-		pages.push(i);
+/* создал массив с общим количеством пользователей */
+	let totalUsers: number[] = [];
+	for (let i = 1; i <= totalCount; i++) {
+		totalUsers.push(i)
 	}
 
-	let portionCount = Math.ceil(pagesCount / pageSize);
+/* разделил массив всех пользователей на количество карточек */
+	const pageCount = Math.ceil(totalUsers.length / pageSize);
 
 
-	let leftPortionPageNumber = (portionNumber - 1) * portionSize + 1;
-	let rightPortionPageNumber = portionNumber * portionSize;
-
-
-
+	const handlePageClick = (even: { selected: number }) => {
+		let { selected } = even;
+		props.onPageChange(selected)
+	};
 
 	return (
-		<section className={styles.pagination}>
-			<div className='container'>
+		<>
 
-				{
-					portionNumber > 1 ? <button className={styles.paginationLeft} onClick={() => {
-						setPortionNumber(portionNumber - 1)
-					}}>PREV</button>
-						:
-						<button className={styles.paginationLeft} disabled>PREV</button>
-				}
-
-				<div className={styles.paginationBtnWrapper} >
-					{
-						pages.filter((e: number) => e >= leftPortionPageNumber && e <= rightPortionPageNumber)
-							.map((item: number, i) => {
-								return (
-									<span className={currentPage === item ? styles.activeCurrentBtn : styles.paginationBtn} key={i} onClick={() => props.onPageChange(item, i)} >{item}</span>
-								)
-							})
-					}
-				</div>
-
-				{portionCount > portionNumber &&
-					<button className={styles.paginationRight} onClick={() => {
-						setPortionNumber(portionNumber + 1)
-					}}>Next</button>
-				}
-
-			</div>
-		</section>
-	)
+			<ReactPaginate
+				breakLabel="..."
+				nextLabel="next >"
+				onPageChange={handlePageClick}
+				pageRangeDisplayed={5}
+				pageCount={pageCount}
+				previousLabel="< previous"
+				renderOnZeroPageCount={null}
+				containerClassName={styles.paginationBtnWrapper}
+				pageClassName={styles.paginationBtnWrapperLists}
+				previousClassName={styles.paginationLeft}
+				nextClassName={styles.paginationRight}
+				breakClassName={styles.paginationPoints}
+				breakLinkClassName="page-link"
+				activeClassName={styles.activeCurrentBtn}
+				disabledClassName={styles.paginationDisabled}
+			/>
+		</>
+	);
 }
 
-export default Pagination
+export default Pagination; 

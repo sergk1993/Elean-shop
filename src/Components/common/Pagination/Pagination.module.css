@@ -1,60 +1,43 @@
-.pagination {
+.paginationBtnWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	text-align: center;
 }
 
-.paginationLeft {
-	display: inline-block;
-	width: 100px;
-	margin-right: 20px;
-	padding: 5px;
-	border: none;
-	background-color: var(--colorBtn);
-	color: var(--blackTextColor);
-	border-radius: 5px;
-	text-transform: uppercase;
-	cursor: pointer;
-}
 
-.paginationLeft:disabled {
-	color: var(--grayTextColor);
-	cursor: inherit;
-}
-
-
-.paginationBtnWrapper {
-	display: inline-block;
-}
-
-.paginationBtnWrapper span {
-	display: inline-block;
-	width: 30px;
-	/* margin: 5px; */
-	border-radius: 5px;
-	padding: 5px;
-	background-color: var(--colorBtn);
-	cursor: pointer;
-	font-size: 15px;
-	border: 1px solid transparent;
-}
-
-.paginationBtnWrapper span:not(:last-child) {
+.paginationBtnWrapperLists:not(:last-child) {
 	margin-right: 5px;
 }
 
-.activeCurrentBtn {
+.paginationBtnWrapperLists a {
+	display: block;
+	text-align: center;
+	border-radius: 5px;
+	background-color: var(--colorBtn);
 	color: var(--blackTextColor);
-	border: 1px solid var(--colorBtn);
-}
-
-.paginationBtn {
-	color: var(--blackTextColor);
-}
-
-.paginationRight {
-	display: inline-block;
-	width: 100px;
-	margin-left: 20px;
+	cursor: pointer;
+	font-size: 15px;
+	border: 1px solid transparent;
 	padding: 5px;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+.activeCurrentBtn a {
+	color: var(--colorActionBtnText);
+	border: 1px solid var(--colorBtn);
+	background-color: var(--colorActionBtn);
+}
+
+
+
+.paginationLeft {
+	display: inline-block;
+	margin-right: 20px;
+	padding: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
 	border: none;
 	background-color: var(--colorBtn);
 	color: var(--blackTextColor);
@@ -63,8 +46,34 @@
 	cursor: pointer;
 }
 
-.paginationRight:disabled {
-	color: var(--grayTextColor);
+
+
+.paginationRight {
+	display: inline-block;
+	margin-left: 20px;
+	padding: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border: none;
+	background-color: var(--colorBtn);
+	color: var(--blackTextColor);
+	border-radius: 5px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.paginationDisabled {
+	background-color: var(--colorBtnDis);
+	color: var(--colorBtnDisText);
 	cursor: inherit;
 }
 
+.paginationPoints {
+	margin-left: 10px;
+	margin-right: 10px;
+	display: block;
+}
+
+.paginationPoints a {
+	font-size: 20px;
+}

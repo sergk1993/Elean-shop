@@ -63,7 +63,6 @@ const UsersContainer = (props: UsersContainerType): JSX.Element => {
 							unsubscribe={props.unsubscribeUsersThunk}
 							quantityUsers={props.usersState.quantityUsers}
 							pageSize={props.usersState.pageSize}
-							currentPage={props.usersState.currentPage}
 							portionSize={props.usersState.pageSize}
 							onPageChange={onPageChange}
 							isDisabledBtn={props.usersState.disableBtn}

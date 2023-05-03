@@ -13,7 +13,8 @@ const instance = axios.create({
 
 export const userApi = {
 	getUsers(currentPage = 1, pageSize = 10, search = '', follow = '') {
-		return instance.get(`/users?page=${currentPage}&count=${pageSize}&term=${search}` + (follow === 'все' ? '' : `&friend=${Boolean(+follow)}`)).then(response => response.data)
+		
+		return instance.get(`/users?page=${currentPage === 0 ? currentPage + 1 : currentPage}&count=${pageSize}&term=${search}` + (follow === 'все' ? '' : `&friend=${Boolean(+follow)}`)).then(response => response.data)
 	},
 
 	subscribe(userId) {
