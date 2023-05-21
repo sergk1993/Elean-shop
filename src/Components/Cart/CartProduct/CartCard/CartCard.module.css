@@ -1,0 +1,84 @@
+.cartCard {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-left: auto;
+	padding: 20px 0;
+	font-family: 'FuturaMediumC';
+	font-weight: 400;
+	padding-bottom: 50px;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.cartCard::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	border: 1px solid #9f9f9f;
+	bottom: 0;
+}
+
+
+.cartCardInfoBox {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 100px;
+	margin-right: 20px;
+}
+
+.cartCardInfoBox img {
+	width: 150px;
+	height: 150px;
+	background-color: var(--imgBackground);
+	display: block;
+	padding: 20px;
+	object-fit: contain;
+}
+
+.cartCardInfoText {
+	margin-left: 40px;
+	font-family: 'FuturaMediumC';
+	max-width:800px; 
+	width: 100%;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 16px;
+}
+
+.cartCardInfoText h3 {
+	font-weight: 400;
+	text-transform: uppercase;
+	font-style: normal;
+	margin-bottom: 10px;
+}
+
+
+.cartCardInfoText p {
+	font-size: 18px;
+	font-family: 'FuturaMediumC';
+	line-height: 20px;
+}
+
+
+
+.cartCardBtnBox {
+	display: flex;
+	align-items: center;
+	max-width: 700px;
+	width: 100%;
+	justify-content: space-between;
+	padding: 0 10px;
+}
+
+
+.cartCardBtnPrice {
+	font-family: 'FuturaBookc';
+	text-transform: uppercase;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 19px;
+	line-height: 24px;
+	margin-right: 75px;
+}

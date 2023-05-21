@@ -1,0 +1,69 @@
+.emptyModalMain {
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: var(--bgCartColorEmpty);
+	z-index: 10;
+}
+
+.emptyModalEmptyBox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 400px;
+	width: 400px;
+	border-radius: 5px;
+	background-color: var(--bgCartColorWhite);
+	text-align: center;
+	z-index: 5;
+	position: relative;
+}
+
+.emptyModalEmptyBox h3 {
+	margin-bottom: 20px;
+	font-family: 'FuturaMediumC';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 30px;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+}
+
+.emptyModalEmptyBox svg {
+	fill: transparent;
+	display: block;
+	max-width: 150px;
+	width: 100%;
+	height: 150px;
+	margin: 0 auto;
+	margin-bottom: 30px;
+}
+
+.emptyModalBtn {
+	padding: 20px;
+	background-color: var(--bgCartColorEmpty);
+	color: var(--colorBtnWhiteText);
+	cursor: pointer;
+	border-radius: 5px;
+	display: block;
+	text-transform: uppercase;
+	font-family: 'FuturaMediumC';
+	letter-spacing: 0.1em;
+	position: relative;
+}
+
+svg.emptyModalClose {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+
+}

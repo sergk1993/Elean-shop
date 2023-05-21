@@ -1,0 +1,59 @@
+.cartHoverProductsInfo {
+	display: flex;
+	align-items: center;
+	padding-bottom: 20px;
+	border-bottom: 1px solid black;
+	margin-bottom: 20px;
+}
+
+.cartHoverProductsInfoBox {
+	width: 100%;
+	padding: 0 20px;
+}
+
+.cartHoverProductsTitle {
+	display: flex;
+	justify-content: space-between;
+	font-family: 'FuturaMediumC';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 20px;
+	margin-bottom: 30px;
+}
+
+.cartHoverProductsTitle h3 {
+	font-weight: 400;
+	max-width: 200px;
+	width: 100%;
+}
+
+.cartHoverProductsTitle p {
+	margin-right: 10px;
+}
+
+.cartHoverProductsImg {
+	display: block;
+	width: 144px;
+	height: 192px;
+	object-fit: contain;
+	border-radius: 5px;
+	margin-right: 25px;
+}
+
+
+.cartHoverProductQuantityBox {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+
+.cartHoverProductQuantity {
+	margin-bottom: 15px;
+	font-family: 'FuturaBookC';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 23px;
+}
+

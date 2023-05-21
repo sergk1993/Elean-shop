@@ -16,22 +16,46 @@
 
 	/* бэкграунд карточек  */
 	--colorCardsBackground: #e3e3e3;
+	--colorCardsBgWhite: #fff;
 
 	/* глобальные цвета */
 	--grayColor: #c0c0c0;
-	--blackTextColor: #000;
 	--blackColor: #000;
 	--whiteColor: #fff;
 	--whiteTextColor: #fff;
+	--blackTextColor: #000;
 	--grayTextColor: #c0c0c0;
 
 	/* кнопки */
 	--colorBtn: #d4d2d2;
+	--colorBtnWhiteText: #fff;
 	--colorBtnDis: #aca9a927;
 	--colorBtnDisText: #d1d1d1;
 	--colorBtbBorder: #d1d1d1;
-	--colorActionBtn:#617170d6; 
+	--colorActionBtn: #617170d6;
 	--colorActionBtnText: #d1d1d1;
+	--colorBorderBtnDark: #aca9a9ba;
+
+	/* кнопки избранныe и корзина */
+	--cartBtn: #11ba90;
+	--cartBtnHover: #189173;
+	--cartBtnWhite: #ffffff;
+	--cartBtnGray: #999898;
+	--cartBtnActive: #a8a8a8;
+	--cartBtnDis: #e1e1e1;
+	--colorBorderCart: #606060;
+	--bgRemoveCart: #d0d0d09c;
+	--bgAddCart: #f55757;
+	--cartBtnClose: #0e745b;
+	--cartBtnHoverBtn: #242424;
+
+	--categoryProduct: #4a4a4a;
+	--borderColorGray: #e0e0e0;
+	--bgCartColorEmpty: #36363691;
+	--bgCartColorWhite:#fff;
+	
+	/* img фоны */
+	--imgBackground: #fff;
 	/* ошибки */
 	--errorText: #fff;
 	--errorBg: #d84646;

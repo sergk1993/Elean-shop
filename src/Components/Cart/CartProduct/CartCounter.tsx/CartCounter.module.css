@@ -1,0 +1,77 @@
+.cartCounterBox {
+	margin-right: 10px;
+}
+
+
+.cartCounterBox button {
+	position: relative;
+	top: 0;
+	display: inline-block;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+
+	background: var(--cartBtn);
+	border: 2px solid var(--colorBorderBtnDark);
+	cursor: pointer;
+	color: var(--whiteColor);
+	transition: top 0.1s ease-out, box-shadow 0.1s ease-in-out;
+}
+
+button.cartCounterPlus,
+button.cartCounterMinus {
+	position: relative;
+	top: 0;
+}
+
+@media (max-width: 1200px) {
+
+	.cartCounterPlus:active,
+	.cartCounterMinus:active {
+		position: relative;
+		top: 2px;
+		/* background: var(--cartBtnActive); */
+		box-shadow: 1px 1px 10px rgb(85 85 85) inset;
+		border: 1px solid var(--colorBorderBtnDark);
+		z-index: 10;
+	}
+}
+
+
+
+@media (min-width: 1201px) {
+
+	.cartCounterPlus:hover,
+	.cartCounterMinus:hover {
+		background-color: var(--cartBtnHover);
+		color: var(--cartBtnWhite);
+	}
+
+	.cartCounterPlus:active,
+	.cartCounterMinus:active {
+		position: relative;
+		top: 2px;
+		box-shadow: 1px 1px 10px rgb(85 85 85) inset;
+
+	}
+}
+
+.cartCounterBox button:not(:last-child) {
+	border-right: none;
+}
+
+
+button.cartCounterFigure {
+	background-color: var(--cartBtnWhite);
+	color: var(--blackColor);
+	cursor: initial;
+}
+
+
+
+
+button.disabledCartProduct,
+.disabledCartProduct:active {
+	background-color: var(--cartBtnDis);
+	cursor: initial;
+}

@@ -1,0 +1,8 @@
+.newsCategoriesMain {
+	display: grid;
+	grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+	gap: 20px;
+	padding-bottom: 100px;
+	position: relative;
+}
+

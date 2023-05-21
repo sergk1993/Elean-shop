@@ -1,0 +1,12 @@
+.cartMain {
+	padding: 40px 0;
+	font-family: 'FuturaMediumC';
+	font-weight: 400;
+	height: 100%;
+}
+
+.cartMain h2 {
+	font-weight: 400;
+	text-align: center;
+	text-transform: uppercase;
+}

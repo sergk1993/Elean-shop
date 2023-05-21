@@ -10,6 +10,7 @@ import NavCategory from './NavCategory-reducer';
 import thunkMiddleware from 'redux-thunk'
 import UsersReducer from './Users-reducer';
 import AuthReducer from './Auth-reducer';
+import CartReducer from './Cart-reducer';
 
 
 
@@ -25,8 +26,8 @@ const rootReducer = combineReducers({
 	categories: Categories,
 	usersPage: UsersReducer,
 	AuthPage: AuthReducer,
+	cart: CartReducer,
 });
-
 
 /* тип для обьекта экшенов */
 type PropertyType<T> = T extends { [key:string]: infer U } ? U : never

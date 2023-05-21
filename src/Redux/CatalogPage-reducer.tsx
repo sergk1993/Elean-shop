@@ -100,7 +100,7 @@ let initialState:CatalogInterface = {
 }
 
 function CatalogPage(state:any = initialState, action:any) {
-		return state;
+	return state
 }
 
 

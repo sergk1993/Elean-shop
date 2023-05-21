@@ -1,0 +1,28 @@
+.cartProduct {
+	font-size: 20px;
+	line-height: 35px;
+}
+
+.cartProduct h3 {
+	font-weight: 400;
+	margin-bottom: 5px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.cartProductPrice {
+	margin-bottom: 10px;
+
+}
+
+
+.cartToCart {
+	display: inline-block;
+	padding: 10px 15px;
+	border-radius: 5px;
+	background-color: var(--cartBtn);
+	text-transform: uppercase;
+	color: var(--whiteTextColor);
+	cursor: pointer;
+	border: 1px solid transparent ;
+} 

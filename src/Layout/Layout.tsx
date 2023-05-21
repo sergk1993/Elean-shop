@@ -1,6 +1,6 @@
 
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Outlet } from 'react-router-dom';
 import styles from './Layout.module.css';
 import Footer from '../Components/Footer/Footer';
@@ -9,6 +9,7 @@ import Nav from '../Components/Nav/Nav'
 import { connect } from 'react-redux';
 import { getProfileTH } from '../Redux/Auth-reducer';
 import Preloader from '../Components/common/Preloader/Preloader';
+import EmptyModalWindow from '../Components/common/EmptyModalWindow/EmptyModalWindow';
 
 type LayoutType = {
 	getProfileTH: () => void,
@@ -19,12 +20,13 @@ type LayoutType = {
 const Layout = (props: LayoutType): JSX.Element => {
 	useEffect(() => {
 		/* setTimeout для preloader */
-		 setTimeout(() => {
+		setTimeout(() => {
 			props.getProfileTH()
-		}, 500);
+		}, 200);
 	}, [])
 
-
+	let [openModalWindow, setOpenModalWindow] = useState<Boolean>(false);
+	openModalWindow ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto";
 
 	return (
 		<>
@@ -32,13 +34,15 @@ const Layout = (props: LayoutType): JSX.Element => {
 
 
 				<div className={styles.layoutWrapper}>
+					
+					<EmptyModalWindow title={'Корзина пустая'} open={openModalWindow} setOpenModalWindow={setOpenModalWindow} />
 
 					<div className='container'>
-						<Header />
+						<Header setOpenModalWindow={setOpenModalWindow} />
 						<Nav />
 					</div>
 
-					<main className='main'>
+					<main className='main' >
 						<Outlet />
 					</main>
 

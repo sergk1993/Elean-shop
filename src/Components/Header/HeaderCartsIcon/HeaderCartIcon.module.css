@@ -1,9 +1,11 @@
-
-.cart {
+.cartLink {
 	display: flex;
-	margin-left: 15px;
+	margin-left: 10px;
 	cursor: pointer;
 	position: relative;
+	padding-bottom: 12px;
+	padding-left: 5px;
+	transform: translateY(5px);
 }
 
 .cartSvg {
@@ -15,8 +17,8 @@
 
 .cartCounter {
 	position: absolute;
-	top: -5px;
-	right: -6px;
+	top: -10px;
+	right: -3px;
 	font-size: 9px;
 	line-height: 11px;
 }

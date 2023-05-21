@@ -1,8 +1,8 @@
-import styles from './Button.module.css'
+import styles from './HeaderDropDownBtn.module.css'
 import React from 'react';
 
 
-function Button() {
+function DropDownBtn() {
 	return (
 		<>
 			<button className={styles.button}  aria-label="Button navigate"> 
@@ -15,4 +15,4 @@ function Button() {
 }
 
 
-export default Button;
+export default DropDownBtn;

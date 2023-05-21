@@ -1,0 +1,69 @@
+.cartHoverMenu {
+	position: absolute;
+	display: block;
+	top: 73px;
+	right: -20px;
+	padding: 20px;
+	width: 600px;
+	max-height: 550px;
+	overflow-y: scroll;
+	background-color: #fff;
+	border: 6px solid #04274626;
+	border-radius: 5px;
+	z-index: 10;
+	font-family: 'FuturaMediumC';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 21px;
+	-webkit-box-shadow: 0px 0px 17px 5px rgba(0, 0, 0, 0.34);
+	box-shadow: 0px 0px 17px 5px rgba(0, 0, 0, 0.34);
+	padding-top: 12px;
+}
+
+
+.cartHoverEmptyText {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 20px;
+	line-height: 35px;
+}
+
+
+.cartHoverPriceBox {
+	display: flex;
+	justify-content: space-between;
+	font-family: 'FuturaMediumC';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 17px;
+	line-height: 23px;
+	margin-bottom: 20px;
+}
+
+.cartHoverPriceBox h3 {
+	font-weight: 400;
+}
+
+.cartHoverOrderToCart,
+.cartHoverOrderBtn {
+	width: 100%;
+	display: block;
+	padding: 15px;
+	text-align: center;
+	cursor: pointer;
+	border: 1px solid var(--colorBorderCart);
+	text-transform: uppercase;
+	background-color: var(--cartBtn);
+	color: var(--whiteColor);
+	margin-bottom: 15px;
+	border-radius: 5px;
+	transition: background-color 0.1s ease-in-out;
+}
+
+@media (min-width: 1201px) {
+	.cartHoverOrderToCart:hover,
+	.cartHoverOrderBtn:hover {
+		background-color: var(--cartBtnHover);
+	}
+}

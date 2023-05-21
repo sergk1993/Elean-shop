@@ -18,22 +18,32 @@
 	text-transform: uppercase;
 }
 
-/* верхний Ul список  */
+/* навигационный список Aside */
 .categoryAsideUpList {
-	/* margin-bottom: 20px; */
+	font-family: 'FuturaMediumC';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 16px;
 }
 
-/* верхние  лишки у Aside */
+
 .categoryAsideUpLists:not(:last-child) {
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 }
 
-.categoryAsideUpLists  a{
-	padding: 2px 0;
+.categoryAsideUpLists button{
+	padding: 5px 0;
+	padding-bottom: 10px;
 	display: inline-block;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	border-bottom: 3px solid transparent;
 }
 
-.categoryAsideUpLists a.active {
+button.categoryAsideActive {
 	color: #ae9177;
-	border-bottom: 1px solid currentColor;
+	border-bottom: 3px solid currentColor;
+	cursor: pointer;
 }

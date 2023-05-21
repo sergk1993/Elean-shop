@@ -1,0 +1,42 @@
+button.cartCloseBtn {
+	position: relative;
+	top: 0;
+	display: inline-block;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	width: 70px;
+	height: 70px;
+	background: transparent;
+	border: 2px solid var(--colorBorderBtnDark);
+	cursor: pointer;
+	color: var(--blackColor);
+	margin-left: -20px;
+	padding: 0 10px;
+	transition: top 0.1s ease-out, box-shadow 0.1s ease-in-out;
+}
+
+@media (max-width: 1200px) {
+	button.cartCloseBtn:active {
+		position: relative;
+		top: 2px;
+		background: var(--cartBtnActive);
+		box-shadow: 1px 1px 10px rgb(85 85 85) inset;
+		border: 1px solid var(--colorBorderBtnDark);
+		z-index: 10;
+	}
+}
+
+@media (min-width: 1201px) {
+	button.cartCloseBtn:hover {
+		background-color: var(--cartBtnClose);
+		color: var(--cartBtnWhite);
+	}
+
+	button.cartCloseBtn:active {
+		position: relative;
+		top: 2px;
+		box-shadow: 1px 1px 11px rgb(1 1 1) inset;
+		transition: box-shadow 4ms ease-in-out;
+	}
+}

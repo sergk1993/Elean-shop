@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import styles from './ProfileIcon.module.css';
+import styles from './HeaderProfile.module.css';
 
-function Profile() {
+function HeaderProfile() {
 	return (
 				<Link className={styles.profile} to='/profile' >
 					<svg className={styles.profileIcon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,4 +15,4 @@ function Profile() {
 	)
 }
 
-export default Profile;
+export default HeaderProfile;
