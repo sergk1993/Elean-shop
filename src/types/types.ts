@@ -108,9 +108,37 @@ export type UserType = {
 
 /* типизация авторизации Profile */
 
-export interface IProfile {
+export interface IProfileAuth {
 	email: string | null,
 	id: number | null,
 	login: string | null,
 	isAuth: boolean,
+}
+
+
+// свойства конкретного человека profile 
+
+export interface IProfileInfo {
+	aboutMe: string | number | null,
+
+	contacts: {
+		facebook: null | string,
+		website: null | string,
+		vk: null | string,
+		twitter: null | string,
+		instagram: null | string,
+		youtube: null | string,
+		github: null | string,
+		mainLink: null | string
+	},
+
+	lookingForAJob: boolean |null,
+	lookingForAJobDescription?: boolean |null,
+	fullName: string |null,
+	userId: number,
+	photos: {
+		small?: string | null,
+		large?: string | null,
+	}
+
 }

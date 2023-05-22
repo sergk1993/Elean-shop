@@ -11,6 +11,7 @@ import { useState } from 'react';
 import CartHoverProductsContainer from '../Cart/CartHoverProductsContainer/CartHoverProductsContainer';
 import HeaderCartIcon from './HeaderCartsIcon/HeaderCartIcon';
 import { actionsCarts } from '../../Redux/Cart-reducer';
+import { getAuth } from '../../Redux/selectors/Auth-selectors';
 
 
 
@@ -63,15 +64,15 @@ function Header(props: any): JSX.Element {
 const mapStateToProps = (state: RootType) => {
 	return {
 		carts: state.cart.carts,
+		auth: getAuth(state)
 	}
 }
 
 
 let { increaseCartProduct, decreaseCartProduct, deleteCartProduct, orderCartList } = actionsCarts;
-
 export default connect(mapStateToProps, {
 	increaseCartProduct,
 	decreaseCartProduct,
 	deleteCartProduct,
-	orderCartList
+	orderCartList,
 })(Header);

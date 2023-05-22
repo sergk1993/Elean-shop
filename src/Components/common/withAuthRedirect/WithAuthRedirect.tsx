@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 import { RootType } from '../../../Redux/redux-store'
-import { IProfile } from '../../../types/types'
+import { IProfileAuth } from '../../../types/types'
 
 
 
@@ -16,7 +16,7 @@ const mapStateToProps = (state: RootType) => {
 
 
 type RedirectComponentType = {
-	isAuth: IProfile
+	isAuth: IProfileAuth
 }
 export function WithAuthRedirect(Component: any) {
 
