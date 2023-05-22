@@ -1,0 +1,15 @@
+.cardSkeletonLib {
+}
+
+.cardSkeletonLibTopImg { 
+	margin-bottom: 30px;
+}
+
+.cardSkeletonLibTitleBox {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.cardSkeletonLibBottomPrice {}

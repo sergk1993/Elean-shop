@@ -20,7 +20,7 @@ function SimpleCard(props: any) {
 	/* проверка добавленных через сердечко товаров */
 
 	let checkUser = props.cartsProducts.data.find((el: any) => el.id === props.id) !== undefined;
-	
+ 
 	return (
 		<div className={styles.simpleCardMain} onClick={() => props.currentProductAC(props)}>
 

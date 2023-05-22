@@ -15,6 +15,8 @@ import CartContainer from './Components/Cart/CartContainer';
 import CategoriesContainer from './Components/Categories/CategoriesContainer';
 import CategoriesCardProduct from './Components/Categories/CategoriesCardProduct/CategoriesCardProduct';
 import CartSetOrder from './Components/Cart/CartSetOrder/CartSetOrder';
+import  { SkeletonTheme } from 'react-loading-skeleton';
+
 
 const router = createHashRouter(
     createRoutesFromElements(
@@ -37,9 +39,11 @@ const rootElem = document.getElementById('root');
 if (rootElem) {
     const root = ReactDOM.createRoot(rootElem);
     root.render(
-        <Provider store={store}>
-            <RouterProvider router={router} />
-        </Provider>
+        <SkeletonTheme baseColor="#dcd9d957" highlightColor="#eae8e8">
+            <Provider store={store}>
+                <RouterProvider router={router} />
+            </Provider>
+        </SkeletonTheme>
     );
 
 }

@@ -42,6 +42,7 @@ const initialState = {
 	},
 
 	categoryProducts: [] as Array<CategoryProductsType>,
+	categoryProductsIsLoading: true as boolean,
 
 	currentCategoryProducts: [] as any
 }
@@ -58,6 +59,7 @@ function Categories(state = initialState, action: ActionTypes): CategoryType {
 			return {
 				...state,
 				categoryProducts: action.items,
+				categoryProductsIsLoading: false
 			}
 
 		case 'CAT/FILTER_PRODUCTS':

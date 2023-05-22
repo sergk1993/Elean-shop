@@ -13,6 +13,8 @@ import CategoriesAside from './CategoriesAside/CategoriesAside'
 
 import { actionsCarts } from '../../Redux/Cart-reducer'
 import CategoriesCards from './CategoriesCards/CardsCategories'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 
 
@@ -29,7 +31,6 @@ type CategoriesAsideType = {
 
 
 function CategoriesContainer(props: CategoriesAsideType): JSX.Element {
-	let [getArr, setGetArr] = useState([])
 	/* массив имен */
 	const { categoryListTitle } = props.categoryAside.categoryAsideCollections;
 
@@ -39,6 +40,9 @@ function CategoriesContainer(props: CategoriesAsideType): JSX.Element {
 	useEffect(() => {
 		props.getProductsTH()
 	}, [])
+
+
+
 
 
 	/* функция для вывода нажимаемого названия категории */
@@ -54,6 +58,7 @@ function CategoriesContainer(props: CategoriesAsideType): JSX.Element {
 	const getPropertyAsideText = (item: string, title: string) => {
 		findTheSameTitle(title);
 		props.getProductsTH(item)
+
 	}
 
 
@@ -64,8 +69,12 @@ function CategoriesContainer(props: CategoriesAsideType): JSX.Element {
 
 	return (
 		<div className='container'>
+			{
+				props.categoryAside.categoryProductsIsLoading ? <div style={{ margin: 0 + ' auto', width: 150, marginBottom: 25, marginTop: 10, }} ><Skeleton height={30} duration={1.2} />
+				</div> : <h3 className={styles.categoriesTitle} >{nameTitle}</h3>
 
-			<h3 className={styles.categoriesTitle} >{nameTitle}</h3>
+			}
+
 			<section className={styles.categories}>
 
 				<CategoriesAside
@@ -74,6 +83,7 @@ function CategoriesContainer(props: CategoriesAsideType): JSX.Element {
 				/>
 
 				<CategoriesCards
+					isLoading={props.categoryAside.categoryProductsIsLoading}
 					cartsProducts={props.cartsProducts}
 					addCartProduct={props.addCartProduct}
 					removeCart={props.removeCartProduct}

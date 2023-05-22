@@ -25,7 +25,7 @@ const CartSetOrder = (props: any) => {
 
 	return (
 		<div className='container'>
-			<div  className={styles.cartSetOrderBg}>
+			<div className={styles.cartSetOrderBg}>
 				<section ref={classExistCart} className={styles.cartSetOrderMain}>
 
 
@@ -55,7 +55,12 @@ const CartSetOrder = (props: any) => {
 					</div>
 					<p className={styles.findCartSetOrderPrice}>Общая сумма {findCartSetOrderPrice} $</p>
 					<div className={styles.orderListBoxLink}>
-						<Link to='/categories' >Продолжить покупки </Link>
+
+						<Link onClick={() => {
+							props.setOpenModalOrder(false);
+							document.body.style.overflow = "auto";
+						}} to='/categories' >Продолжить покупки </Link>
+
 						<button onClick={() => alert(`Общая сумма ваших товаров составляет ${findCartSetOrderPrice} $`)}>Оплатить покупки </button>
 					</div>
 

@@ -20,9 +20,10 @@ type LayoutType = {
 const Layout = (props: LayoutType): JSX.Element => {
 	useEffect(() => {
 		/* setTimeout для preloader */
-		setTimeout(() => {
+		let timer = setTimeout(() => {
 			props.getProfileTH()
 		}, 200);
+		return () => clearTimeout(timer);
 	}, [])
 
 	let [openModalWindow, setOpenModalWindow] = useState<Boolean>(false);
