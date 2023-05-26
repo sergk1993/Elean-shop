@@ -1,5 +1,128 @@
+.myProfileMain {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 400px;
+	background-color: #4b4a4a32;
+	box-shadow: -0px 0px 45px 13px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	padding: 20px;
+	padding-bottom: 40px;
+	background: rgba(31, 32, 33, 1.0);
+	background: linear-gradient(135deg, rgb(114 120 126), rgb(1 54 71 / 23%));
+	margin-bottom: 20px;
+
+}
+
+.myProfileBoxWrapper {}
+
+.myProfileBox {
+	display: flex;
+	position: relative;
+
+}
+
+.myProfileBoxImg {
+	margin-right: 40px;
+	max-width: 400px;
+	width: 100%;
+	border-radius: 5px;
+	object-fit: contain;
+}
+
+.myProfileImgLarge {}
+
+.myProfileTitleBox {
+	max-width: 500px;
+	width: 100%;
+	font-size: 19px;
+	line-height: 25px;
+	margin-bottom: 20px;
+	padding: 5px;
+}
 
 
-.profileWrapper {
-	
+.myProfileBoxName {
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.myProfileBoxStatus {
+	margin-bottom: 15px;
+	cursor: pointer;
+	background-color: transparent;
+	padding: 5px;
+	border-radius: 5px;
+	transition: background-color 50ms ease-in-out, color 50ms ease-in-out;
+	margin-left: -5px;
+}
+
+
+.myProfileBoxStatus:hover {
+	background-color: rgba(31, 32, 33, 1.0);
+	color: var(--cartBtnWhite);
+}
+
+.myProfileBoxStatusInput {
+	border: none;
+	padding: 5px;
+	margin-bottom: 15px;
+	background-color: #ffffff;
+	border-radius: 5px;
+}
+
+.myProfileBoxAboutMeBox p {
+	background-color: rgba(91, 89, 89, 0.388);
+	border-radius: 5px;
+	padding: 5px;
+}
+
+
+.myProfileBoxAboutMeBox p:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+.myProfileSettings {
+	position: absolute;
+	top: 5px;
+	right: 15px;
+	display: inline-block;
+	padding: 7px;
+	cursor: pointer;
+	border-radius: 5px;
+	border: none;
+}
+
+.profileInfoLookingForAJob {
+	padding: 5px;
+	background-color: var(--colorBtn);
+	margin-bottom: 10px;
+	display: inline-block;
+	border-radius: 5px;
+}
+
+
+.profileInfoBox {
+	margin-top: 20px;
+}
+
+.profileInfoBox h3 {
+	font-size: 14px;
+	font-weight: 400px;
+	text-transform: uppercase;
+}
+
+
+.profileInfoContactsLink {
+	text-transform: uppercase;
+	display: inline-block;
+	background-color: var(--colorBtn);
+	padding: 7px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+
+.profileInfoContactsLink:not(:last-child) {
+	margin-right: 10px;
 }

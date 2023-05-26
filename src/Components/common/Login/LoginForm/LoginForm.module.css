@@ -32,7 +32,7 @@
 	padding: 5px;
 	color: var(--errorText);
 	margin-bottom: 15px;
-	
+
 }
 
 
@@ -41,7 +41,7 @@
 	font-family: 'Lato';
 	background-color: var(--colorBtn);
 	width: 100%;
-	font-size: 25px;
+	font-size: 15px;
 	text-transform: uppercase;
 	border: 1px solid transparent;
 	border-radius: 5px;
@@ -50,10 +50,26 @@
 	padding: 15px;
 	text-align: center;
 	cursor: pointer;
+	margin-bottom: 10px;
 }
 
 .loginFormBtn[type='submit']:disabled {
 	background-color: var(--colorBtnDis);
 	color: var(--colorBtnDisText);
 	cursor: inherit;
+}
+
+.loginFormBtnToSignUp {
+	font-family: 'Lato';
+	background-color: var(--colorBtn);
+	width: 100%;
+	font-size: 15px;
+	text-transform: uppercase;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	display: inline-block;
+	margin: 0 auto;
+	padding: 15px;
+	text-align: center;
+	cursor: pointer;
 }

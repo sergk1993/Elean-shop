@@ -118,27 +118,31 @@ export interface IProfileAuth {
 
 // свойства конкретного человека profile 
 
+type IProfileInfoContacts = {
+	facebook: string,
+	website: string,
+	vk: string,
+	twitter: string,
+	instagram: string,
+	youtube: string,
+	github: string,
+	mainLink: string
+}
+
+
 export interface IProfileInfo {
-	aboutMe: string | number | null,
+	aboutMe?: string | number | null,
+	contacts?: Record<string, string>, // Record используется для определения объекта со строковыми ключами и строковыми значениями
+	lookingForAJob?: boolean,
+	lookingForAJobDescription?: string,
+	fullName?: string,
+	userId?: number,
+}
 
-	contacts: {
-		facebook: null | string,
-		website: null | string,
-		vk: null | string,
-		twitter: null | string,
-		instagram: null | string,
-		youtube: null | string,
-		github: null | string,
-		mainLink: null | string
-	},
 
-	lookingForAJob: boolean |null,
-	lookingForAJobDescription?: boolean |null,
-	fullName: string |null,
-	userId: number,
-	photos: {
+export interface IProfileInfoImg {
+	photos?: {
 		small?: string | null,
 		large?: string | null,
 	}
-
 }
