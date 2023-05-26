@@ -1,4 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form";
+import { Link } from 'react-router-dom';
 import styles from './LoginForm.module.css'
 
 type Inputs = {
@@ -7,7 +8,7 @@ type Inputs = {
 };
 
 type LoginFormType = {
-	login: (items:Inputs) => void,
+	login: (items: Inputs) => void,
 }
 
 const LoginForm = (props: LoginFormType) => {
@@ -51,6 +52,7 @@ const LoginForm = (props: LoginFormType) => {
 
 			{errors?.password && <p className={styles.formError}>{errors?.password?.message}</p>}
 			<button className={styles.loginFormBtn} type='submit'>Login</button>
+			<Link target="_blank" className={styles.loginFormBtnToSignUp} to='https://social-network.samuraijs.com/signUp'>зарегистрироваться</Link>
 		</form>
 	)
 }

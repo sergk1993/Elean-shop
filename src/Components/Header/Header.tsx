@@ -64,7 +64,6 @@ function Header(props: any): JSX.Element {
 const mapStateToProps = (state: RootType) => {
 	return {
 		carts: state.cart.carts,
-		auth: getAuth(state)
 	}
 }
 

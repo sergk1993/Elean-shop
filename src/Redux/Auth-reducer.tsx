@@ -15,9 +15,9 @@ let initialState = {
 	initializePage: true,
 }
 
-export type InitialStateType = typeof initialState;
+export type InitialAuthStateType = typeof initialState;
 
-function AuthReducer(state = initialState, action: AllAuthActionType) {
+function AuthReducer(state = initialState, action: AllAuthActionType): InitialAuthStateType {
 	switch (action.type) {
 		case SET_USER_DATA:
 			return {
@@ -69,7 +69,7 @@ const setProfileAC = (email: string | null, id: number | null, login: string | n
 		items: { email, id, login, isAuth }
 	}
 }
-export const getProfileTH = () => async (dispatch: DispatchAuthType) => {
+export const getProfileAuthTH = () => async (dispatch: DispatchAuthType) => {
 	await authApi.me().then(resp => {
 		dispatch(initializeAC())
 		// если приходит 0, запрос правильный
@@ -91,7 +91,7 @@ export const loginTH = (data: LoginTHType): ThunkType => async (dispatch) => {
 	const resp = await authApi.login(login, password);
 	// если приходит 0, запрос правильный
 	if (resp.resultCode === 0) {
-		dispatch(getProfileTH())
+		dispatch(getProfileAuthTH())
 	}
 }
 

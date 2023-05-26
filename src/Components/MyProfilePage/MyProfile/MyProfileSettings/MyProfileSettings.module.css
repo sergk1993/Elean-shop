@@ -1,0 +1,131 @@
+.myProfileSettingsCloseBox {
+	background-color: #b3b0b0b5;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 12;
+	padding: 10px;
+}
+
+
+.myProfileSettingsCloseWrapper {
+	position: absolute;
+	max-width: 1000px;
+	max-height: 500px;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #074336;
+	padding: 30px;
+	color: var(--whiteTextColor);
+	border-radius: 15px;
+	overflow-y: scroll;
+
+}
+
+
+.myProfileSettingsClose {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: auto;
+	padding: 7px;
+	border-radius: 5px;
+	border: none;
+	width: 30px;
+	height: 30px;
+	margin-bottom: 30px;
+}
+
+.myProfileSettingsClose svg {
+	width: 100%;
+}
+
+.myProfileSettingsCloseWrapper h2 {
+	text-align: center;
+	margin-bottom: 30px;
+	font-family: 'FuturaBookC';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 21px;
+	line-height: 20px;
+	text-align: center;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+.myProfileSettingsForm {}
+
+.myProfileSettingsInputBox {}
+
+
+
+ul.myProfileSettingsInputBox {
+	margin-bottom: 40px;
+}
+
+ul.myProfileSettingsInputBox li:not(:last-child) {
+	margin-bottom: 15px;
+}
+
+.myProfileSettingsInputBox li label,
+.myProfileSettingsInputBox li label input,
+.myProfileSettingsInputBox li label p {
+	text-transform: uppercase;
+	margin-bottom: 8px;
+	position: relative;
+}
+
+
+.myProfileSettingsInputBox li label input {
+	padding: 5px;
+	width: 100%;
+}
+
+.myProfileSettingsCheckLi {
+	display: inline-block;
+}
+
+.myProfileSettingsCheckLi label {
+	display: flex;
+	align-items: center;
+}
+
+/* сбросил марджин у checkBox инпута что бы он не выходил из флекс */
+.myProfileSettingsInputBox .myProfileSettingsCheckLi label p {
+	margin-bottom: 0;
+}
+
+.myProfileSettingsCheckLi label input[type='checkbox'] {
+	width: 18px;
+	height: 18px;
+	margin: 0;
+	margin-left: 10px;
+}
+
+
+.myProfileSettingsSubmit {
+	display: block;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	margin-left: auto;
+	text-transform: uppercase;
+}
+
+.profileInfoSettingsError {
+	position: absolute;
+	top: -4px;
+	background-color: var(--errorBg);
+	padding: 3px;
+	margin-left: 15px;
+	padding-left: 8px;
+	padding-right: 8px;
+	display: inline-block;
+	border-radius: 3px;
+}

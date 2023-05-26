@@ -23,8 +23,6 @@ function App() {
         <ClientsSwiper />
         <InstagramCards />
       </div>
-
-
     </>
   );
 }
