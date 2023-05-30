@@ -12,20 +12,19 @@ type PaginationType = {
 
 const Pagination: React.FC<PaginationType> = (props) => {
 	const { totalCount, pageSize } = props;
-
-/* создал массив с общим количеством пользователей */
+	/* создал массив с общим количеством пользователей */
 	let totalUsers: number[] = [];
 	for (let i = 1; i <= totalCount; i++) {
 		totalUsers.push(i)
 	}
 
-/* разделил массив всех пользователей на количество карточек */
+	/* разделил массив всех пользователей на количество карточек */
 	const pageCount = Math.ceil(totalUsers.length / pageSize);
 
 
 	const handlePageClick = (even: { selected: number }) => {
 		let { selected } = even;
-		props.onPageChange(selected)
+		props.onPageChange(selected + 1)
 	};
 
 	return (

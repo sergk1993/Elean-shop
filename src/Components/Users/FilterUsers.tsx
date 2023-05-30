@@ -8,7 +8,6 @@ type FilterUsersType = {
 	filter: (item: FilterUsersInitType) => void
 }
 
-/* гавнотип */
 type FilterUserSubmitType = {
 	follow: {
 		label?: string,
@@ -34,7 +33,7 @@ function FilterUsers(props: FilterUsersType) {
 	return (
 		<div className={styles.filterUserMain}>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<div className={styles.filterUserInputsWrapper}> 
+				<div className={styles.filterUserInputsWrapper}>
 					<input className={styles.filterUserInput} defaultValue="test" {...register("search")} placeholder='Поиск' />
 
 					<Controller
@@ -42,30 +41,30 @@ function FilterUsers(props: FilterUsersType) {
 						control={control}
 						render={({
 							field: { onChange },
-						}) => <Select 
-							styles={{
-								control: (baseStyles) => ({
-									...baseStyles,
-									cursor: 'pointer',
-									width: '200px',
-									padding: '5px',
-									'fontFamily': 'ProximaNova',
-									'fontSize': '15px', 
-								}),
-								
-							}}
-							onChange={onChange}
-							placeholder='Параметра поиска'
-							options={[
-								{ value: "все", label: "All" },
-								{ value: "1", label: "Мои друзья" },
-								{ value: "0", label: "Поиск друзей" }
-							]}
+						}) => <Select
+								styles={{
+									control: (baseStyles) => ({
+										...baseStyles,
+										cursor: 'pointer',
+										width: '200px',
+										padding: '5px',
+										'fontFamily': 'ProximaNova',
+										'fontSize': '15px',
+									}),
+
+								}}
+								onChange={onChange}
+								placeholder='Параметра поиска'
+								options={[
+									{ value: "all", label: "All" },
+									{ value: "1", label: "Мои друзья" },
+									{ value: "0", label: "Поиск друзей" }
+								]}
 							/>}
 					/>
 
 
-				<input className={styles.filterUserSubmitBtn} type="submit" value='поиск' />
+					<input className={styles.filterUserSubmitBtn} type="submit" value='поиск' />
 				</div>
 			</form>
 		</div>

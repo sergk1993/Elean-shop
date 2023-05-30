@@ -6,7 +6,7 @@ import { InferActionType } from './redux-store';
 
 
 const initialState = {
-	users: [] as Array<number>,
+	users: [] as Array<UserType>,
 	pageSize: 12 as number,
 	quantityUsers: 20 as number,
 	currentPage: 1 as number,

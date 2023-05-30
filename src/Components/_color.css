@@ -53,8 +53,8 @@
 	--categoryProduct: #4a4a4a;
 	--borderColorGray: #e0e0e0;
 	--bgCartColorEmpty: #36363691;
-	--bgCartColorWhite:#fff;
-	
+	--bgCartColorWhite: #fff;
+
 	/* img фоны */
 	--imgBackground: #fff;
 	/* ошибки */
@@ -62,6 +62,8 @@
 	--errorBg: #d84646;
 
 	/* preloader загрузка */
-	--preloader: #0fadc9;
+	--preloaderFigure: #0fadc9;
+	--preloaderBg: #094a4d;
+
 
 }

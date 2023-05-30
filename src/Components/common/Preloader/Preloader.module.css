@@ -1,7 +1,7 @@
 .preloader {
 	width: 100vw;
 	height: 100vh;
-	position: absolute;
+	position: fixed;
 	left: 0;
 	right: 0;
 	top: 0;
@@ -9,6 +9,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	z-index: 100;
+	background-color: var(--preloaderBg);
 }
 
 .loader {
@@ -26,16 +28,22 @@
 }
 
 .loader:after {
-	box-shadow: 0 2px 0 var(--preloader) inset;
-	animation: loader 2s linear infinite;
+	box-shadow: 0 2px 0 var(--preloaderFigure) inset;
+	animation: loader 1000ms linear infinite;
 }
+
+
 
 @keyframes loader {
 	0% {
-		transform: rotate(0)
+		transform: rotate(0deg);
+		opacity: 1;
+		background-color: var(--preloaderBg);
 	}
 
 	100% {
-		transform: rotate(360deg)
+		transform: rotate(360deg);
+		opacity: 0;
+		background-color: var(--preloaderBg);
 	}
 }

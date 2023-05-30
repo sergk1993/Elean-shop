@@ -6,7 +6,7 @@
 .usersWrapperCards {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	flex-wrap: wrap; 
+	flex-wrap: wrap;
 	gap: 20px;
 }
 
@@ -24,7 +24,7 @@
 
 
 
-.userCardInfo img {
+.userCardInfoUserLinkImg img {
 	width: 150px;
 	height: 150px;
 	display: block;
@@ -40,6 +40,7 @@
 	margin-bottom: 20px;
 	color: #777;
 }
+
 .userCardInfo h3::first-letter {
 	text-transform: uppercase;
 }

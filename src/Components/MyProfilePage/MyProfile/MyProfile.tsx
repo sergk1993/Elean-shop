@@ -1,30 +1,35 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import { IProfileInfo, IProfileInfoImg } from '../../../types/types'
+import { IProfileAuth, IProfileInfo, IProfileInfoImg } from '../../../types/types'
 import styles from './MyProfile.module.css'
 import profileEmptyImg from '../../../assets/img/profile/profileUser.png';
 import MyProfileSettings from './MyProfileSettings/MyProfileSettings';
 import { Link } from 'react-router-dom';
+import SceletonsProfile from '../SceletonProfile/SceletonsProfile';
+import Skeleton from 'react-loading-skeleton';
 
 interface IprofileInfo extends IProfileInfoImg, IProfileInfo { }
 
 type MyProfileType = {
-	authProps: {
-		id: number | null,
-		email: string | null,
-		login: string | null,
-	}
+	authProps: IProfileAuth,
 	profileInfo: IprofileInfo | null,
 	profileStatus: string | null | any,
 	updateStatusProfileTH: (str: string) => void,
-	getProfileLoading: boolean,
+	isProfileLoading: boolean,
 	changeMyProfileDataInfoTH: (payload: IProfileInfo) => void,
+	profileStatusTH: (id: number | null) => void,
+	profileDataTH: (id: number | null) => void,
+	checkTheSameUser: boolean,
+	setIsOpenSettings: (item: boolean) => void,
+	isOpenSettings: boolean,
+
 }
 
 
 function MyProfile(props: MyProfileType) {
-	let [isOpenSettings, setIsOpenSettings] = useState<boolean>(false);
+
 	let [status, setStatus] = useState(true);
 	let [getCurrentStatus, setGetCurrentStatus] = useState(props.profileStatus);
+
 
 	let handlerMyStatus = (item: string) => {
 		if (item !== props.profileStatus) {
@@ -47,70 +52,85 @@ function MyProfile(props: MyProfileType) {
 
 
 
-
-
 	return (
-		<section className={styles.myProfileMain}>
+		<>
+			{props.isProfileLoading ? <Skeleton height={460} style={{ marginBottom: 20 }} /> :
 
-			{props.profileInfo !== null &&
-				<article className={styles.myProfileBox}>
+				<section className={styles.myProfileMain}>
 
-					{props.profileInfo.photos?.large && <img className={styles.myProfileBoxImg} src={props.profileInfo.photos.large || profileEmptyImg} alt="" />}
+					{props.profileInfo !== null &&
+						<article className={styles.myProfileBox}>
 
-					<div className={styles.myProfileBoxWrapper}>
-						<div className={styles.myProfileTitleBox}>
+							<img className={styles.myProfileBoxImg} src={props.profileInfo.photos?.large ? props.profileInfo.photos?.large : 'https://static.thenounproject.com/png/1438946-200.png'} alt="" />
 
-							<h2 className={styles.myProfileBoxName}>{props.profileInfo.fullName ? props.profileInfo.fullName : 'Имя нет'}</h2>
 
-							{status ?
-								<p className={`${styles.myProfileBoxStatus}`}
-									onClick={() => setStatus(false)}
-									// Отключение/включение взаимодействия с помощью CSS свойства pointer-events
-									style={{ pointerEvents: !props.getProfileLoading ? 'auto' : 'none' }}
-								>
+							<div>
+								<div className={styles.myProfileTitleBox}>
 
-									{props.profileStatus ? props.profileStatus : 'status'}</p>
+									<h2 className={styles.myProfileBoxName}>{props.profileInfo.fullName ? props.profileInfo.fullName : 'Имя нет'}</h2>
 
-								: <input autoFocus onBlur={(e) => handlerMyStatus(getCurrentStatus)} onKeyDown={handleKeyDown}
-									className={styles.myProfileBoxStatusInput} type="text" value={getCurrentStatus} onChange={(e) => setGetCurrentStatus(e.currentTarget.value)}
-								/>
-							}
+									{/* изменение статуса с проверкой */}
+									{props.checkTheSameUser ? <>
+										{status ?
+											<p className={styles.myProfileBoxStatus}
+												onClick={() => setStatus(false)}
+												// Отключение/включение клика на статус
+												style={{ pointerEvents: !props.isProfileLoading ? 'auto' : 'none' }}
+											>{props.profileStatus ? props.profileStatus : 'status'}</p>
+											:
+											<input
+												autoFocus onBlur={(e) => handlerMyStatus(getCurrentStatus)}
+												onKeyDown={handleKeyDown}
+												className={styles.myProfileBoxStatusInput}
+												type="text"
+												value={getCurrentStatus}
+												onChange={(e) => setGetCurrentStatus(e.currentTarget.value)}
+											/>
 
-							<div className={styles.myProfileBoxAboutMeBox}>
+										}
 
-								<div className={styles.profileInfoAboutMe}>
-									<p >{props.profileInfo.aboutMe ? props.profileInfo.aboutMe : ''}</p>
+
+									</> : <p className={styles.myProfileBoxProfileUserStatus}>{props.profileStatus ? props.profileStatus : 'status'}</p>
+									}
+
+									<div className={styles.myProfileBoxAboutMeBox}>
+
+										{props.profileInfo.aboutMe ? <p >{props.profileInfo.aboutMe}</p> : ''}
+										{props.profileInfo.lookingForAJobDescription ? <p>{props.profileInfo.lookingForAJobDescription}</p> : ''}
+										{props.profileInfo.lookingForAJob ? <p className={styles.profileInfoLookingForAJobYes}>ищу работу</p> : <p className={styles.profileInfoLookingForAJobNo}>не ищу работу</p>}
+
+									</div>
+
+
+									<div className={styles.profileInfoBox}>
+										<h3>Contacts</h3>
+										{Object.keys(props.profileInfo?.contacts || {}).map((key: any, i: number) => {
+
+											return (
+												<Fragment key={i}>
+													{props.profileInfo?.contacts && props.profileInfo?.contacts[key]
+														? <Link target='_blank' className={styles.profileInfoContactsLink} to={props.profileInfo?.contacts[key]}>{key}</Link>
+														: ''}
+												</Fragment>
+											);
+										})}
+
+									</div>
 								</div>
-								{props.profileInfo.lookingForAJobDescription ? <p>{props.profileInfo.lookingForAJobDescription}</p> : ''}
-								{props.profileInfo.lookingForAJob ? <p className={styles.profileInfoLookingForAJobYes}>ищу работу</p> : <p className={styles.profileInfoLookingForAJobNo}>не ищу работу</p>}
+
+								{props.checkTheSameUser ? <>
+									{props.isOpenSettings === false && <button className={styles.myProfileSettings} onClick={() => props.setIsOpenSettings(true)} >открыть настройки</button>}
+								</> : ''}
 
 							</div>
+						</article>
+					}
+
+					{props.checkTheSameUser ? <>{props.isOpenSettings === true && <MyProfileSettings profileId={props.authProps.id} changeMyProfileDataInfoTH={props.changeMyProfileDataInfoTH} profileInfo={props.profileInfo} setIsOpenSettings={props.setIsOpenSettings} />}</> : ''}
 
 
-							<div className={styles.profileInfoBox}>
-								<h3>Contacts</h3>
-								{Object.keys(props.profileInfo?.contacts || {}).map((key: any, i: number) => {
-									return (
-										<Fragment key={i}>
-											{props.profileInfo?.contacts && props.profileInfo?.contacts[key]
-												? <Link className={styles.profileInfoContactsLink} to={props.profileInfo?.contacts[key]}>{key}</Link>
-												: ''}
-										</Fragment>
-									);
-								})}
-
-							</div>
-						</div>
-
-						{isOpenSettings === false && <button className={styles.myProfileSettings} onClick={() => setIsOpenSettings(true)} >открыть настройки</button>}
-
-					</div>
-				</article>
-			}
-
-			{isOpenSettings === true && <MyProfileSettings profileId={props.authProps.id} changeMyProfileDataInfoTH={props.changeMyProfileDataInfoTH} profileInfo={props.profileInfo} setIsOpenSettings={setIsOpenSettings} />}
-
-		</section >
+				</section >
+			}</>
 	)
 }
 

@@ -6,9 +6,11 @@ import { IProfileAuth, IProfileInfo } from '../../types/types';
 import Login from '../common/Login/Login';
 import styles from './MyProfilePageContainer.module.css';
 import MyProfile from './MyProfile/MyProfile';
-import { getProfileDataSL, getProfileLoading, getProfileStatus, } from '../../Redux/selectors/Profile-selectors';
-import { profileStatusTH, profileDataTH, updateStatusProfileTH, actionsProfile, changeMyProfileDataInfoTH } from '../../Redux/Profile-reducer';
-import { useEffect } from 'react'
+import { getProfileDataSL, isProfileLoading, getProfileStatus, setFirstRenderSL, } from '../../Redux/selectors/Profile-selectors';
+import { profileStatusTH, profileDataTH, updateStatusProfileTH, actionsProfile, changeMyProfileDataInfoTH, setFirstRender } from '../../Redux/Profile-reducer';
+import { useEffect, useState } from 'react';
+import Skeleton from 'react-loading-skeleton';
+
 
 
 
@@ -22,22 +24,54 @@ type MyProfilePageType = {
 	updateStatusProfileTH: (str: string) => void,
 	changeMyProfileDataInfoTH: (payload: IProfileInfo) => void,
 	profileStatus: string | null,
-	getProfileLoading: boolean,
+	isProfileLoading: boolean,
+	setFirstRender: (item: any) => void,
+	isFirstRenderCheck: boolean,
+	getProfileLoadingAC: (item: boolean) => void,
 }
 
 
 function MyProfilePageContainer(props: MyProfilePageType) {
+	// проверка на одинакового юсера для скрытия разных кнопок 
+	let [checkTheSameUser, setCheckTheSameUser] = useState(false)
+	// открытие настроек 
+	let [isOpenSettings, setIsOpenSettings] = useState<boolean>(false);
+
 
 	useEffect(() => {
-		if (props.auth.isAuth) {
-			props.profileDataTH(props.auth.id);
-			props.profileStatusTH(props.auth.id);
+		// проверка при первом рендере если авторизационный айди не найден присвой мой айди
+		if (!props.profileInfo?.userId) {
+			setTimeout(() => {
+				props.profileDataTH(props.auth.id);
+				props.profileStatusTH(props.auth.id);
+			}, 200)
+		} else if (props.isFirstRenderCheck) {
+			props.profileDataTH(props.profileInfo.userId);
+			props.profileStatusTH(props.profileInfo.userId);
+
+			props.setFirstRender(false)
 		}
-	}, [props.auth.isAuth])
+	}, [props.profileInfo?.userId, props.auth.id, props.isFirstRenderCheck]);
+
+
+
+	useEffect(() => {
+		if (props.profileInfo?.userId === props.auth.id) {
+			setCheckTheSameUser(true);
+		} else {
+			setCheckTheSameUser(false);
+			setIsOpenSettings(false);
+		}
+	}, [props.profileInfo?.userId, props.auth.id])
+
 
 
 	return (
 		<div className="container">
+
+
+
+
 			<section className={styles.profilePage}>
 
 				<h3>Profile</h3>
@@ -45,21 +79,32 @@ function MyProfilePageContainer(props: MyProfilePageType) {
 				{!props.auth.isAuth ? <Login isLogin={props.loginTH} />
 					:
 					<MyProfile
-						getProfileLoading={props.getProfileLoading}
+						isProfileLoading={props.isProfileLoading}
 						updateStatusProfileTH={props.updateStatusProfileTH}
 						profileStatus={props.profileStatus}
 						profileInfo={props.profileInfo}
 						authProps={props.auth}
 						changeMyProfileDataInfoTH={props.changeMyProfileDataInfoTH}
+						profileDataTH={props.profileDataTH}
+						profileStatusTH={props.profileStatusTH}
+						checkTheSameUser={checkTheSameUser}
+						setIsOpenSettings={setIsOpenSettings}
+						isOpenSettings={isOpenSettings}
 					/>
 
 				}
 
-
-				{props.auth.isAuth &&
-					<button className={styles.myProfilePageBtnLogOut} onClick={props.logOutTH}>выйти</button>}
+				{props.isProfileLoading && props.isFirstRenderCheck ? <Skeleton height={50} width={250} /> :
+					<>
+						{
+							props.auth.isAuth && checkTheSameUser &&
+							<button className={styles.myProfilePageBtnLogOut} onClick={props.logOutTH}>выйти</button>
+						}
+					</>
+				}
 
 			</section>
+
 		</div>
 	)
 }
@@ -69,14 +114,13 @@ let mapStateToProps = (state: RootType) => {
 		auth: getAuth(state),
 		profileInfo: getProfileDataSL(state),
 		profileStatus: getProfileStatus(state),
-		getProfileLoading: getProfileLoading(state)
+		isProfileLoading: isProfileLoading(state),
+		isFirstRenderCheck: setFirstRenderSL(state)
 	}
 }
 
 
-let { getProfileStatusAC } = actionsProfile;
-
-
+let { getProfileStatusAC, getProfileLoadingAC } = actionsProfile;
 
 export default connect(mapStateToProps,
 	{
@@ -87,7 +131,8 @@ export default connect(mapStateToProps,
 		profileDataTH,
 		updateStatusProfileTH,
 		getProfileStatusAC,
-		changeMyProfileDataInfoTH
-
+		changeMyProfileDataInfoTH,
+		setFirstRender,
+		getProfileLoadingAC,
 	}
 )(MyProfilePageContainer)

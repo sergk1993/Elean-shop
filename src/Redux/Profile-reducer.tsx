@@ -1,14 +1,14 @@
 import { Dispatch } from 'react';
-import { authApi, profileApi } from '../API/api';
+import { profileApi } from '../API/api';
 import { IProfileInfo } from '../types/types';
-import { InitialAuthStateType } from './Auth-reducer';
 import { InferActionType } from './redux-store';
 import { RootType } from './redux-store';
 
 let initialState = {
 	profileData: null as IProfileInfo | null,
 	profileStatus: '' as string | null,
-	isloadingProfile: true
+	isLoadingProfile: true as boolean,
+	isFirstRender: true as boolean, //  отслеживает выполнение первого рендера
 }
 
 export type initialProfileStateType = typeof initialState
@@ -28,14 +28,18 @@ function ProfileReducer(state = initialState, action: ActionProfileType): initia
 				profileStatus: action.status,
 
 			}
+
 		case 'PF/GET_PROFILE_LOADING':
 			return {
 				...state,
-				isloadingProfile: action.isLoading
+				isLoadingProfile: action.isLoading
 			}
 
-
-
+		case 'PF/IS_FIRST_RENDER':
+			return {
+				...state,
+				isFirstRender: action.isFirstRender
+			}
 
 		default:
 			return state
@@ -50,36 +54,35 @@ export const actionsProfile = {
 	getProfileData: (items: any) => ({ type: 'PF/GET_PROFILE_DATA', payload: items } as const),
 	getProfileStatusAC: (status: string) => ({ type: 'PF/GET_PROFILE_STATUS', status } as const),
 	getProfileLoadingAC: (isLoading: boolean) => ({ type: 'PF/GET_PROFILE_LOADING', isLoading } as const),
-	getProfileDataInfoAC: (isLoading: boolean) => ({ type: 'PF/GET_PROFILE_LOADING', isLoading } as const),
+	setIsFirstRender: (isFirstRender: boolean) => ({ type: 'PF/IS_FIRST_RENDER', isFirstRender } as const),
 }
-
 
 export const profileDataTH = (id: number | null) => async (dispatch: DispatchProfileType) => {
 	try {
 		const profileData = await profileApi.getProfileData(id);
+		dispatch(actionsProfile.getProfileLoadingAC(false));
+
 		if (profileData.userId === id) {
 			dispatch(actionsProfile.getProfileData(profileData))
+			dispatch(actionsProfile.setIsFirstRender(false))
+			setTimeout(() => {
+				dispatch(actionsProfile.getProfileLoadingAC(false));
+			}, 200)
 		}
 	} catch (err: any) {
 		console.log(`в ProfileReducer в санке profileDataTH пришел не правильный айди, ${err}`);
 	}
 }
 
-
 export const profileStatusTH = (id: number | null) => async (dispatch: DispatchProfileType) => {
 	try {
-		dispatch(actionsProfile.getProfileLoadingAC(true));
 		const profileStatus = await profileApi.getStatusProfile(id);
 		dispatch(actionsProfile.getProfileStatusAC(profileStatus))
-		dispatch(actionsProfile.getProfileLoadingAC(false));
-
+		dispatch(actionsProfile.setIsFirstRender(false))
 	} catch (err) {
-		dispatch(actionsProfile.getProfileLoadingAC(false));
-
 		console.log(`в ProfileReducer в санке profileStatusTH пришел не правильный айди, ${err}`);
 	}
 }
-
 
 export const updateStatusProfileTH = (newStatus: string) => async (dispatch: DispatchProfileType) => {
 	try {
@@ -90,7 +93,11 @@ export const updateStatusProfileTH = (newStatus: string) => async (dispatch: Dis
 
 		if (updateStatus.resultCode === 0) {
 			dispatch(actionsProfile.getProfileStatusAC(newStatus))
-			dispatch(actionsProfile.getProfileLoadingAC(false));
+			setTimeout(() => {
+				dispatch(actionsProfile.getProfileLoadingAC(false));
+			}, 200)
+			dispatch(actionsProfile.setIsFirstRender(false))
+
 		}
 
 	} catch (err) {
@@ -110,7 +117,6 @@ export const changeMyProfileDataInfoTH = (payload: IProfileInfo) => async (dispa
 		if (changeProfileDataType.resultCode === 0) {
 			dispatch(profileDataTH(myProfileId));
 			dispatch(actionsProfile.getProfileLoadingAC(false));
-
 		}
 	} catch (err) {
 		dispatch(actionsProfile.getProfileLoadingAC(false));
@@ -119,7 +125,10 @@ export const changeMyProfileDataInfoTH = (payload: IProfileInfo) => async (dispa
 	}
 };
 
-
+export const setFirstRender = (isFirstRender: boolean) => ({
+	type: 'PF/SET_FIRST_RENDER',
+	isFirstRender
+} as const);
 
 
 

@@ -12,17 +12,28 @@ import CartHoverProductsContainer from '../Cart/CartHoverProductsContainer/CartH
 import HeaderCartIcon from './HeaderCartsIcon/HeaderCartIcon';
 import { actionsCarts } from '../../Redux/Cart-reducer';
 import { getAuth } from '../../Redux/selectors/Auth-selectors';
+import { profileDataTH, profileStatusTH } from '../../Redux/Profile-reducer';
+import { IProfileAuth } from '../../types/types';
 
 
 
 type HeaderType = {
-	cart: any
-	increaseCartProduct: any
-	decreaseCartProduct: any
-	deleteCartProduct: any
+	carts: {
+		totalCountCartHeart: any,
+	},
+	setOpenModalWindow: any,
+	increaseCartProduct: any,
+	decreaseCartProduct: any,
+	deleteCartProduct: any,
+	orderCartList: any
+	profileDataTH: (item: number | null) => void,
+	profileStatusTH: (item: number | null) => void,
+	auth: IProfileAuth
 }
 
-function Header(props: any): JSX.Element {
+
+
+function Header(props: HeaderType): JSX.Element {
 	let [openMenu, setOpenMenu] = useState<Boolean>(false)
 
 
@@ -37,7 +48,11 @@ function Header(props: any): JSX.Element {
 			<HeaderTitle />
 			<HeaderPhone />
 
-			<HeaderProfile />
+			<HeaderProfile
+				auth={props.auth}
+				profileDataTH={props.profileDataTH}
+				profileStatusTH={props.profileStatusTH}
+			/>
 
 			<HeaderCartIcon
 				setOpenMenu={setOpenMenu}
@@ -64,6 +79,7 @@ function Header(props: any): JSX.Element {
 const mapStateToProps = (state: RootType) => {
 	return {
 		carts: state.cart.carts,
+		auth: getAuth(state)
 	}
 }
 
@@ -74,4 +90,6 @@ export default connect(mapStateToProps, {
 	decreaseCartProduct,
 	deleteCartProduct,
 	orderCartList,
+	profileDataTH,
+	profileStatusTH,
 })(Header);

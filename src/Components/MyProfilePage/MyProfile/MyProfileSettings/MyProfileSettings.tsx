@@ -60,7 +60,7 @@ function MyProfileSettings(props: MyProfileSettingsType) {
 		props.setIsOpenSettings(false)
 	};
 
-	const urlRegExp = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
+	// const urlRegExp = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
 
 
 	if (!profileInfo) {
@@ -115,8 +115,9 @@ function MyProfileSettings(props: MyProfileSettingsType) {
 													<p>{contactKey}
 														{errors?.contacts?.[contactKey] && <span className={styles.profileInfoSettingsError}>{errors.contacts[contactKey]?.message}</span>}
 													</p>
-
-													<input {...register(`contacts.${contactKey}`, { pattern: { value: urlRegExp, message: `${contactKey} должен содержать корректные символы` } })} />
+													
+													{/* { pattern: { value: urlRegExp, message: `${contactKey} должен содержать корректные символы` } } */}
+													<input {...register(`contacts.${contactKey}`, )} />
 												</label>
 
 											</li>

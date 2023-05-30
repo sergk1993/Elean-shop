@@ -8,11 +8,11 @@ const INITIALIZE_PAGE = 'INITIALIZE_PAGE'
 
 
 let initialState = {
-	isAuth: false,
-	id: null as number | null | any,
+	isAuth: false as boolean,
+	id: null as number | null  ,
 	login: null as string | null,
 	email: null as string | null,
-	initializePage: true,
+	initializePage: true as boolean,
 }
 
 export type InitialAuthStateType = typeof initialState;

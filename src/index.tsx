@@ -14,7 +14,7 @@ import CartContainer from './Components/Cart/CartContainer';
 import CategoriesContainer from './Components/Categories/CategoriesContainer';
 import CategoriesCardProduct from './Components/Categories/CategoriesCardProduct/CategoriesCardProduct';
 import CartSetOrder from './Components/Cart/CartSetOrder/CartSetOrder';
-import  { SkeletonTheme } from 'react-loading-skeleton';
+import { SkeletonTheme } from 'react-loading-skeleton';
 import MyProfilePageContainer from './Components/MyProfilePage/MyProfilePageContainer';
 
 
@@ -24,7 +24,7 @@ const router = createHashRouter(
             <Route index element={<App />} />
             <Route path="dialogs" element={<Dialogs />} />
             <Route path="users/:id?" element={<UsersContainer />} />
-            <Route path="profile" element={<MyProfilePageContainer />} />
+            <Route path="profile/:userId?" element={<MyProfilePageContainer />} />
             <Route path="cart" element={<CartContainer />} />
             <Route path='categories-product' element={<CategoriesCardProduct />} />
             <Route path='cart-set-order' element={<CartSetOrder />} />

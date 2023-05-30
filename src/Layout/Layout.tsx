@@ -11,13 +11,13 @@ import { getProfileAuthTH } from '../Redux/Auth-reducer';
 import Preloader from '../Components/common/Preloader/Preloader';
 import EmptyModalWindow from '../Components/common/EmptyModalWindow/EmptyModalWindow';
 import { getAuth } from '../Redux/selectors/Auth-selectors';
-import { IProfileAuth } from '../types/types';
 import { RootType } from '../Redux/redux-store';
 
 type LayoutType = {
 	getProfileAuthTH: () => void,
-	initialize: any,
-	auth: IProfileAuth,
+	auth: {
+		initializePage: boolean
+	},
 
 }
 
@@ -25,7 +25,7 @@ type LayoutType = {
 const Layout = (props: LayoutType): JSX.Element => {
 	// let { id } = props.auth
 	useEffect(() => {
-		/* setTimeout для preloader */
+		// setTimeout для preloader
 		let timer = setTimeout(() => {
 			props.getProfileAuthTH()
 		}, 200);
@@ -40,7 +40,7 @@ const Layout = (props: LayoutType): JSX.Element => {
 
 	return (
 		<>
-			{props.initialize.initializePage ? <Preloader /> :
+			{props.auth.initializePage ? <Preloader /> :
 
 
 				<div className={styles.layoutWrapper}>
@@ -68,7 +68,6 @@ const Layout = (props: LayoutType): JSX.Element => {
 }
 
 let mapStateToProps = (state: RootType) => ({
-	initialize: state.AuthPage,
 	auth: getAuth(state),
 })
 export default connect(mapStateToProps, { getProfileAuthTH })(Layout);

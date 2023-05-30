@@ -11,7 +11,7 @@ import { compose } from 'redux';
 import WithAuthRedirect from '../common/withAuthRedirect/WithAuthRedirect';
 import { getUsers } from '../../Redux/selectors/Users-selectors';
 import FilterUsers from './FilterUsers';
-
+import { profileDataTH, profileStatusTH } from '../../Redux/Profile-reducer';
 
 
 
@@ -21,6 +21,8 @@ type UsersContainerType = {
 	subscrUsersThunk: (item: number) => void,
 	unsubscribeUsersThunk: (item: number) => void,
 	children?: React.ReactNode,
+	profileDataTH: (item: number | null) => void,
+	profileStatusTH: (item: number | null) => void,
 }
 
 
@@ -66,6 +68,8 @@ const UsersContainer = (props: UsersContainerType): JSX.Element => {
 							portionSize={props.usersState.pageSize}
 							onPageChange={onPageChange}
 							isDisabledBtn={props.usersState.disableBtn}
+							profileDataTH={props.profileDataTH}
+							profileStatusTH={props.profileStatusTH}
 
 						/>
 					</section>
@@ -104,5 +108,5 @@ function withRouter(Component: any) {
 export default compose(
 	WithAuthRedirect,
 	withRouter,
-	connect(mapStateToProps, { thunkUser, subscrUsersThunk, unsubscribeUsersThunk })
+	connect(mapStateToProps, { thunkUser, subscrUsersThunk, unsubscribeUsersThunk, profileDataTH, profileStatusTH })
 )(UsersContainer)

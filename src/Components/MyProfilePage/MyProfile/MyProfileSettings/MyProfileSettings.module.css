@@ -74,7 +74,6 @@ ul.myProfileSettingsInputBox li:not(:last-child) {
 }
 
 .myProfileSettingsInputBox li label,
-.myProfileSettingsInputBox li label input,
 .myProfileSettingsInputBox li label p {
 	text-transform: uppercase;
 	margin-bottom: 8px;
