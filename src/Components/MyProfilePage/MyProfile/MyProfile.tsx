@@ -21,7 +21,7 @@ type MyProfileType = {
 	checkTheSameUser: boolean,
 	setIsOpenSettings: (item: boolean) => void,
 	isOpenSettings: boolean,
-
+	sendNewImageProfileTH: (newImg: string) => void,
 }
 
 
@@ -50,7 +50,12 @@ function MyProfile(props: MyProfileType) {
 		}
 	}, [props.profileStatus])
 
+	const sendNewImg = (e:any) => {
+		if (e.target.files.length) {
+		props.sendNewImageProfileTH(e.target.files[0])
+		}
 
+	}
 
 	return (
 		<>
@@ -61,8 +66,16 @@ function MyProfile(props: MyProfileType) {
 					{props.profileInfo !== null &&
 						<article className={styles.myProfileBox}>
 
-							<img className={styles.myProfileBoxImg} src={props.profileInfo.photos?.large ? props.profileInfo.photos?.large : 'https://static.thenounproject.com/png/1438946-200.png'} alt="" />
+							<div className={styles.myProfileBoxImgBox}>
 
+
+								{props.checkTheSameUser ? <>
+									<img className={styles.myProfileBoxImg} src={props.profileInfo.photos?.large ? props.profileInfo.photos?.large : 'https://static.thenounproject.com/png/1438946-200.png'} alt="" />
+									<input className={styles.myProfileBoxImgInput} type="file" alt='сменить картинку' title='сменить картинку' onChange={sendNewImg} />
+								</> : <img className={styles.myProfileBoxImg} src={props.profileInfo.photos?.large ? props.profileInfo.photos?.large : 'https://static.thenounproject.com/png/1438946-200.png'} alt="" />
+								}
+
+							</div>
 
 							<div>
 								<div className={styles.myProfileTitleBox}>
@@ -126,6 +139,7 @@ function MyProfile(props: MyProfileType) {
 						</article>
 					}
 
+					{/* кнопка включения/выключения настроек */}
 					{props.checkTheSameUser ? <>{props.isOpenSettings === true && <MyProfileSettings profileId={props.authProps.id} changeMyProfileDataInfoTH={props.changeMyProfileDataInfoTH} profileInfo={props.profileInfo} setIsOpenSettings={props.setIsOpenSettings} />}</> : ''}
 
 

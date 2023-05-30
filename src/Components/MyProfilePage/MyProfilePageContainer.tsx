@@ -6,8 +6,8 @@ import { IProfileAuth, IProfileInfo } from '../../types/types';
 import Login from '../common/Login/Login';
 import styles from './MyProfilePageContainer.module.css';
 import MyProfile from './MyProfile/MyProfile';
-import { getProfileDataSL, isProfileLoading, getProfileStatus, setFirstRenderSL, } from '../../Redux/selectors/Profile-selectors';
-import { profileStatusTH, profileDataTH, updateStatusProfileTH, actionsProfile, changeMyProfileDataInfoTH, setFirstRender } from '../../Redux/Profile-reducer';
+import { getProfileDataSL, isProfileLoading, getProfileStatus, setFirstRenderSL, getNewImageSL } from '../../Redux/selectors/Profile-selectors';
+import { profileStatusTH, profileDataTH, updateStatusProfileTH, actionsProfile, changeMyProfileDataInfoTH, setFirstRender, sendNewImageProfileTH } from '../../Redux/Profile-reducer';
 import { useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 
@@ -28,6 +28,7 @@ type MyProfilePageType = {
 	setFirstRender: (item: any) => void,
 	isFirstRenderCheck: boolean,
 	getProfileLoadingAC: (item: boolean) => void,
+	sendNewImageProfileTH: (newImg: string) => void,
 }
 
 
@@ -90,6 +91,8 @@ function MyProfilePageContainer(props: MyProfilePageType) {
 						checkTheSameUser={checkTheSameUser}
 						setIsOpenSettings={setIsOpenSettings}
 						isOpenSettings={isOpenSettings}
+						sendNewImageProfileTH={props.sendNewImageProfileTH}
+						
 					/>
 
 				}
@@ -115,12 +118,13 @@ let mapStateToProps = (state: RootType) => {
 		profileInfo: getProfileDataSL(state),
 		profileStatus: getProfileStatus(state),
 		isProfileLoading: isProfileLoading(state),
-		isFirstRenderCheck: setFirstRenderSL(state)
+		isFirstRenderCheck: setFirstRenderSL(state),
+		newImg: getNewImageSL(state),
 	}
 }
 
 
-let { getProfileStatusAC, getProfileLoadingAC } = actionsProfile;
+let { getProfileStatusAC, getProfileLoadingAC, } = actionsProfile;
 
 export default connect(mapStateToProps,
 	{
@@ -134,5 +138,6 @@ export default connect(mapStateToProps,
 		changeMyProfileDataInfoTH,
 		setFirstRender,
 		getProfileLoadingAC,
+		sendNewImageProfileTH,
 	}
 )(MyProfilePageContainer)

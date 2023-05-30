@@ -20,15 +20,32 @@
 	position: relative;
 }
 
-.myProfileBoxImg {
-	margin-right: 40px;
+.myProfileBoxImgBox {
 	max-width: 400px;
+	margin-right: 40px;
+	width: 100%;
+	position: relative;
+}
+
+.myProfileBoxImg {
 	width: 100%;
 	border-radius: 5px;
 	object-fit: contain;
 }
 
-.myProfileImgLarge {}
+.myProfileBoxImgInput {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	opacity: 0;
+	cursor: pointer;
+}
+
 
 .myProfileTitleBox {
 	max-width: 500px;
@@ -83,6 +100,7 @@
 .myProfileBoxAboutMeBox {
 	margin-bottom: 10px;
 }
+
 .myProfileBoxAboutMeBox p:not(:last-child) {
 	margin-bottom: 10px;
 }

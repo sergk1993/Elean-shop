@@ -56,6 +56,17 @@ export const profileApi = {
 
 	updateProfileDataInfo: (payload) => {
 		return instance.put('/profile', payload).then(resp => resp.data)
+	},
+
+	sendNewImg: (newImg) => {
+		var formDataNewImg = new FormData();
+		formDataNewImg.append("image", newImg);
+
+		return instance.put('/profile/photo', formDataNewImg, {
+			headers: {
+				"Content-Type": "multipart/form-data",
+			},
+		}).then(res => res.data)
 	}
 }
 

@@ -1,14 +1,17 @@
 import { Dispatch } from 'react';
 import { profileApi } from '../API/api';
-import { IProfileInfo } from '../types/types';
+import { IProfileInfo, IProfileInfoImg } from '../types/types';
 import { InferActionType } from './redux-store';
 import { RootType } from './redux-store';
 
+interface IProfileData extends IProfileInfoImg, IProfileInfo { }
+
 let initialState = {
-	profileData: null as IProfileInfo | null,
+	profileData: null as IProfileData | null,
 	profileStatus: '' as string | null,
 	isLoadingProfile: true as boolean,
 	isFirstRender: true as boolean, //  отслеживает выполнение первого рендера
+	newImg: '' as any,
 }
 
 export type initialProfileStateType = typeof initialState
@@ -41,6 +44,13 @@ function ProfileReducer(state = initialState, action: ActionProfileType): initia
 				isFirstRender: action.isFirstRender
 			}
 
+		case 'PF/SEND_NEW_IMAGE':
+			debugger
+			return {
+				...state,
+				profileData: { ...state.profileData, photos: action.newImg },
+			}
+
 		default:
 			return state
 	}
@@ -49,12 +59,17 @@ function ProfileReducer(state = initialState, action: ActionProfileType): initia
 export type ActionProfileType = InferActionType<typeof actionsProfile>;
 type DispatchProfileType = Dispatch<ActionProfileType>;
 
+interface IProfileImage {
+  small?: string | null,
+  large?: string | null,
+}
 
 export const actionsProfile = {
 	getProfileData: (items: any) => ({ type: 'PF/GET_PROFILE_DATA', payload: items } as const),
 	getProfileStatusAC: (status: string) => ({ type: 'PF/GET_PROFILE_STATUS', status } as const),
 	getProfileLoadingAC: (isLoading: boolean) => ({ type: 'PF/GET_PROFILE_LOADING', isLoading } as const),
 	setIsFirstRender: (isFirstRender: boolean) => ({ type: 'PF/IS_FIRST_RENDER', isFirstRender } as const),
+	sendNewImg: (newImg: IProfileImage) => ({ type: 'PF/SEND_NEW_IMAGE', newImg } as const),
 }
 
 export const profileDataTH = (id: number | null) => async (dispatch: DispatchProfileType) => {
@@ -129,6 +144,17 @@ export const setFirstRender = (isFirstRender: boolean) => ({
 	type: 'PF/SET_FIRST_RENDER',
 	isFirstRender
 } as const);
+
+
+export const sendNewImageProfileTH = (newImg: string) => async (dispatch: DispatchProfileType) => {
+	const newImgApi = await profileApi.sendNewImg(newImg)
+	if (newImgApi.resultCode === 0) {
+		debugger
+		dispatch(actionsProfile.sendNewImg(newImgApi.data.photos))
+	}
+}
+
+
 
 
 
