@@ -2,14 +2,14 @@ import { NavCategoryInterface } from '../types/types'
 
 let initialState: NavCategoryInterface = {
 	headerNavPage: [
+		// { id: 1, text: 'наши коллекции', path: 'collections' },
+		// { id: 3, text: 'о бренде', path: 'brand' },
+		// { id: 5, text: 'контакты', path: 'contacts' },
+		// { id: 4, text: 'шоурум', path: 'showroom' },
+		// { id: 1, text: 'покупателям', path: 'shopper' },
 		{ id: 0, text: 'категории', path: 'categories' },
-		{ id: 1, text: 'наши коллекции', path: 'collections' },
-		{ id: 2, text: 'покупателям', path: 'shopper' },
-		{ id: 3, text: 'о бренде', path: 'brand' },
-		{ id: 4, text: 'шоурум', path: 'showroom' },
-		{ id: 5, text: 'контакты', path: 'contacts' },
-		{ id: 6, text: 'Диалоги', path: 'dialogs' },
-		{ id: 7, text: 'пользователи', path: 'users' },
+		{ id: 1, text: 'Диалоги', path: 'dialogs' },
+		{ id: 2, text: 'пользователи', path: 'users' },
 	],
 
 	dropDownMenu: [

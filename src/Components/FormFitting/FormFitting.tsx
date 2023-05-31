@@ -50,18 +50,3 @@ function FormFitting() {
 
 
 export default FormFitting
-
-
-
-/* 
-This expression is not callable.
-	Type 'CombinedState<{ catalogListPage: any; 
-		navCategory: NavCategoryInterface; 
-		dialogsPage: DialogsPageInterface; 
-		AboutBlock: { aboutBlockText: { id: number; info: string; }[];
-		aboutBlockBtn: { ...; }[]; }; 
-		ClientsSwiper: { ...; }; 
-		footerPage: FooterInitialState; }>'
-		 has no call signatures.ts(2349)
-
-*/

@@ -14,7 +14,6 @@ function App() {
   return (
     <>
       <SwiperTop />
-      <SocialSideMenu />
       <div className={styles.container}>
         <Catalog />
         <AboutBlock />

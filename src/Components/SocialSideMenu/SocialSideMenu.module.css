@@ -19,6 +19,9 @@
 	width: 40px;
 	align-items: center;
 	margin-bottom: 25px;
+	background-color: transparent;
+	border: transparent;
+	cursor: pointer;
 }
 
 .arrowUp {
