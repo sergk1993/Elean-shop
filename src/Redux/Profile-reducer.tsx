@@ -45,7 +45,6 @@ function ProfileReducer(state = initialState, action: ActionProfileType): initia
 			}
 
 		case 'PF/SEND_NEW_IMAGE':
-			debugger
 			return {
 				...state,
 				profileData: { ...state.profileData, photos: action.newImg },
@@ -149,7 +148,6 @@ export const setFirstRender = (isFirstRender: boolean) => ({
 export const sendNewImageProfileTH = (newImg: string) => async (dispatch: DispatchProfileType) => {
 	const newImgApi = await profileApi.sendNewImg(newImg)
 	if (newImgApi.resultCode === 0) {
-		debugger
 		dispatch(actionsProfile.sendNewImg(newImgApi.data.photos))
 	}
 }

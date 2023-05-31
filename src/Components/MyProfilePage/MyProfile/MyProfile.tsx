@@ -50,9 +50,9 @@ function MyProfile(props: MyProfileType) {
 		}
 	}, [props.profileStatus])
 
-	const sendNewImg = (e:any) => {
+	const sendNewImg = (e: any) => {
 		if (e.target.files.length) {
-		props.sendNewImageProfileTH(e.target.files[0])
+			props.sendNewImageProfileTH(e.target.files[0])
 		}
 
 	}
@@ -103,7 +103,7 @@ function MyProfile(props: MyProfileType) {
 										}
 
 
-									</> : <p className={styles.myProfileBoxProfileUserStatus}>{props.profileStatus ? props.profileStatus : 'status'}</p>
+									</> : <p className={styles.myProfileBoxProfileUserStatus}>{props.profileStatus ? props.profileStatus : 'Статус пустой'}</p>
 									}
 
 									<div className={styles.myProfileBoxAboutMeBox}>

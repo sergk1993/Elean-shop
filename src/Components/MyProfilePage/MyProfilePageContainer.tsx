@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
 import { getProfileAuthTH, loginTH, LoginTHType, logOutTH } from '../../Redux/Auth-reducer';
-import { getAuth } from '../../Redux/selectors/Auth-selectors';
+import { getAuth, getCaptchaSL } from '../../Redux/selectors/Auth-selectors';
 import { RootType } from '../../Redux/redux-store';
 import { IProfileAuth, IProfileInfo } from '../../types/types';
 import Login from '../common/Login/Login';
 import styles from './MyProfilePageContainer.module.css';
 import MyProfile from './MyProfile/MyProfile';
-import { getProfileDataSL, isProfileLoading, getProfileStatus, setFirstRenderSL, getNewImageSL } from '../../Redux/selectors/Profile-selectors';
 import { profileStatusTH, profileDataTH, updateStatusProfileTH, actionsProfile, changeMyProfileDataInfoTH, setFirstRender, sendNewImageProfileTH } from '../../Redux/Profile-reducer';
+import { getCaptchaProfileTH } from '../../Redux/Auth-reducer';
+import { getProfileDataSL, getProfileStatus, isProfileLoading, setFirstRenderSL, getNewImageSL, } from '../../Redux/selectors/Profile-selectors';
+
 import { useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 
@@ -29,17 +31,23 @@ type MyProfilePageType = {
 	isFirstRenderCheck: boolean,
 	getProfileLoadingAC: (item: boolean) => void,
 	sendNewImageProfileTH: (newImg: string) => void,
+	getCaptchaProfileTH: () => void,
+	captcha: string | null,
 }
 
 
 function MyProfilePageContainer(props: MyProfilePageType) {
+	
 	// проверка на одинакового юсера для скрытия разных кнопок 
 	let [checkTheSameUser, setCheckTheSameUser] = useState(false)
 	// открытие настроек 
 	let [isOpenSettings, setIsOpenSettings] = useState<boolean>(false);
 
-
 	useEffect(() => {
+		if (!props.auth.isAuth) {
+			return; // Если пользователь не авторизован, не выполнять запрос
+		}
+
 		// проверка при первом рендере если авторизационный айди не найден присвой мой айди
 		if (!props.profileInfo?.userId) {
 			setTimeout(() => {
@@ -77,7 +85,7 @@ function MyProfilePageContainer(props: MyProfilePageType) {
 
 				<h3>Profile</h3>
 
-				{!props.auth.isAuth ? <Login isLogin={props.loginTH} />
+				{!props.auth.isAuth ? <Login isLogin={props.loginTH} captcha={props.captcha} />
 					:
 					<MyProfile
 						isProfileLoading={props.isProfileLoading}
@@ -92,12 +100,12 @@ function MyProfilePageContainer(props: MyProfilePageType) {
 						setIsOpenSettings={setIsOpenSettings}
 						isOpenSettings={isOpenSettings}
 						sendNewImageProfileTH={props.sendNewImageProfileTH}
-						
+
 					/>
 
 				}
 
-				{props.isProfileLoading && props.isFirstRenderCheck ? <Skeleton height={50} width={250} /> :
+				{props.isProfileLoading && props.isFirstRenderCheck && props.auth.isAuth ? <Skeleton height={50} width={250} /> :
 					<>
 						{
 							props.auth.isAuth && checkTheSameUser &&
@@ -120,6 +128,7 @@ let mapStateToProps = (state: RootType) => {
 		isProfileLoading: isProfileLoading(state),
 		isFirstRenderCheck: setFirstRenderSL(state),
 		newImg: getNewImageSL(state),
+		captcha: getCaptchaSL(state),
 	}
 }
 
@@ -139,5 +148,6 @@ export default connect(mapStateToProps,
 		setFirstRender,
 		getProfileLoadingAC,
 		sendNewImageProfileTH,
+		getCaptchaProfileTH,
 	}
 )(MyProfilePageContainer)

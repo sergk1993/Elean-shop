@@ -73,3 +73,34 @@
 	text-align: center;
 	cursor: pointer;
 }
+
+
+
+/* captcha */
+.captchaMain {
+	text-align: center;
+	background-color: var(--imgBackground);
+	padding: 15px;
+	border-radius: 5px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-bottom: 15px;
+}
+
+.captchaBox img {
+	width: 150;
+	height: 70px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+.captchaBox input {
+	display: block;
+	width: 100%;
+	border: 1px solid var(--colorBtn);
+	padding: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+}

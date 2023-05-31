@@ -5,10 +5,12 @@ import styles from './LoginForm.module.css'
 type Inputs = {
 	login: string,
 	password: string,
+	captcha: string | null
 };
 
 type LoginFormType = {
 	login: (items: Inputs) => void,
+	captcha: string | null,
 }
 
 const LoginForm = (props: LoginFormType) => {
@@ -18,6 +20,7 @@ const LoginForm = (props: LoginFormType) => {
 		defaultValues: {
 			login: '',
 			password: '',
+			captcha: ''
 		}
 	});
 
@@ -50,9 +53,22 @@ const LoginForm = (props: LoginFormType) => {
 				placeholder='Password'
 			/>
 
-			{errors?.password && <p className={styles.formError}>{errors?.password?.message}</p>}
+			{props.captcha && <div className={styles.captchaMain}>
+				<div className={styles.captchaBox}>
+					<img src={props.captcha} alt="" />
+					<input {...register("captcha")}
+						type='text'
+						name="captcha"
+						placeholder='Captcha'
+					/>
+				</div>
+			</div>
+			}
+
 			<button className={styles.loginFormBtn} type='submit'>Login</button>
+
 			<Link target="_blank" className={styles.loginFormBtnToSignUp} to='https://social-network.samuraijs.com/signUp'>зарегистрироваться</Link>
+
 		</form>
 	)
 }

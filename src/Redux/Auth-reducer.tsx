@@ -1,18 +1,20 @@
 import { Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
-import { authApi } from '../API/api';
+import { authApi, profileApi } from '../API/api';
 import { IProfileAuth } from '../types/types';
 import { RootType } from './redux-store';
 const SET_USER_DATA = 'SET_USER_DATA';
-const INITIALIZE_PAGE = 'INITIALIZE_PAGE'
+const INITIALIZE_PAGE = 'INITIALIZE_PAGE';
+const AUTH_GET_CAPTCHA = 'AUTH_GET_CAPTCHA';
 
 
 let initialState = {
 	isAuth: false as boolean,
-	id: null as number | null  ,
+	id: null as number | null,
 	login: null as string | null,
 	email: null as string | null,
 	initializePage: true as boolean,
+	getCaptcha: null as string | null,
 }
 
 export type InitialAuthStateType = typeof initialState;
@@ -26,10 +28,15 @@ function AuthReducer(state = initialState, action: AllAuthActionType): InitialAu
 			}
 
 		case INITIALIZE_PAGE:
-
 			return {
 				...state,
 				initializePage: false
+			}
+
+		case AUTH_GET_CAPTCHA:
+			return {
+				...state,
+				getCaptcha: action.captcha,
 			}
 
 		default:
@@ -39,7 +46,7 @@ function AuthReducer(state = initialState, action: AllAuthActionType): InitialAu
 }
 
 
-type AllAuthActionType = SetProfileACType | InitializeACType;
+type AllAuthActionType = SetProfileACType | InitializeACType | GetCaptchaType;
 type DispatchAuthType = Dispatch<AllAuthActionType>
 
 type ThunkType = ThunkAction<Promise<void>, RootType, unknown, AllAuthActionType>
@@ -69,6 +76,8 @@ const setProfileAC = (email: string | null, id: number | null, login: string | n
 		items: { email, id, login, isAuth }
 	}
 }
+
+
 export const getProfileAuthTH = () => async (dispatch: DispatchAuthType) => {
 	await authApi.me().then(resp => {
 		dispatch(initializeAC())
@@ -81,18 +90,25 @@ export const getProfileAuthTH = () => async (dispatch: DispatchAuthType) => {
 }
 
 
+
+
 export type LoginTHType = {
 	login: string,
 	password: string,
+	rememberMe?: boolean,
+	captcha?: null | string,
 }
 
 export const loginTH = (data: LoginTHType): ThunkType => async (dispatch) => {
-	let { login, password } = data
-	const resp = await authApi.login(login, password);
+	let { login, password, rememberMe, captcha } = data
+	const resp = await authApi.login(login, password, rememberMe, captcha);
 	// если приходит 0, запрос правильный
 	if (resp.resultCode === 0) {
 		dispatch(getProfileAuthTH())
+	} else if (resp.resultCode === 10) {
+		dispatch(getCaptchaProfileTH())
 	}
+
 }
 
 export const logOutTH = (): ThunkType => async (dispatch) => {
@@ -101,6 +117,26 @@ export const logOutTH = (): ThunkType => async (dispatch) => {
 	if (resp.data.resultCode === 0) {
 		dispatch(setProfileAC(null, null, null, false))
 	}
+}
+
+
+type GetCaptchaType = {
+	type: typeof AUTH_GET_CAPTCHA,
+	captcha: string | null
+}
+
+const getCaptchaAC = (captcha: string | null): GetCaptchaType => {
+	return {
+		type: AUTH_GET_CAPTCHA,
+		captcha
+	}
+}
+
+
+export const getCaptchaProfileTH = (): ThunkType => async (dispatch) => {
+	let profileCaptchaApi = await profileApi.getProfileCaptcha();
+
+	dispatch(getCaptchaAC(profileCaptchaApi.url))
 }
 
 
