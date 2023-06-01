@@ -70,3 +70,10 @@ ol .navDropDown {
 .navDropDown li:not(:last-child) {
 	margin-bottom: 5px;
 }
+
+
+@media screen and (max-width: 480px) {
+	.list>li:not(:last-child) {
+		margin-right: 15px;
+	}
+}
