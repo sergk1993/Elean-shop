@@ -1,7 +1,7 @@
 button.cartCloseBtn {
 	position: relative;
 	top: 0;
-	display: inline-block;
+	display: inline-flex;
 	text-align: center;
 	justify-content: center;
 	align-items: center;

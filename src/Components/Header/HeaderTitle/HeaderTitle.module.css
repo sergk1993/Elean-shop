@@ -1,8 +1,8 @@
-
 .titleWrapper {
 	display: flex;
 	margin-right: auto;
 	margin-left: auto;
+	transform: translateX(30px);
 }
 
 
@@ -24,3 +24,23 @@
 	display: block;
 }
 
+@media screen and (max-width: 800px) {
+	.titleWrapper {
+		position: absolute;
+		transform: translateX(-50%);
+		left: 50%;
+		top: 15px;
+		margin-right: 0;
+		margin-left: 0;
+		display: block;
+		margin-bottom: 15px;
+	}
+
+}
+
+@media screen and (max-width: 480px) {
+	.titleWrapper {
+		left: 0;
+		transform: translateX(0);
+	}
+}

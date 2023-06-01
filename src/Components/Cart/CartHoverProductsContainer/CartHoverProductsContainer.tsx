@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CartEmpty from '../CartEmpty/CartEmpty';
 import CartModalPrice from '../CartSetOrder/CartSetOrder';
@@ -8,6 +9,22 @@ import styles from './CartHoverProductsContainer.module.css'
 function CartHoverProductsContainer(props: any) {
 	let findSum = Math.floor((props.carts.data.reduce((sum: any, obj: any) => obj.price * obj.count + sum, 0)) * 100) / 100;
 
+	// эта фигня для проверки ширины экрана, для кнопок counter
+	const [findWidthWindowMediaSize, setFindWidthWindowMediaSize] = useState(window.innerWidth)
+
+	useEffect(() => {
+		const handleResize = () => {
+			const screenWidth = window.innerWidth;
+			setFindWidthWindowMediaSize(screenWidth)
+		};
+
+		window.addEventListener('resize', handleResize);
+
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		}
+	}, [])
+
 
 
 
@@ -17,7 +34,7 @@ function CartHoverProductsContainer(props: any) {
 
 
 
-			{props.carts.data.length > 0 ? <div>
+			{props.carts.data.length > 0 ? <>
 
 				{props.carts.data.map((items: any) => {
 
@@ -37,6 +54,7 @@ function CartHoverProductsContainer(props: any) {
 							decreaseCartProduct={props.decreaseCartProduct}
 							increaseCartProduct={props.increaseCartProduct}
 							deleteProduct={props.deleteProduct}
+							findWidthWindowMediaSize={findWidthWindowMediaSize}
 						/>
 
 
@@ -53,9 +71,9 @@ function CartHoverProductsContainer(props: any) {
 				<Link to='/cart' className={styles.cartHoverOrderToCart}> Перейти в корзину</Link>
 
 
-			</div>
+			</>
 				: <div className={styles.cartHoverEmptyText}>
-					<CartEmpty width={350} height={350} title={15} />
+					<CartEmpty />
 				</div>
 			}
 

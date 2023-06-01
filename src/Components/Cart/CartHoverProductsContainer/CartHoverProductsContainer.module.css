@@ -2,7 +2,7 @@
 	position: absolute;
 	display: block;
 	top: 73px;
-	right: -20px;
+	right: 0px;
 	padding: 20px;
 	width: 600px;
 	max-height: 550px;
@@ -66,4 +66,34 @@
 	.cartHoverOrderBtn:hover {
 		background-color: var(--cartBtnHover);
 	}
+}
+
+@media screen and (max-width: 800px) {
+	.cartHoverMenu {
+		width: 400px;
+		max-height: 400px;
+		top: 100px;
+		right: 5px;
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+
+	.cartHoverOrderToCart {
+		padding: 5px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.cartHoverMenu {
+		width: 250px;
+		height: 250px;
+		top: 150px;
+	}
+
+	.cartHoverPriceBox {
+		font-size: 15px;
+		line-height: 20px;
+		margin-bottom: 5px;
+	}
+	
 }

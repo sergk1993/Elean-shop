@@ -1,10 +1,23 @@
 .profile {
 	margin-left: 40px;
 	display: flex;
+	
 }
 
 .profileIcon {
 	display: inline-block;
 	width: 22px;
 	height: 22px;
+}
+
+@media screen and (max-width: 800px) {
+	.profile {
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.profile {
+		display: inline-block;
+	}
 }

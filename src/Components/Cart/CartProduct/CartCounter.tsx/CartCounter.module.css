@@ -6,16 +6,17 @@
 .cartCounterBox button {
 	position: relative;
 	top: 0;
-	display: inline-block;
+	display: inline-flex;
 	text-align: center;
 	justify-content: center;
 	align-items: center;
-
 	background: var(--cartBtn);
 	border: 2px solid var(--colorBorderBtnDark);
 	cursor: pointer;
 	color: var(--whiteColor);
 	transition: top 0.1s ease-out, box-shadow 0.1s ease-in-out;
+	width: 50px;
+	width: 50px;
 }
 
 button.cartCounterPlus,
@@ -75,3 +76,11 @@ button.disabledCartProduct,
 	background-color: var(--cartBtnDis);
 	cursor: initial;
 }
+
+/* @media screen and (max-width: 800px) {
+
+	.cartCounterBox button  {
+		width: 40px ;
+		height: 40px ;
+	}
+} */

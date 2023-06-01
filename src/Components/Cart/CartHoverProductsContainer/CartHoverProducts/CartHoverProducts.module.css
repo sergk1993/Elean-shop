@@ -26,6 +26,7 @@
 	font-weight: 400;
 	max-width: 200px;
 	width: 100%;
+	text-align: start;
 }
 
 .cartHoverProductsTitle p {
@@ -34,7 +35,8 @@
 
 .cartHoverProductsImg {
 	display: block;
-	width: 144px;
+	max-width: 144px;
+	width: 100%;
 	height: 192px;
 	object-fit: contain;
 	border-radius: 5px;
@@ -55,5 +57,63 @@
 	font-weight: 400;
 	font-size: 17px;
 	line-height: 23px;
+	display: flex;
 }
 
+@media screen and (max-width: 800px) {
+	.cartHoverProductsImg {
+		width: 100px;
+		margin-right: 10px;
+	}
+
+	.cartHoverProductsInfo {
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+	}
+
+	.cartHoverProductsInfoBox {
+		padding: 0 10px;
+	}
+
+
+	.cartHoverProductsTitle {
+		font-size: 15px;
+		line-height: 18px;
+		margin-bottom: 5px;
+	}
+
+	.cartHoverProductsTitle h3 {
+		width: 160px;
+		margin-right: 5px;
+	}
+
+	.cartHoverProductQuantity {
+		margin-bottom: 5px;
+	}
+
+
+}
+
+@media screen and (max-width: 480px) {
+	.cartHoverProductsImg {
+		width: 45px;
+		margin-right: 5px;
+		height: auto;
+	}
+
+	.cartHoverProductsTitle {
+		font-size: 10px;
+		line-height: 15px;
+		margin-bottom: 5px;
+	}
+
+	.cartHoverProductsTitle h3 {
+		width: 100px;
+	}
+
+	.cartHoverProductsTitle p {
+		font-size: 13px;
+		margin: 0;
+		flex-shrink: 0;
+	}
+}

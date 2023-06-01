@@ -22,7 +22,6 @@ function EmptyModalWindow(props: any) {
 		<section  className={styles.emptyModalMain} style={{ display: props.open ? 'flex' : 'none' }}>
 
 			<div ref={classExist} className={styles.emptyModalEmptyBox}>
-				<div >
 					<svg onClick={() => props.setOpenModalWindow(false)} className={styles.emptyModalClose} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M1 13L13 1" stroke="black" strokeWidth="2" />
 						<path d="M13 13L1 1" stroke="black" strokeWidth="2" />
@@ -37,7 +36,6 @@ function EmptyModalWindow(props: any) {
 					<Link className={styles.emptyModalBtn} to='categories' onClick={() => props.setOpenModalWindow(false)}>Продолжить покупки</Link>
 				</div>
 
-			</div>
 
 		</section>
 	)

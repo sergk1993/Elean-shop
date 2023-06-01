@@ -10,12 +10,30 @@
 
 .cartEmptyMain p {
 	margin-bottom: 20px;
+	font-size: 20px;
 	font-weight: 400;
 	text-align: center;
 	text-transform: uppercase;
 }
 
 .cartEmptyMain svg {
-	width: 100%;
+	width: 300px;
+	height: 300px;
 	border-radius: 50%;
+}
+
+@media screen and (max-width: 480px) {
+	.cartEmptyMain {
+		padding: 0;
+	}
+
+	.cartEmptyMain svg {
+		width: 150px;
+		height: 150px;
+	}
+
+	.cartEmptyMain p {
+		margin-bottom: 10px;
+		font-size: 15px;
+	}
 }

@@ -8,7 +8,7 @@ function CartHoverProducts(props: any) {
 
 	let cartHoverCardPrice = Math.floor((props.price * props.cartProductCount) * 100) / 100
 	return (
-		<div>
+		<>
 
 			<article className={styles.cartHoverProductsInfo}>
 
@@ -34,16 +34,16 @@ function CartHoverProducts(props: any) {
 									cartUsers={props.callbackProps}
 									increaseCartProduct={props.increaseCartProduct}
 									decreaseCartProduct={props.decreaseCartProduct}
-									width={50}
-									height={50}
+									width={props.findWidthWindowMediaSize > 800 ? 50 : 25}
+									height={props.findWidthWindowMediaSize > 800 ? 50 : 25}
 									id={props.id}
 								/>
 							</div>
 						</div>
 
 						<CartCloseBtn
-							width={50}
-							height={50}
+							width={props.findWidthWindowMediaSize > 800 ? 50 : 25}
+							height={props.findWidthWindowMediaSize > 800 ? 50 : 25}
 							callbackProps={props.callbackProps}
 							deleteProduct={props.deleteProduct}
 							id={props.id}
@@ -56,7 +56,7 @@ function CartHoverProducts(props: any) {
 			</article>
 
 
-		</div>
+		</>
 	)
 }
 
