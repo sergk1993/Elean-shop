@@ -1,7 +1,5 @@
-
 .swiper {
 	width: 100%;
-	margin-bottom: 60px;
 }
 
 .swiper-slide {
@@ -82,4 +80,36 @@
 	font-family: 'FuturaBookC';
 	text-align: start;
 	color: #fff;
+	text-transform: uppercase;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+	.swiperOne img {
+		height: 500px;
+	}
+
+	.swiperPhotoText {
+		transform: translate(260px, 160px);
+		font-size: 15px;
+		line-height: 20px;
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+	.swiperPhotoText {
+		transform: translate(180px, 150px);
+    font-size: 12px;
+    line-height: 20px;
+    width: 160px;
+	}
+
+	.headerSwiper .swiper-button-next {
+		right: 45px;
+	}
+	.headerSwiper .swiper-button-prev {
+		left: 45px;
+	}
 }

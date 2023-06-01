@@ -66,6 +66,15 @@ const SwiperTop = (): JSX.Element => {
 				}}
 				navigation={true}
 				className="headerSwiper"
+				breakpoints={{
+					480: {
+						slidesPerView: 1,
+
+					},
+					318: {
+						slidesPerView: 3,
+					}
+				}}
 			>
 				{
 					imgSwiper.photoSwiper.map(e => {
