@@ -35,8 +35,8 @@ function Catalog(props: CatalogInterface): JSX.Element {
 						{e.title}
 					</figcaption>
 					<picture>
-						<source srcSet={e.photoImgWebp} type='image/webp' />
-						<img src={e.photoImgJpeg} alt="blouses img" />
+						<source srcSet={e.photoImgWebp ? e.photoImgWebp : ''} type='image/webp' />
+						<img src={e.photoImgJpeg ? e.photoImgJpeg : ''} alt="blouses img" />
 					</picture>
 				</figure>
 			</a>
@@ -50,7 +50,7 @@ function Catalog(props: CatalogInterface): JSX.Element {
 				<div className={styles.gridCatalogTop}>
 					{CatalogNames}
 				</div>
-
+				
 				<div className={styles.gridCatalogDown}>
 					{
 						catalogListDown

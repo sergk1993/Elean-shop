@@ -1,9 +1,11 @@
  .catalog {
- 	margin-bottom: 70px;
+ 	padding-top: 70px;
+ 	padding-bottom: 70px;
  }
 
  .gridCatalogTop {
  	display: grid;
+ 	justify-content: center;
  	grid-template-columns: repeat(4, 324px);
  	grid-template-rows: repeat(3, 420px);
  	gap: 14px;
@@ -12,7 +14,7 @@
 
  .gridCatalogTop figure {
  	margin: 0;
-	height: 100%;
+ 	height: 100%;
  }
 
  .gridCatalogTop figure figcaption {
@@ -26,13 +28,13 @@
  	text-transform: capitalize;
  }
 
- 
+
  .gridCatalogTop figcaption {
  	margin-bottom: 13px;
  }
 
  .gridCatalogTop a {
-	overflow: hidden;
+ 	overflow: hidden;
  }
 
  .gridCatalogTop img {
@@ -42,7 +44,7 @@
  	object-fit: cover;
  }
 
- .gridCatalogTop a:nth-child(1)  {
+ .gridCatalogTop a:nth-child(1) {
  	display: grid;
  	grid-column: 1 / 3;
  	grid-row: 1 / 3;
@@ -50,11 +52,11 @@
  }
 
 
- .gridCatalogTop a:nth-child(6)  {
+ .gridCatalogTop a:nth-child(6) {
  	display: grid;
  	grid-column: 3/5;
  	grid-row: 2/4;
-	margin-top: 60px;
+ 	margin-top: 60px;
  }
 
 
@@ -81,4 +83,96 @@
  	height: 100%;
  	display: block;
  	object-fit: contain;
+ }
+
+
+ @media screen and (max-width: 1400px) {
+ 	.gridCatalogTop {
+ 		grid-template-columns: repeat(2, 1fr);
+ 		grid-template-rows: repeat(1, 1fr);
+ 	}
+
+ 	.gridCatalogTop a:nth-child(1) {
+ 		margin-bottom: 0;
+ 		grid-column: initial;
+ 		grid-row: initial;
+ 		margin-top: 0;
+
+ 	}
+
+
+ 	.gridCatalogTop a:nth-child(3) {
+ 		margin-bottom: 0;
+ 		grid-column: 1/3;
+ 		grid-row: initial;
+ 		margin-top: 0;
+
+ 	}
+
+ 	.gridCatalogTop a:nth-child(6) {
+ 		margin-bottom: 0;
+ 		grid-column: 1/3;
+ 		grid-row: initial;
+ 		margin-top: 0;
+ 	}
+
+
+ 	/* нижний грид */
+
+ 	.gridCatalogDown {
+ 		/* grid-template-columns: repeat(auto-fit, minmax(100px, 300px)); */
+ 		gap: 20px;
+ 		grid-template-columns: repeat(2, 1fr);
+ 		grid-template-rows: repeat(1, 1fr);
+ 	}
+
+ 	.gridCatalogDown picture {
+ 		display: block;
+ 	}
+ }
+
+
+
+ @media screen and (max-width: 480px) {
+ 	.gridCatalogTop {
+ 		grid-template-columns: repeat(auto-fit, minmax(0, 400px));
+ 		grid-template-rows: repeat(2, 400px);
+ 		row-gap: 20px;
+ 	}
+
+ 	.gridCatalogTop a:nth-child(1) {
+ 		margin-bottom: 0;
+ 		grid-column: 1/5;
+ 		grid-row: initial;
+ 		margin-top: 0;
+ 	}
+
+ 	.gridCatalogTop a:nth-child(3) {
+ 		margin-bottom: 0;
+ 		grid-column: initial;
+ 		grid-row: initial;
+ 		margin-top: 0;
+ 	}
+
+ 	.gridCatalogTop a:nth-child(6) {
+ 		margin-bottom: 0;
+ 		grid-column: 1/5;
+ 		grid-row: initial;
+ 		margin-top: 0;
+ 	}
+
+ 	.gridCatalogTop figure {
+ 		text-align: center;
+ 	}
+
+ 	/* нижний грид */
+ 	.gridCatalogDown {
+ 		grid-template-columns: repeat(1, 1fr);
+ 		grid-template-rows: repeat(4, 200px);
+ 	}
+
+ 	.gridCatalogDown img {
+ 		object-fit: cover;
+ 		aspect-ratio: 2 /1;
+ 	}
  }
