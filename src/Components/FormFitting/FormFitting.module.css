@@ -1,7 +1,7 @@
 .formFitting {
 	padding: 70px;
 	border: 1px solid var(--blackColor);
-	margin-bottom: 70px;
+	padding-bottom: 70px;
 }
 
 
@@ -92,9 +92,11 @@
 .formFittingArea {
 	display: inline-block;
 	width: 100%;
+	height: 130px;
 	resize: none;
 	background-color: transparent;
 	padding: 18px;
+	padding-top: 10px;
 	border-right-width: 0.5px;
 	border-right-color: var(--blackColor);
 }
@@ -135,6 +137,7 @@
 	border-right-width: 0.5px;
 	border-right-color: var(--blackColor);
 	flex-shrink: 4;
+	margin-bottom: 8px;
 	text-transform: uppercase;
 }
 
@@ -149,4 +152,57 @@
 	font-size: 14px;
 	line-height: 18px;
 	color: var(--grayColor);
+}
+
+
+@media screen and (max-width: 600px) {
+	.formFitting {
+		padding: 40px;
+	}
+
+	.formInputTopBox {
+		display: block;
+		width: 100%;
+	}
+
+	.formInputTopBox input:not(:last-child) {
+		margin-bottom: 10px;
+	}
+
+	.formInputBottomBox {
+		display: block;
+	}
+
+	.formFittingArea {
+		margin-bottom: 10px;
+	}
+
+	.formFittingButton {
+		max-width: 120px;
+		width: 100%;
+		margin-left: auto;
+	}
+
+	.textSub {
+		display: none;
+	}
+}
+
+
+@media screen and (max-width: 480px) {
+	.formFitting {
+		padding: 20px;
+	}
+
+	.title {
+		font-size: 18px;
+		line-height: 25px;
+		margin-bottom: 10px;
+	}
+
+	.formFittingArea {
+		height: 90px;
+	}
+
+
 }

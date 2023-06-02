@@ -28,14 +28,14 @@ function FormFitting() {
 
 				<div className={styles.formInputTopBox}>
 
-					<input className={styles.inputName}  type='text' placeholder='ВВЕДИТЕ ИМя' required />
-					<input className={styles.inputPhone} type='text' placeholder='ВВЕДИТЕ ТЕЛЕФОн' required />
-					<input className={styles.inputTime} type='text' placeholder='ВВЕДИТЕ УДОБНОЕ ВРЕМя' required />
+					<input className={styles.inputName}  type='text' placeholder='ВВЕДИТЕ ИМя *' required />
+					<input className={styles.inputPhone} type='text' placeholder='ВВЕДИТЕ ТЕЛЕФОн *' required />
+					<input className={styles.inputTime} type='text' placeholder='ВВЕДИТЕ УДОБНОЕ ВРЕМя *' required />
 				</div>
 
 				<div className={styles.formInputBottomBox}>
 					<textarea className={styles.formFittingArea} placeholder='ДОБАВИТЬ КОММЕНТАРИй' />
-					<button className={styles.formFittingButton}>ОТПРАВИТь</button>
+					<button className={styles.formFittingButton}>ЗАПИСАТЬСя</button>
 				</div>
 				<p className={styles.textSub}>Поля отмеченные “*” обязательны для заполнения</p>
 			</form>
