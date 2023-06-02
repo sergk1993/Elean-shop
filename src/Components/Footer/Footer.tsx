@@ -21,87 +21,91 @@ function Footer(props: FooterPageType): JSX.Element {
 
 		<footer className={styles.footer}>
 			<div className='container'>
-				<div className={styles.footerWrapper}>
-					
-					<div >
-						<div className={styles.footerNavigate}>
-							<div className={styles.footerWidthTitle}>
-								<Title />
+				<div className={styles.footerCenter}>
+
+
+					<div className={styles.footerWrapper}>
+
+						<div className={styles.footerInfoBox}>
+							<div className={styles.footerNavigate}>
+								<div className={styles.footerWidthTitle}>
+									<Title />
+								</div>
+								<nav className={styles.footerNav}>
+									<ol className={styles.footerNavList}>
+
+										{
+											props.footerPage.footerNav.map(e => {
+												return (
+													<li key={e.id}><Link to="/">{e.link}</Link></li>
+												);
+											})
+										}
+
+									</ol>
+								</nav>
 							</div>
-							<nav className={styles.footerNav}>
-								<ol className={styles.footerNavList}>
-
-									{
-										props.footerPage.footerNav.map(e => {
-											return (
-												<li key={e.id}><Link to="/">{e.link}</Link></li>
-											);
-										})
-									}
-
-								</ol>
-							</nav>
-						</div>
 
 
-						<div className={styles.feedback}>
+							<div className={styles.feedback}>
 
-							{
-								props.footerPage.contactsPhone.map(e => {
-									return (
-										<div className={styles.contactsPhoneWrapper} key={e.id}>
-											<a className={styles.contactsPhone} href={`tel:${e.phoneNumber}`}>{e.phoneNumberText}</a>
-											<a href={`tel:${e.whatsappNumber}`}>{e.whatsappNumberText}</a>
-										</div>
-									);
-								})
-							}
+								{
+									props.footerPage.contactsPhone.map(e => {
+										return (
+											<div className={styles.contactsPhoneWrapper} key={e.id}>
+												<a className={styles.contactsPhone} href={`tel:${e.phoneNumber}`}>{e.phoneNumberText}</a>
+												<a href={`tel:${e.whatsappNumber}`}>{e.whatsappNumberText}</a>
+											</div>
+										);
+									})
+								}
 
-							{
-								props.footerPage.contactsAddress.map(e => {
-									return (
-										<address className={styles.contactsAddress} key={e.id}>
-											<p className={styles.contactsAddressTitle}>	{e.address} </p>
-											{e.location}
-										</address>
-									);
-								})
-							}
-
-
-							{
-								props.footerPage.workTimeBox.map(e => {
-									return (
-										<div className={styles.workTime} key={e.id}>
-											<p className={styles.workTimeTitle}>{e.workTime} </p>
-											<p>{e.workTimeText}</p>
-										</div>
-									);
-								})
-							}
-						</div>
-
-						<div className={styles.socialLink}>
+								{
+									props.footerPage.contactsAddress.map(e => {
+										return (
+											<address className={styles.contactsAddress} key={e.id}>
+												{e.location}
+												<p className={styles.contactsAddressTitle}>	{e.address} </p>
+											</address>
+										);
+									})
+								}
 
 
-							{
-								props.footerPage.socialLinkBox.map(e => {
-									return (
-										<a className={styles.socialLinkEmail}
-											href={e.socialLink} key={e.id}>{e.socialLinkText}
-										</a>
-									);
-								})
-							}
-
-							<div className={styles.socialMarginLeft}>
-								<SocialMedia />
+								{
+									props.footerPage.workTimeBox.map(e => {
+										return (
+											<div className={styles.workTime} key={e.id}>
+												<p className={styles.workTimeTitle}>{e.workTime} </p>
+												<p>{e.workTimeText}</p>
+											</div>
+										);
+									})
+								}
 							</div>
-						</div>
 
-					</div>
-					<div className={styles.form_left}>
-						<FormFooter />
+							<div className={styles.socialLink}>
+
+
+								{
+									props.footerPage.socialLinkBox.map(e => {
+										return (
+											<a className={styles.socialLinkEmail}
+												href={e.socialLink} key={e.id}>{e.socialLinkText}
+											</a>
+										);
+									})
+								}
+
+								<div className={styles.socialMarginLeft}>
+									<SocialMedia />
+								</div>
+							</div>
+
+						</div>
+						<div className={styles.form_left}>
+							<FormFooter />
+						</div>
 					</div>
 				</div>
 			</div>

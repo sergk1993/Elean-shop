@@ -122,3 +122,12 @@
 	right: 15px;
 	transform: translateY(-50%);
 }
+
+@media screen and (max-width: 600px) {
+	.form {
+		width: 100%;
+	}
+	.formCheckboxWrapper{
+		font-size: 13px;
+	}
+}

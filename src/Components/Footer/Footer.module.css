@@ -6,6 +6,7 @@
 	color: var(--blackTextColor);
 	padding-bottom: 40px;
 }
+
 .footerWrapper {
 	display: flex;
 }
@@ -40,7 +41,7 @@
 
 .footerNavList li a {
 	font-size: 14px;
-	line-height: 40px;
+	line-height: 22px;
 	text-transform: uppercase;
 }
 
@@ -49,7 +50,7 @@
 	display: flex;
 	align-items: center;
 	font-size: 15px;
-	line-height: 25px;
+	line-height: 20px;
 	margin-bottom: 40px;
 }
 
@@ -107,4 +108,148 @@
 
 .form_left {
 	margin-left: 100px;
+}
+
+
+@media screen and (max-width: 1440px) {
+
+
+	.footerWrapper {
+		display: flex;
+		justify-content: center;
+	}
+	.footerCenter {
+		display: flex;
+		justify-content: center;
+	}
+
+	.footerInfoBox {
+		display: flex;
+		justify-content: center;
+		margin-right: 20px;
+	}
+
+	.footerNavigate {
+		display: inline-block;
+	}
+
+	.footerWidthTitle {
+		margin: 0 auto;
+	}
+
+	.footerNav {
+
+		margin-left: 0;
+	}
+
+	.footerNavList {
+		display: block;
+		margin: 0;
+	}
+
+	.contactsPhoneWrapper {
+		margin-bottom: 10px;
+		width: auto;
+
+	}
+
+	.feedback {
+		display: inline-block;
+		margin-bottom: 0;
+	}
+
+	.contactsAddress {
+		margin-left: 0;
+		margin-bottom: 10px;
+	}
+
+	.contactsAddressTitle {
+		margin-bottom: 5px;
+	}
+
+	.workTime {
+		margin-left: 0;
+
+	}
+
+	.socialLink {
+		display: block;
+		text-align: end;
+	}
+
+	.socialLinkEmail {
+		margin-bottom: 10px;
+		width: auto;
+	}
+
+
+	.form_left {
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.footerWrapper {
+		display: block;
+	}
+
+	.footerInfoBox {
+		display: flex;
+		justify-content: flex-start;
+	}
+
+}
+
+@media screen and (max-width:800px) {
+	.footerNavigate {
+		margin-bottom: 10px;
+	}
+
+	.footerInfoBox {
+		display: block;
+	}
+
+	.footerWidthTitle {
+		margin: 0;
+		margin-bottom: 10px;
+	}
+
+	.feedback {
+		vertical-align: bottom;
+	}
+
+	.socialLink {
+		display: block;
+		text-align: start;
+	}
+
+	.socialLinkEmail {
+		display: inline-block;
+		width: auto;
+	}
+
+	.socialMarginLeft {
+		margin-left: 0;
+		margin-bottom: 10px;
+	}
+
+	.contactsPhoneWrapper {
+		margin-bottom: 10px;
+	}
+
+}
+
+@media screen and (max-width:600px) {
+
+	.contactsPhoneWrapper {
+		margin-bottom: 10px;
+	}
+
+	.workTimeTitle {
+		margin-bottom: 10px;
+	}
+
+	.workTime {
+		margin-bottom: 10px;
+	}
 }
