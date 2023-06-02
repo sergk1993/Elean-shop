@@ -25,9 +25,8 @@
 	display: block;
 	width: 450px;
 	height: 520px;
+	object-fit: cover;
 }
-
-
 
 .imgTwo {
 	margin-bottom: 20px;
@@ -35,4 +34,33 @@
 
 .imgThree {
 	margin-bottom: 40px;
+}
+
+
+@media screen and (max-width: 1024px) {
+	.showroomTitle {
+		margin-bottom: 15px;
+	}
+
+	.showRoomImgBox:nth-child(2) {
+		display: none;
+	}
+
+}
+
+@media screen and (max-width: 800px) {
+	.showRoomImgBox {
+		width: 100%;
+	}
+.wrapper {
+	margin-bottom: 30px;
+}
+	.showRoomImgBox img {
+		width: 100%;
+		height: 100%;
+	}
+
+	.showRoomImgBox:nth-child(3) {
+		display: none;
+	}
 }

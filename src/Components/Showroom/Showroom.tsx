@@ -13,26 +13,26 @@ import showroomThreeJpj from '../../assets/img/showroom/showroomThree.jpg'
 
 function Showroom() {
 	return (
-		<section> 
+		<section>
 			<h2 className={styles.showroomTitle}>НАШ ШОУРУм</h2>
-				<div className={styles.wrapper}>
+			<div className={styles.wrapper}>
 
-			<picture className={styles.showRoomImgBox}>
-				<source srcSet={showroomOneWebp}/>
-				<img  src={showroomOneJpj} alt="" />
-			</picture>
+				<picture className={styles.showRoomImgBox}>
+					<source srcSet={showroomOneWebp} />
+					<img src={showroomOneJpj} alt="" />
+				</picture>
 
-			<picture className={styles.showRoomImgBox}>
-				<source srcSet={showroomTwoWebp}/>
-				<img className={styles.imgTwo} src={showroomTwoJpj} alt="" />
-			</picture>
+				<picture className={styles.showRoomImgBox}>
+					<source srcSet={showroomTwoWebp} />
+					<img className={styles.imgTwo} src={showroomTwoJpj} alt="" />
+				</picture>
 
-			<picture className={styles.showRoomImgBox}>
-				<source  srcSet={showroomThreeWebp}/>
-				<img className={styles.imgThree} src={showroomThreeJpj} alt="" />
-			</picture >
+				<picture className={styles.showRoomImgBox}>
+					<source srcSet={showroomThreeWebp} />
+					<img className={styles.imgThree} src={showroomThreeJpj} alt="" />
+				</picture >
 
-				</div>
+			</div>
 		</section>
 	)
 }
