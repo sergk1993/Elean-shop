@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Elena-shop/static/css/main.2fa8d5fb.css",
-    "main.js": "/Elena-shop/static/js/main.9996038b.js",
+    "main.css": "/Elena-shop/static/css/main.edc8413a.css",
+    "main.js": "/Elena-shop/static/js/main.eef44054.js",
     "static/js/787.52c4a659.chunk.js": "/Elena-shop/static/js/787.52c4a659.chunk.js",
     "static/media/swiper_1.jpg": "/Elena-shop/static/media/swiper_1.e9b29f4eb9f8c9795a1d.jpg",
     "static/media/about.jpg": "/Elena-shop/static/media/about.23ec822d811c349b0660.jpg",
@@ -26,7 +26,6 @@
     "static/media/catalog_3.webp": "/Elena-shop/static/media/catalog_3.96687b40431ac8540be9.webp",
     "static/media/catalog_8.jpg": "/Elena-shop/static/media/catalog_8.8e1b799067b6012aca2d.jpg",
     "static/media/instagramCards1.jpg": "/Elena-shop/static/media/instagramCards1.6a240b2ba36b16c6997d.jpg",
-    "static/media/catalog_5.webp": "/Elena-shop/static/media/catalog_5.078521bf253f8852db9d.webp",
     "static/media/catalog_2.jpg": "/Elena-shop/static/media/catalog_2.a856816a72e5d3bee619.jpg",
     "static/media/catalog_3.jpg": "/Elena-shop/static/media/catalog_3.ebee3e65646c37871be5.jpg",
     "static/media/ClientsSwiper1.jpg": "/Elena-shop/static/media/ClientsSwiper1.551e1c5759f072dbd0d6.jpg",
@@ -35,7 +34,6 @@
     "static/media/catalog_7.jpg": "/Elena-shop/static/media/catalog_7.c615990c681a9a9111a2.jpg",
     "static/media/catalog_9.jpg": "/Elena-shop/static/media/catalog_9.a360165d50c14c12a909.jpg",
     "static/media/clientReviews.jpg": "/Elena-shop/static/media/clientReviews.116c3092fa7cacb57759.jpg",
-    "static/media/catalog_6.webp": "/Elena-shop/static/media/catalog_6.26565baee72b21854438.webp",
     "static/media/swiper_4.jpg": "/Elena-shop/static/media/swiper_4.3d07e6e500710530fbc3.jpg",
     "static/media/catalog_4.jpg": "/Elena-shop/static/media/catalog_4.70b3c3f95f3efc8d0d4b.jpg",
     "static/media/catalog_1.webp": "/Elena-shop/static/media/catalog_1.644e22e14f5c4bd3bc00.webp",
@@ -70,16 +68,17 @@
     "static/media/catalog_8.webp": "/Elena-shop/static/media/catalog_8.c0283695963871dc260e.webp",
     "static/media/catalog_7.webp": "/Elena-shop/static/media/catalog_7.af8f5fcfdc48efede211.webp",
     "static/media/catalog_9.webp": "/Elena-shop/static/media/catalog_9.0a76849abe354ad4f93c.webp",
+    "static/media/emptyPeopleReviews.svg": "/Elena-shop/static/media/emptyPeopleReviews.d2fe03ffc569811c29ee87869c8b01d4.svg",
     "index.html": "/Elena-shop/index.html",
     "static/media/formCheck.svg": "/Elena-shop/static/media/formCheck.ca0b3827ffb9872bebbf.svg",
     "static/media/arrow-swiper.svg": "/Elena-shop/static/media/arrow-swiper.c43243f1a7161dd88108.svg",
     "static/media/footerFormButton.svg": "/Elena-shop/static/media/footerFormButton.ad18888c3e2cf8188076.svg",
-    "main.2fa8d5fb.css.map": "/Elena-shop/static/css/main.2fa8d5fb.css.map",
-    "main.9996038b.js.map": "/Elena-shop/static/js/main.9996038b.js.map",
+    "main.edc8413a.css.map": "/Elena-shop/static/css/main.edc8413a.css.map",
+    "main.eef44054.js.map": "/Elena-shop/static/js/main.eef44054.js.map",
     "787.52c4a659.chunk.js.map": "/Elena-shop/static/js/787.52c4a659.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2fa8d5fb.css",
-    "static/js/main.9996038b.js"
+    "static/css/main.edc8413a.css",
+    "static/js/main.eef44054.js"
   ]
 }
