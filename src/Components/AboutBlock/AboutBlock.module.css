@@ -1,5 +1,6 @@
 .aboutBlock {
-	margin-bottom: 70px;
+	padding-top: 15px;
+	padding-bottom: 70px;
 }
 
 
@@ -26,17 +27,10 @@
 	max-width: 950px;
 	height: 500px;
 	transform: skewX(-20deg);
-	background-color: red;
 	overflow: hidden;
 	margin-right: 100px;
+	margin-left: 80px;
 }
-
-
-.aboutBlockImg {}
-
-
-.aboutBlockWrapperImg {}
-
 
 .boxImage img {
 	display: block;
@@ -95,4 +89,78 @@
 .aboutBtnSlash {
 	margin-left: 14px;
 	margin-right: 10px;
+}
+
+
+@media screen and (max-width: 1280px) {
+	.aboutBlock {
+		padding-bottom: 40px;
+	}
+
+	.aboutBlockWrapper {
+		display: block;
+		position: relative;
+		padding-top: 100px;
+	}
+
+	.boxImage {
+		height: auto;
+		margin: 0 auto;
+		margin-bottom: 20px;
+	}
+
+	.aboutText {
+		margin: 0 auto;
+	}
+
+	.aboutBlockWrapper .aboutText p:nth-child(1) {
+		position: absolute;
+		top: 0;
+		max-width: 540px;
+		width: 100%;
+		text-align: start;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+}
+
+@media screen and (max-width: 600px) {
+	.boxImage {
+		height: auto;
+		margin-bottom: 20px;
+		transform: skewX(0);
+		margin: 0 auto;
+		margin-bottom: 20px;
+	}
+
+	.boxImage img {
+		transform: skewX(0) scale(1);
+	}
+}
+
+
+@media screen and (max-width: 480px) {
+	.aboutBlock {
+		padding-bottom: 20px;
+	}
+
+	.aboutBlockWrapper {
+		padding-top: 150px;
+	}
+
+	.title {
+		margin-bottom: 15px;
+	}
+
+	.aboutBtn {
+		margin-top: 0;
+	}
+
+}
+
+@media screen and (max-width: 380px) {
+	.aboutBlockWrapper {
+		padding-top: 160px;
+	}
 }

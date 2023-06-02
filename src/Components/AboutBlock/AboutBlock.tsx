@@ -20,7 +20,7 @@ function AboutBlock(props: AboutBlockType): JSX.Element {
 			<div className={styles.aboutBlockWrapper}>
 
 				<div className={styles.boxImage}>
-					<picture className={styles.aboutBlockImg} >
+					<picture>
 						<source srcSet={aboutWebp} type="image/webp" />
 						<img src={aboutJpg} alt='about brand img' />
 					</picture>
