@@ -15,57 +15,29 @@ function InstagramCards() {
 	return (
 		<section className={styles.instagramCards}>
 			<h2>МЫ В INSTAGRAm</h2>
-			<div className={styles.wrapper}>
 
-				{
-					instagramCardsState.map(e => {
-						return (
-							<div className={styles.infoBox} key={e.id}>
-								<img className={styles.infoBoxImg} src={e.imgInsta} alt="instagram posing girl" />
-								<a className={styles.descrBox} href='/'>
-									<img className={styles.descrImg} src={e.imgInsta} alt="" />
-									<div className={styles.descrBoxAbout} >
-										<p className={styles.descrTitle}>{e.name} <span className={styles.subscribe}>Подписаться</span></p>
-										<p className={styles.descrSubTItle}>{e.brand}</p>
-									</div>
-								</a>
-							</div>
-						);
-					})
-				}
-				{/* 
-				<div className={styles.infoBox}>
-					<img className={styles.infoBoxImg} src={instagramCards2} alt="instagram posing girl" />
-					<a className={styles.descrBox} href='/'>
-						<img className={styles.descrImg} src={instagramCards2} alt="" />
-						<div className={styles.descrBoxAbout} >
-							<p className={styles.descrTitle}>elena_official <span className={styles.subscribe}>Подписаться</span></p>
-							<p className={styles.descrSubTItle}>Кофемания / coffeemania</p>
-						</div>
-					</a>
+				<div className={styles.wrapper}>
+
+					{
+						instagramCardsState.map(e => {
+							return (
+								<div className={styles.infoBox} key={e.id}>
+									<img className={styles.infoBoxImg} src={e.imgInsta} alt="instagram posing girl" />
+									<a className={styles.descrBox} href='/'>
+										<img className={styles.descrImg} src={e.imgInsta} alt="" />
+										<div className={styles.descrBoxAbout} >
+											<p className={styles.descrTitle}>{e.name} <span className={styles.subscribe}>Подписаться</span></p>
+											<p className={styles.descrSubTItle}>{e.brand}</p>
+										</div>
+									</a>
+								</div>
+							);
+						})
+					}
 				</div>
-				<div className={styles.infoBox}>
-					<img className={styles.infoBoxImg} src={instagramCards1} alt="instagram posing girl" />
-					<a className={styles.descrBox} href='/'>
-						<img className={styles.descrImg} src={instagramCards1} alt="" />
-						<div className={styles.descrBoxAbout} >
-							<p className={styles.descrTitle}>elena_official <span className={styles.subscribe}>Подписаться</span></p>
-							<p className={styles.descrSubTItle}>Кофемания / coffeemania</p>
-						</div>
-					</a>
-				</div>
-				<div className={styles.infoBox}>
-					<img className={styles.infoBoxImg} src={instagramCards2} alt="instagram posing girl" />
-					<a className={styles.descrBox} href='/'>
-						<img className={styles.descrImg} src={instagramCards2} alt="" />
-						<div className={styles.descrBoxAbout} >
-							<p className={styles.descrTitle}>elena_official <span className={styles.subscribe}>Подписаться</span></p>
-							<p className={styles.descrSubTItle}>Кофемания / coffeemania</p>
-						</div>
-					</a>
-				</div>
-				 */}
-			</div>
+
+
+
 		</section>
 	)
 }

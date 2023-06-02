@@ -1,5 +1,5 @@
 .instagramCards {
-	margin-bottom: 100px;
+	padding-bottom: 100px;
 }
 
 .instagramCards h2 {
@@ -18,15 +18,14 @@
 }
 
 .wrapper {
-	display: flex;
+	display: grid;
 	justify-content: center;
-	align-items: center;
-	margin: 0 auto;
-	column-gap: 20px;
+	grid-template-columns: repeat(auto-fill, minmax(100px, 260px));
+	gap: 20px;
 }
 
 .infoBox {
-	width: 280px;
+	width: 100%;
 	padding-bottom: 20px;
 	background-color: var(--whiteColor);
 }
@@ -40,9 +39,9 @@
 
 .descrBox {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
-	padding: 0 10px;
+	padding: 5px;
 }
 
 .descrImg {
@@ -59,7 +58,9 @@
 
 
 .descrBoxAbout {
+	text-align: end;
 	margin-left: 10px;
+	width: min-content;
 }
 
 .descrBoxAbout p {
@@ -70,11 +71,15 @@ p.descrTitle {
 	font-size: 15px;
 	line-height: 17px;
 	margin-bottom: 5px;
+	display: flex;
+}
+
+p.descrTitle span {
+	margin-left: 5px;
 }
 
 .subscribe {
 	font-size: 16px;
-	margin-left: 12px;
 	letter-spacing: 0.05em;
 	color: dodgerblue;
 	font-family: 'FuturaDemiC';
@@ -82,17 +87,6 @@ p.descrTitle {
 	position: relative;
 }
 
-.subscribe::after {
-	content: '';
-	position: absolute;
-	width: 5px;
-	height: 5px;
-	border-radius: 50%;
-	top: 50%;
-	transform: translateY(-50%);
-	background-color: #000;
-	left: -10px;
-}
 
 
 
@@ -101,4 +95,97 @@ p.descrTitle {
 	font-size: 15px;
 	line-height: 15px;
 	color: rgb(119, 119, 119);
+	white-space: nowrap;
+}
+
+
+@media screen and (max-width: 1024px) {
+	.instagramCards {
+		padding-bottom: 40px;
+	}
+
+	.descrImg {
+		width: 40px;
+		height: 40px;
+	}
+
+}
+
+@media screen and (max-width: 800px) {
+
+	.wrapper {
+		display: grid;
+		justify-content: center;
+		grid-template-columns: repeat(4, 150px);
+		gap: 10px;
+	}
+
+	.instagramCards h2 {
+		margin-bottom: 20px;
+	}
+
+	.descrBoxAbout {
+		margin-left: 5px;
+	}
+
+	.descrImg {
+		width: 40px;
+		height: 40px;
+	}
+
+	.instagramCards {
+		display: block;
+	}
+
+	p.descrTitle {
+		font-size: 10px;
+		line-height: 15px;
+		margin-bottom: 5px;
+		display: block;
+	}
+
+	p.descrTitle span {
+		font-size: 10px;
+		font-weight: 400;
+	}
+
+	.descrSubTItle {
+		font-size: 9px;
+	}
+
+	.instagramCards {
+		padding-bottom: 20px;
+	}
+
+	.infoBox {
+		padding-bottom: 10px;
+	}
+}
+
+
+@media screen and (max-width: 700px) {
+	.wrapper {
+		display: grid;
+		justify-content: center;
+		grid-template-columns: repeat(3, 130px);
+		gap: 10px;
+	}
+
+	.descrSubTItle {
+		font-size: 7px;
+	}
+
+	p.descrTitle {
+		margin-bottom: 0;
+	}
+
+	.infoBox {
+		padding-bottom: 4px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.wrapper {
+		grid-template-columns: repeat(2, 130px);
+	}
 }
