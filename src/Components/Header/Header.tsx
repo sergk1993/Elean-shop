@@ -14,6 +14,7 @@ import { actionsCarts } from '../../Redux/Cart-reducer';
 import { getAuth } from '../../Redux/selectors/Auth-selectors';
 import { profileDataTH, profileStatusTH } from '../../Redux/Profile-reducer';
 import { IProfileAuth } from '../../types/types';
+import Nav from '../Nav/Nav';
 
 
 
@@ -38,41 +39,50 @@ function Header(props: HeaderType): JSX.Element {
 
 
 	//onMouseLeave={() => setOpenMenu(false)}
-	return (
+	return (<>
+
+
 		<header className={styles.header} >
-			<h1 className={styles.visuallyHidden}>Купить женскую одежду</h1>
-			<HeaderDropDownBtn />
-			<div className={styles.spaceLeft}>
-				<SocialMedia />
+			<div className='container'>
+				<div className={styles.headerWrapper}>
+					<h1 className={styles.visuallyHidden}>Купить женскую одежду</h1>
+					<HeaderDropDownBtn />
+					<div className={styles.spaceLeft}>
+						<SocialMedia />
+					</div>
+					<HeaderTitle />
+					<HeaderPhone />
+
+					<HeaderProfile
+						auth={props.auth}
+						profileDataTH={props.profileDataTH}
+						profileStatusTH={props.profileStatusTH}
+					/>
+
+					<HeaderCartIcon
+						setOpenMenu={setOpenMenu}
+						countCartHeart={props.carts.totalCountCartHeart}
+						cart={props.carts}
+						setOpenModalWindow={props.setOpenModalWindow}
+					/>
+
+
+
+
+					{openMenu && <CartHoverProductsContainer
+						setOpenMenu={setOpenMenu}
+						carts={props.carts}
+						increaseCartProduct={props.increaseCartProduct}
+						decreaseCartProduct={props.decreaseCartProduct}
+						deleteProduct={props.deleteCartProduct}
+						orderCartList={props.orderCartList}
+					/>}
+				</div>
+
+				<Nav />
 			</div>
-			<HeaderTitle />
-			<HeaderPhone />
-
-			<HeaderProfile
-				auth={props.auth}
-				profileDataTH={props.profileDataTH}
-				profileStatusTH={props.profileStatusTH}
-			/>
-
-			<HeaderCartIcon
-				setOpenMenu={setOpenMenu}
-				countCartHeart={props.carts.totalCountCartHeart}
-				cart={props.carts}
-				setOpenModalWindow={props.setOpenModalWindow}
-			/>
-
-
-
-
-			{openMenu && <CartHoverProductsContainer
-				setOpenMenu={setOpenMenu}
-				carts={props.carts}
-				increaseCartProduct={props.increaseCartProduct}
-				decreaseCartProduct={props.decreaseCartProduct}
-				deleteProduct={props.deleteCartProduct}
-				orderCartList={props.orderCartList}
-			/>}
 		</header>
+	</>
 	);
 }
 

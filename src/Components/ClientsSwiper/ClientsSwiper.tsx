@@ -3,8 +3,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { RootType } from '../../Redux/redux-store';
 import { connect } from 'react-redux';
 import ClientsReviews from './ClientsReviews/ClientsReviews';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import './ClientsSwiper.css';
 import { ClientsReviewsInterface, ClientsSwiperInterface } from '../../types/types';
 import { getClientsSwiper } from '../../Redux/selectors/ClientsSwiper-selectors';
@@ -23,9 +24,23 @@ function ClientsSwiper(props: ClientsSwiperType): JSX.Element {
 		<section className='swiperMainBottom swiperMainBott_MarginBottom'>
 			<div className='swiperMainBottomWrapper'>
 				<Swiper
+					breakpoints={{
+						318: {
+							slidesPerView: 2,
+						},
+						480: {
+							slidesPerView: 3,
+						},
+						800: {
+							slidesPerView: 4,
+						},
+						1200: {
+							slidesPerView: 5,
+						}
+
+					}}
 					modules={[Pagination, Navigation]}
-					spaceBetween={10}
-					slidesPerView={5}
+					spaceBetween={5}
 					pagination={{ clickable: true }}
 
 					navigation={{
@@ -62,9 +77,6 @@ function ClientsSwiper(props: ClientsSwiperType): JSX.Element {
 
 			</div>
 
-			<div >
-
-			</div>
 
 
 			<ClientsReviews clientsReviews={props.clientsSwiper.clientsReviews} />

@@ -18,89 +18,93 @@ function Footer(props: FooterPageType): JSX.Element {
 
 
 	return (
-		<footer className={styles.footer}>
 
-			<div >
-				<div className={styles.footerNavigate}>
-					<div className={styles.footerWidthTitle}>
-						<Title />
-					</div>
-					<nav className={styles.footerNav}>
-						<ol className={styles.footerNavList}>
+		<footer className={styles.footer}>
+			<div className='container'>
+				<div className={styles.footerWrapper}>
+					
+					<div >
+						<div className={styles.footerNavigate}>
+							<div className={styles.footerWidthTitle}>
+								<Title />
+							</div>
+							<nav className={styles.footerNav}>
+								<ol className={styles.footerNavList}>
+
+									{
+										props.footerPage.footerNav.map(e => {
+											return (
+												<li key={e.id}><Link to="/">{e.link}</Link></li>
+											);
+										})
+									}
+
+								</ol>
+							</nav>
+						</div>
+
+
+						<div className={styles.feedback}>
 
 							{
-								props.footerPage.footerNav.map(e => {
+								props.footerPage.contactsPhone.map(e => {
 									return (
-										<li key={e.id}><Link to="/">{e.link}</Link></li>
+										<div className={styles.contactsPhoneWrapper} key={e.id}>
+											<a className={styles.contactsPhone} href={`tel:${e.phoneNumber}`}>{e.phoneNumberText}</a>
+											<a href={`tel:${e.whatsappNumber}`}>{e.whatsappNumberText}</a>
+										</div>
 									);
 								})
 							}
 
-						</ol>
-					</nav>
-				</div>
+							{
+								props.footerPage.contactsAddress.map(e => {
+									return (
+										<address className={styles.contactsAddress} key={e.id}>
+											<p className={styles.contactsAddressTitle}>	{e.address} </p>
+											{e.location}
+										</address>
+									);
+								})
+							}
 
 
-				<div className={styles.feedback}>
+							{
+								props.footerPage.workTimeBox.map(e => {
+									return (
+										<div className={styles.workTime} key={e.id}>
+											<p className={styles.workTimeTitle}>{e.workTime} </p>
+											<p>{e.workTimeText}</p>
+										</div>
+									);
+								})
+							}
+						</div>
 
-					{
-						props.footerPage.contactsPhone.map(e => {
-							return (
-								<div className={styles.contactsPhoneWrapper} key={e.id}>
-									<a className={styles.contactsPhone} href={`tel:${e.phoneNumber}`}>{e.phoneNumberText}</a>
-									<a href={`tel:${e.whatsappNumber}`}>{e.whatsappNumberText}</a>
-								</div>
-							);
-						})
-					}
-
-					{
-						props.footerPage.contactsAddress.map(e => {
-							return (
-								<address className={styles.contactsAddress} key={e.id}>
-									<p className={styles.contactsAddressTitle}>	{e.address} </p>
-									{e.location}
-								</address>
-							);
-						})
-					}
+						<div className={styles.socialLink}>
 
 
-					{
-						props.footerPage.workTimeBox.map(e => {
-							return (
-								<div className={styles.workTime} key={e.id}>
-									<p className={styles.workTimeTitle}>{e.workTime} </p>
-									<p>{e.workTimeText}</p>
-								</div>
-							);
-						})
-					}
-				</div>
+							{
+								props.footerPage.socialLinkBox.map(e => {
+									return (
+										<a className={styles.socialLinkEmail}
+											href={e.socialLink} key={e.id}>{e.socialLinkText}
+										</a>
+									);
+								})
+							}
 
-				<div className={styles.socialLink}>
+							<div className={styles.socialMarginLeft}>
+								<SocialMedia />
+							</div>
+						</div>
 
-
-					{
-						props.footerPage.socialLinkBox.map(e => {
-							return (
-								<a className={styles.socialLinkEmail}
-									href={e.socialLink} key={e.id}>{e.socialLinkText}
-								</a>
-							);
-						})
-					}
-
-					<div className={styles.socialMarginLeft}>
-						<SocialMedia />
+					</div>
+					<div className={styles.form_left}>
+						<FormFooter />
 					</div>
 				</div>
-
 			</div>
-			<div className={styles.form_left}>
-				<FormFooter />
-			</div>
-
 		</footer>
 	)
 }

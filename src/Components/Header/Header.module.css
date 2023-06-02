@@ -1,10 +1,14 @@
 .header {
+	padding-top: 40px;
+	padding-bottom: 30px;
+}
+
+.headerWrapper {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding-top: 40px;
-	padding-bottom: 30px;
 	position: relative;
+	margin-bottom: 10px;
 }
 
 .visuallyHidden {
@@ -20,8 +24,13 @@
 
 @media screen and (max-width: 800px) {
 	.header {
-		padding-top: 70px;
-		display: flex
+		display: flex;
+		padding-top: 10px;
+		padding-bottom: 20px;
+	}
+	.headerWrapper {
+		margin-top: 60px;
+		margin-bottom: 20px;
 	}
 }
 
@@ -30,12 +39,16 @@
 		display: block;
 		padding-top: 20px;
 		text-align: end;
-
 	}
 
 	.spaceLeft {
 		display: block;
 		margin-left: 0;
 		margin-bottom: 5px;
+	}
+	
+	.headerWrapper {
+		margin-top: 0;
+		display: block;
 	}
 }

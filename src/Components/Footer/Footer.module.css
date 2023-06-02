@@ -1,5 +1,4 @@
 .footer {
-	display: flex;
 	font-family: 'FuturaMediumC';
 	font-style: normal;
 	font-weight: 500;
@@ -7,7 +6,9 @@
 	color: var(--blackTextColor);
 	padding-bottom: 40px;
 }
-
+.footerWrapper {
+	display: flex;
+}
 
 
 .footerNavigate {

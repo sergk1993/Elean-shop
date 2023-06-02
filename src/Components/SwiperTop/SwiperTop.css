@@ -1,8 +1,8 @@
-.swiper {
+.swiper.headerSwiper {
 	width: 100%;
 }
 
-.swiper-slide {
+.swiperTop-slide {
 	text-align: center;
 	font-size: 18px;
 	display: -webkit-box;
@@ -101,14 +101,15 @@
 @media screen and (max-width: 768px) {
 	.swiperPhotoText {
 		transform: translate(180px, 150px);
-    font-size: 12px;
-    line-height: 20px;
-    width: 160px;
+		font-size: 12px;
+		line-height: 20px;
+		width: 160px;
 	}
 
 	.headerSwiper .swiper-button-next {
 		right: 45px;
 	}
+
 	.headerSwiper .swiper-button-prev {
 		left: 45px;
 	}

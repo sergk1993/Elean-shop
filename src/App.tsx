@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <SwiperTop />
-      <div className={styles.container}>
+      <div className='container'>
         <Catalog />
         <AboutBlock />
         <Showroom />

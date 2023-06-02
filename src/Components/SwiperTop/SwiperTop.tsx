@@ -79,7 +79,7 @@ const SwiperTop = (): JSX.Element => {
 				{
 					imgSwiper.photoSwiper.map(e => {
 						return (
-							<SwiperSlide className='swiper-slide' key={e.id} >
+							<SwiperSlide className='swiperTop-slide' key={e.id} >
 								<picture className='swiperOne'>
 									<source srcSet={e.photoWebp} type='image/webp' />
 									<img src={e.photoJpg} alt='' />

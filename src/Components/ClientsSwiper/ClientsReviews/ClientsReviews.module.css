@@ -11,15 +11,15 @@
 	grid-template-rows: 1fr 1fr;
 	gap: 90px 120px;
 	margin: 0 auto;
-	padding-top: 40px;
+	padding-top: 80px;
 	margin-bottom: 40px;
 }
 
 .descr {
 	position: relative;
 	box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .descr p {
@@ -36,20 +36,20 @@
 
 .clientsImageWrapper {
 	position: absolute;
-	left: -90px;
-	top: -30px;
-
+	left: 40px;
+	top: -65px;
+	z-index: 1;
 }
 
 .clientsImageWrapper::before {
 	position: absolute;
 	content: '';
-	bottom: 4px;
-	right: -4px;
+	bottom: -9px;
+	left: 2px;
 	border-top: 12px solid transparent;
 	border-left: 15px solid #D0D4DC;
 	border-bottom: 12px solid transparent;
-	transform: rotate(38deg);
+	transform: rotate(124deg);
 	z-index: 1;
 }
 
@@ -60,6 +60,8 @@
 	height: 60px;
 	border-radius: 50%;
 	z-index: 2;
+	background-color: var(--bgWhite);
+
 }
 
 
@@ -147,4 +149,56 @@
 
 .clientsShowAllBtn:after {
 	right: -15px;
+}
+
+
+
+@media screen and (max-width: 1440px) {
+	.clientsReviewsWrapper {
+		gap: 30px;
+		row-gap: 50px;
+
+	}
+
+	.clientsImage {
+		width: 40px;
+		height: 40px;
+	}
+
+	.clientsImageWrapper {
+		position: absolute;
+		left: 20px;
+		top: -40px;
+	}
+
+}
+
+@media screen and (max-width: 1024px) {
+	.clientsReviews {
+		margin-bottom: 40px;
+	}
+}
+
+
+
+@media screen and (max-width: 800px) {
+	.clientsReviewsWrapper {
+		gap: 15px;
+		row-gap: 50px;
+
+	}
+
+	.descr p {
+		padding: 20px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.clientsReviewsWrapper {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(1, 1fr);
+	}
+	.clientsShowAllBtn {
+		max-width: 250px;
+	}
 }

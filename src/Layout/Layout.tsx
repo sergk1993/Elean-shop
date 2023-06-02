@@ -72,19 +72,13 @@ const Layout = (props: LayoutType): JSX.Element => {
 
 						<EmptyModalWindow title={'Корзина пустая'} open={openModalWindow} setOpenModalWindow={setOpenModalWindow} />
 
-						<div className='container'>
-							<Header setOpenModalWindow={setOpenModalWindow} />
-							<Nav />
-						</div>
+						<Header setOpenModalWindow={setOpenModalWindow} />
 
-						<main className='main' >
+						<main >
 							<Outlet />
 						</main>
 
-						<div className='container'>
-							<Footer />
-						</div>
-
+						<Footer />
 					</div>
 
 				</>
