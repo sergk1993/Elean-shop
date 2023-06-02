@@ -28,11 +28,11 @@ function SocialSideMenu(props: SocialSideMenuType): JSX.Element {
 
 
 				<button className={styles.SocialSideMenuPhone} aria-label='phone icon call the main office'>
-					<span className={styles.SocialSideMenuPhoneSpan}></span>
+					<span></span>
 				</button>
 
 				<button className={styles.SocialSideMenuMessage} aria-label='phone message call the main office'>
-					<span className={styles.SocialSideMenuMessageSpan}></span>
+					<span></span>
 				</button>
 
 			</section>

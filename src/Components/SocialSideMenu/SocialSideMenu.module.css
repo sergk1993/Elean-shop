@@ -1,7 +1,7 @@
 .SocialSideMenuWrapper {
 	position: fixed;
 	right: 42px;
-	bottom: 100px;
+	bottom: 50px;
 	z-index: 10;
 	display: flex;
 	flex-direction: column;
@@ -9,8 +9,6 @@
 	justify-content: space-between;
 
 }
-
-
 
 .arrowUpBox {
 	display: inline-flex;
@@ -28,12 +26,17 @@
 	width: 30px;
 	object-fit: contain;
 	margin-bottom: 10px;
-	color: var(--grayColor);
+	width: 35px;
+	object-fit: contain;
+	margin-bottom: 10px;
+	background: #E1C4A9;
+	border-radius: 50%;
+	padding: 5px;
 }
 
 
 .arrowUp path {
-	fill: var(--grayColor);
+	fill: var(--bgWhite);
 }
 .menuText {
 	writing-mode: vertical-lr;
@@ -75,7 +78,7 @@
 	border-radius: 14px;
 }
 
-.SocialSideMenuPhoneSpan::after {
+.SocialSideMenuPhone span::after {
 	content: '';
 	position: absolute;
 	left: 50%;
@@ -88,7 +91,7 @@
 }
 
 
-.SocialSideMenuPhoneSpan::before {
+.SocialSideMenuPhone span::before {
 	content: '';
 	position: absolute;
 	transform: translate(-2px, 24px);
@@ -110,10 +113,11 @@
 	border-radius: 23px;
 	border: none;
 	cursor: pointer;
+	position: relative;
 }
 
 
-.SocialSideMenuMessageSpan {
+.SocialSideMenuMessage span {
 	display: block;
 	width: 36px;
 	height: 36px;
@@ -121,11 +125,12 @@
 	border-radius: 14px;
 }
 
-.SocialSideMenuMessageSpan::after {
+.SocialSideMenuMessage span::after {
 	content: '';
 	position: absolute;
-	bottom: 31px;
-	left: 27px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 50%);
 	width: 6px;
 	height: 6px;
 	background: #E1C4A9;
@@ -133,14 +138,53 @@
 	border-radius: 50%;
 }
 
-.SocialSideMenuMessageSpan::before {
+.SocialSideMenuMessage span::before {
 	content: '';
 	position: absolute;
-	bottom: 20px;
-	left: 27px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -100%);
 	width: 6px;
 	height: 6px;
 	background: #E1C4A9;
 	z-index: 2;
 	border-radius: 50%;
+}
+
+
+@media screen and (max-width: 700px) {
+	.arrowUpBox {
+		margin-bottom: 15px;
+	}
+
+	.SocialSideMenuPhone {
+		width: 40px;
+		height: 40px;
+	}
+
+	.SocialSideMenuPhone span {
+		border-radius: 50%;
+	}
+
+	.SocialSideMenuMessage {
+		width: 40px;
+		height: 40px;
+	}
+
+	.SocialSideMenuMessage span {
+		width: 18px;
+		height: 25px;
+	}
+
+	.SocialSideMenuWrapper {
+		right: 22px;
+	}
+
+	.arrowUpBox {
+		margin-bottom: 0;
+	}
+
+	.arrowUpBox h2 {
+		display: none;
+	}
 }
