@@ -7,7 +7,7 @@ import HeaderTitle from './HeaderTitle/HeaderTitle';
 import HeaderProfile from './HeaderProfile/HeaderProfile';
 import { connect } from 'react-redux';
 import { RootType } from '../../Redux/redux-store';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CartHoverProductsContainer from '../Cart/CartHoverProductsContainer/CartHoverProductsContainer';
 import HeaderCartIcon from './HeaderCartsIcon/HeaderCartIcon';
 import { actionsCarts } from '../../Redux/Cart-reducer';
@@ -37,6 +37,10 @@ type HeaderType = {
 function Header(props: HeaderType): JSX.Element {
 	let [openMenu, setOpenMenu] = useState<Boolean>(false)
 
+	useEffect(() => {
+		props.profileDataTH(props.auth.id)
+		props.profileStatusTH(props.auth.id)
+	}, [props.auth])
 
 	//onMouseLeave={() => setOpenMenu(false)}
 	return (<>

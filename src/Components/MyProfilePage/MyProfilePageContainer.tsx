@@ -33,27 +33,23 @@ type MyProfilePageType = {
 	sendNewImageProfileTH: (newImg: string) => void,
 	getCaptchaProfileTH: () => void,
 	captcha: string | null,
+	
 }
 
 
 function MyProfilePageContainer(props: MyProfilePageType) {
-	
+
 	// проверка на одинакового юсера для скрытия разных кнопок 
 	let [checkTheSameUser, setCheckTheSameUser] = useState(false)
 	// открытие настроек 
 	let [isOpenSettings, setIsOpenSettings] = useState<boolean>(false);
 
 	useEffect(() => {
-		if (!props.auth.isAuth) {
-			return; // Если пользователь не авторизован, не выполнять запрос
-		}
-
 		// проверка при первом рендере если авторизационный айди не найден присвой мой айди
 		if (!props.profileInfo?.userId) {
-			setTimeout(() => {
 				props.profileDataTH(props.auth.id);
 				props.profileStatusTH(props.auth.id);
-			}, 200)
+		
 		} else if (props.isFirstRenderCheck) {
 			props.profileDataTH(props.profileInfo.userId);
 			props.profileStatusTH(props.profileInfo.userId);
@@ -71,8 +67,7 @@ function MyProfilePageContainer(props: MyProfilePageType) {
 			setCheckTheSameUser(false);
 			setIsOpenSettings(false);
 		}
-	}, [props.profileInfo?.userId, props.auth.id])
-
+	}, [props.profileInfo?.userId, props.auth.id, checkTheSameUser, isOpenSettings])
 
 
 	return (
