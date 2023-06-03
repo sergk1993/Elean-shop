@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Elena-shop/static/css/main.edc8413a.css",
-    "main.js": "/Elena-shop/static/js/main.eef44054.js",
+    "main.css": "/Elena-shop/static/css/main.86fb7f43.css",
+    "main.js": "/Elena-shop/static/js/main.930e41ae.js",
     "static/js/787.52c4a659.chunk.js": "/Elena-shop/static/js/787.52c4a659.chunk.js",
     "static/media/swiper_1.jpg": "/Elena-shop/static/media/swiper_1.e9b29f4eb9f8c9795a1d.jpg",
     "static/media/about.jpg": "/Elena-shop/static/media/about.23ec822d811c349b0660.jpg",
@@ -73,12 +73,12 @@
     "static/media/formCheck.svg": "/Elena-shop/static/media/formCheck.ca0b3827ffb9872bebbf.svg",
     "static/media/arrow-swiper.svg": "/Elena-shop/static/media/arrow-swiper.c43243f1a7161dd88108.svg",
     "static/media/footerFormButton.svg": "/Elena-shop/static/media/footerFormButton.ad18888c3e2cf8188076.svg",
-    "main.edc8413a.css.map": "/Elena-shop/static/css/main.edc8413a.css.map",
-    "main.eef44054.js.map": "/Elena-shop/static/js/main.eef44054.js.map",
+    "main.86fb7f43.css.map": "/Elena-shop/static/css/main.86fb7f43.css.map",
+    "main.930e41ae.js.map": "/Elena-shop/static/js/main.930e41ae.js.map",
     "787.52c4a659.chunk.js.map": "/Elena-shop/static/js/787.52c4a659.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.edc8413a.css",
-    "static/js/main.eef44054.js"
+    "static/css/main.86fb7f43.css",
+    "static/js/main.930e41ae.js"
   ]
 }
