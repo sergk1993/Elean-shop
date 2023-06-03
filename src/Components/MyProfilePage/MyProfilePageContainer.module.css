@@ -1,11 +1,13 @@
 .profilePage {
-	height: 100%;
 	padding: 50px 0;
 	padding-bottom: 60px;
 }
 
+.profilePageWrapper {
+	height: 100%;
+}
 
-.profilePage>h3 {
+.profilePageWrapper>h3 {
 	text-align: center;
 	font-family: 'FuturaBookC';
 	font-style: normal;
@@ -37,3 +39,25 @@
 	background-color: var(--colorBtn);
 	font-size: 18px;
 }
+
+
+@media screen and (max-width: 800px) {
+	.profilePage {
+		padding: 30px;
+		padding-bottom: 60px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.profilePage {
+		padding: 20px;
+		padding-bottom: 50px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.profilePage {
+		padding: 0px;
+		padding-bottom: 50px;
+	}
+ }

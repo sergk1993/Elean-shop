@@ -33,7 +33,7 @@ type MyProfilePageType = {
 	sendNewImageProfileTH: (newImg: string) => void,
 	getCaptchaProfileTH: () => void,
 	captcha: string | null,
-	
+
 }
 
 
@@ -47,9 +47,9 @@ function MyProfilePageContainer(props: MyProfilePageType) {
 	useEffect(() => {
 		// проверка при первом рендере если авторизационный айди не найден присвой мой айди
 		if (!props.profileInfo?.userId) {
-				props.profileDataTH(props.auth.id);
-				props.profileStatusTH(props.auth.id);
-		
+			props.profileDataTH(props.auth.id);
+			props.profileStatusTH(props.auth.id);
+
 		} else if (props.isFirstRenderCheck) {
 			props.profileDataTH(props.profileInfo.userId);
 			props.profileStatusTH(props.profileInfo.userId);
@@ -71,47 +71,50 @@ function MyProfilePageContainer(props: MyProfilePageType) {
 
 
 	return (
-		<div className="container">
 
 
 
 
-			<section className={styles.profilePage}>
+		<section className={styles.profilePage}>
+			<div className="container">
 
-				<h3>Profile</h3>
+				<div className={styles.profilePageWrapper}>
 
-				{!props.auth.isAuth ? <Login isLogin={props.loginTH} captcha={props.captcha} />
-					:
-					<MyProfile
-						isProfileLoading={props.isProfileLoading}
-						updateStatusProfileTH={props.updateStatusProfileTH}
-						profileStatus={props.profileStatus}
-						profileInfo={props.profileInfo}
-						authProps={props.auth}
-						changeMyProfileDataInfoTH={props.changeMyProfileDataInfoTH}
-						profileDataTH={props.profileDataTH}
-						profileStatusTH={props.profileStatusTH}
-						checkTheSameUser={checkTheSameUser}
-						setIsOpenSettings={setIsOpenSettings}
-						isOpenSettings={isOpenSettings}
-						sendNewImageProfileTH={props.sendNewImageProfileTH}
+					<h3>Profile</h3>
 
-					/>
+					{!props.auth.isAuth ? <Login isLogin={props.loginTH} captcha={props.captcha} />
+						:
+						<MyProfile
+							isProfileLoading={props.isProfileLoading}
+							updateStatusProfileTH={props.updateStatusProfileTH}
+							profileStatus={props.profileStatus}
+							profileInfo={props.profileInfo}
+							authProps={props.auth}
+							changeMyProfileDataInfoTH={props.changeMyProfileDataInfoTH}
+							profileDataTH={props.profileDataTH}
+							profileStatusTH={props.profileStatusTH}
+							checkTheSameUser={checkTheSameUser}
+							setIsOpenSettings={setIsOpenSettings}
+							isOpenSettings={isOpenSettings}
+							sendNewImageProfileTH={props.sendNewImageProfileTH}
 
-				}
+						/>
 
-				{props.isProfileLoading && props.isFirstRenderCheck && props.auth.isAuth ? <Skeleton height={50} width={250} /> :
-					<>
-						{
-							props.auth.isAuth && checkTheSameUser &&
-							<button className={styles.myProfilePageBtnLogOut} onClick={props.logOutTH}>выйти</button>
-						}
-					</>
-				}
+					}
 
-			</section>
+					{props.isProfileLoading && props.isFirstRenderCheck && props.auth.isAuth ? <Skeleton height={50} width={250} /> :
+						<>
+							{
+								props.auth.isAuth && checkTheSameUser &&
+								<button className={styles.myProfilePageBtnLogOut} onClick={props.logOutTH}>выйти</button>
+							}
+						</>
+					}
 
-		</div>
+
+				</div>
+			</div >
+		</section>
 	)
 }
 
