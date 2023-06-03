@@ -34,7 +34,7 @@ function Dialogs(props: DialogsType) {
 	return (
 		<div className='container'>
 			<section className={styles.dialogs}>
-				<h3 className={styles.dialogsTitle}>Связь с менеджером</h3>
+				<h3 className={styles.dialogsTitle}>Диалоги</h3>
 				<div className={styles.dialogsBox}>
 					<div className={styles.dialogsContacts}>
 						{
