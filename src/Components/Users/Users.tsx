@@ -11,7 +11,7 @@ type Props = {
 	subscribeUser: (id: number) => void
 	unsubscribe: (id: number) => void,
 	quantityUsers: number,
-	pageSize: number,
+	pageSizePaginator: number,
 	portionSize: number,
 	onPageChange: (numberPage: number) => void,
 	isDisabledBtn: Array<any>,
@@ -60,7 +60,7 @@ const Users = (props: Props): JSX.Element => {
 				<Pagination
 					onPageChange={props.onPageChange}
 					totalCount={props.quantityUsers}
-					pageSize={props.pageSize}
+					pageSizePaginator={props.pageSizePaginator}
 				/>
 			}
 		</>

@@ -27,7 +27,7 @@
 
 
 
-.filterUserSubmitBtn{
+.filterUserSubmitBtn {
 	display: inline-block;
 	margin-left: 15px;
 	width: 150px;
@@ -37,4 +37,27 @@
 	background-color: var(--colorBtn);
 	border: 1px solid var(--colorBtbBorder);
 	border-radius: 5px;
+}
+
+
+@media screen and (max-width: 768px) {
+	.filterUserMain {
+		display: flex;
+		justify-content: end;
+	}
+
+	.filterUserInput {
+		margin-bottom: 10px;
+	}
+
+	.filterUserInputsWrapper {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	.filterUserSubmitBtn {
+		margin-left: 0;
+		margin-top: 10px;
+		width: 200px;
+	}
 }

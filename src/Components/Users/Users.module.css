@@ -11,6 +11,9 @@
 }
 
 .usersCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	padding: 20px;
 	border-radius: 20px;
 	text-align: center;
@@ -22,7 +25,10 @@
 	background-color: var(--colorCardsBackground);
 }
 
-
+.userCardInfoUserLinkImg {
+	margin-bottom: 20px;
+	display: block;
+}
 
 .userCardInfoUserLinkImg img {
 	width: 150px;
@@ -30,7 +36,6 @@
 	display: block;
 	border-radius: 50%;
 	margin: 0 auto;
-	margin-bottom: 20px;
 	object-fit: cover;
 }
 
@@ -46,11 +51,6 @@
 }
 
 
-.usersCard {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
 
 
 .usersCard button {
@@ -72,4 +72,86 @@
 
 .usersCard button:hover {
 	background-color: rgb(169, 167, 167);
+}
+
+
+@media screen and (max-width: 840px) {
+	.users {
+		margin-bottom: 20px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.usersWrapperCards {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.usersCard {
+		max-width: 200px;
+		width: 100%;
+	}
+
+	.userCardInfoUserLinkImg img {
+		width: 90px;
+		height: 90px;
+	}
+
+	.usersCard button {
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.usersWrapperCards {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 10px;
+	}
+
+	.usersCard {
+		width: 100%;
+		padding: 10px;
+	}
+
+	.userCardInfo h3 {
+		font-size: 15px;
+		line-height: 20px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+
+	}
+
+	.usersCard button {
+		font-size: 13px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.usersCard {
+		padding: 8px;
+	}
+
+	.usersWrapperCards {
+		gap: 5px;
+		row-gap: 10px;
+	}
+
+	.userCardInfo h3 {
+		font-size: 12px;
+		line-height: 15px;
+		margin-bottom: 10px;
+	}
+
+	.usersCard button {
+		font-size: 8px;
+		line-height: 12px;
+	}
+}
+
+
+@media screen and (max-width: 370px) {
+	.usersCard {
+		padding: 8px;
+		width: 95px;
+	}
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { RootType } from '../../Redux/redux-store';
@@ -23,15 +23,17 @@ type UsersContainerType = {
 	children?: React.ReactNode,
 	profileDataTH: (item: number | null) => void,
 	profileStatusTH: (item: number | null) => void,
+	pageSizePaginator:number,
 }
 
 
 
 
 const UsersContainer = (props: UsersContainerType): JSX.Element => {
+	let [pageSize, setpageSize] = useState(12)
 
 	useEffect(() => {
-		props.thunkUser(props.usersState.currentPage, props.usersState.pageSize, props.usersState.filter)
+		props.thunkUser(props.usersState.currentPage, pageSize, props.usersState.filter)
 	}, [])
 
 
@@ -40,14 +42,13 @@ const UsersContainer = (props: UsersContainerType): JSX.Element => {
 	цифра 1 всегда перебрасывает на первую страницу при поиске
 	*/
 	const filterSearchUser = (filterUser: FilterUsersInitType) => {
-		props.thunkUser(1, props.usersState.pageSize, filterUser)
+		props.thunkUser(1, pageSize, filterUser)
 	}
 
 	/* получаю кнопку. filter для сохранения имени из инпута поиска при переключении страниц */
 	const onPageChange = (pageNumber: number) => {
-		props.thunkUser(pageNumber, props.usersState.pageSize, props.usersState.filter)
+		props.thunkUser(pageNumber, pageSize, props.usersState.filter)
 	}
-
 
 	return (
 		<section className='container'>
@@ -64,8 +65,8 @@ const UsersContainer = (props: UsersContainerType): JSX.Element => {
 							subscribeUser={props.subscrUsersThunk}
 							unsubscribe={props.unsubscribeUsersThunk}
 							quantityUsers={props.usersState.quantityUsers}
-							pageSize={props.usersState.pageSize}
-							portionSize={props.usersState.pageSize}
+							pageSizePaginator={props.usersState.pageSizePaginator}
+							portionSize={pageSize}
 							onPageChange={onPageChange}
 							isDisabledBtn={props.usersState.disableBtn}
 							profileDataTH={props.profileDataTH}

@@ -32,7 +32,7 @@
 
 
 
-.paginationLeft {
+.paginationLeftLink {
 	display: inline-block;
 	margin-right: 20px;
 	padding: 5px;
@@ -48,18 +48,19 @@
 
 
 
-.paginationRight {
+.paginationRightLink {
 	display: inline-block;
 	margin-left: 20px;
-	padding: 5px;
-	padding-right: 10px;
-	padding-left: 10px;
 	border: none;
 	background-color: var(--colorBtn);
 	color: var(--blackTextColor);
 	border-radius: 5px;
 	text-transform: uppercase;
 	cursor: pointer;
+	padding: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+
 }
 
 .paginationDisabled {
@@ -76,4 +77,30 @@
 
 .paginationPoints a {
 	font-size: 20px;
+}
+
+
+@media screen and (max-width: 800px) {
+	.paginationBtnWrapper {
+		display: block;
+	}
+
+	.paginationBtnWrapperLists {
+		display: inline-block;
+		margin-bottom: 10px;
+	}
+
+	.paginationLeftLink {
+		display: block;
+		margin-bottom: 10px;
+		margin-right: 0;
+	}
+
+
+
+	.paginationPoints {
+		display: inline-flex;
+	}
+
+	
 }
