@@ -8,6 +8,10 @@
 	padding: 10px;
 }
 
+.simpleCardMain img {
+	margin-bottom: 30px;
+}
+
 .fourthCard {
 	grid-column: 4 / 5;
 	grid-row: 1 / 3;
@@ -30,8 +34,8 @@
 .simpleCardTitleBox {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
-	margin-top: 40px;
+	align-items: flex-start;
+	margin-bottom: 20px;
 }
 
 .simpleCardTitle {
@@ -72,9 +76,7 @@
 	}
 }
 
-.simpleCardPrice {
-	margin-top: 10px;
-}
+.simpleCardPrice {}
 
 .simpleCardSvgActive {
 	height: 100%;
@@ -82,4 +84,83 @@
 	stroke: var(--bgAddCart);
 
 	fill: var(--bgAddCart);
+}
+
+
+
+@media screen and (max-width: 1280px) {
+	.simpleCardMain {
+		display: grid;
+		align-content: end;
+		max-width: 250px;
+		height: 100%;
+		align-items: center;
+		background-color: var(--colorCardsBgWhite);
+		padding: 10px;
+	}
+
+	.simpleCardMain img {
+		margin-bottom: 20px;
+	}
+
+	.simpleCardImg {
+		height: 100px !important;
+	}
+
+	.simpleCardTitleBox {
+		margin-bottom: 15px;
+	}
+
+	.simpleCardTitle {
+		font-size: 14px;
+		line-height: 16px;
+	}
+
+}
+
+@media screen and (max-width: 1024px) {
+
+	
+}
+
+@media screen and (max-width: 768px) {
+	.simpleCardMain img {
+		margin-bottom: 10px;
+	}
+
+	.simpleCardTitleBox {
+		margin-bottom: 10px;
+	}
+
+	.simpleCardTitle {
+		font-size: 10px;
+		line-height: 10px;
+	}
+
+	.simpleCardBtn {
+		width: 20px;
+		height: 20px;
+	}
+
+	.simpleCardPrice {
+		font-size: 10px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.simpleCardMain {
+		max-width: 200px;
+	}
+
+	.simpleCardImg {
+		height: 70px !important;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.simpleCardBtn {
+		display: flex;
+		width: 15px;
+		height: 15px;
+	}
 }

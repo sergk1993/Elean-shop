@@ -17,12 +17,12 @@ type NewsCategoriesType = {
 
 const CategoriesCards = (props: NewsCategoriesType) => {
 	return (
-		<>
+		<div className={styles.newsCategoriesMainContainer}>
 			<div className={styles.newsCategoriesMain}>
 				{props.isLoading && < SkeletonsLibrary cards={8} />}
 
 				{
-					props.categoriesProduct.map((items: any, i) => {
+					props.categoriesProduct.map((items: any) => {
 
 						return (
 							<Fragment key={items.id}>
@@ -38,11 +38,10 @@ const CategoriesCards = (props: NewsCategoriesType) => {
 							</Fragment>
 						)
 					})
-
 				}
 
 			</div>
-		</>
+		</div >
 	)
 }
 

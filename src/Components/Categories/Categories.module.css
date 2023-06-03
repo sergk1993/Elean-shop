@@ -1,5 +1,7 @@
 .categories {
 	display: flex;
+	padding-bottom: 100px;
+
 }
 
 .categoriesTitle {
@@ -18,4 +20,28 @@
 
 .categoriesTitle::first-letter {
 	text-transform: uppercase;
+}
+
+@media screen and (max-width: 1024px) {
+	.categoriesTitle {
+		margin-bottom: 20px;
+		font-size: 18px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.categoriesTitle {
+		margin-bottom: 10px;
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.categories {
+		display: block;
+	}
+
+	.categoriesTitle {
+		padding-top: 0;
+	}
 }

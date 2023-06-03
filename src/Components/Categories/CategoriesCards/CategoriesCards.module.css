@@ -1,8 +1,23 @@
+.newsCategoriesMainContainer{
+	display: block;
+
+}
+
 .newsCategoriesMain {
 	display: grid;
-	grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+	grid-template: repeat(1, 1fr) / repeat(4, 1fr);
 	gap: 20px;
-	padding-bottom: 100px;
 	position: relative;
 }
 
+
+@media screen and (max-width: 1024px) {
+	.newsCategoriesMain {
+		grid-template: repeat(1, 1fr) / repeat(3, 1fr);
+	}
+
+	.newsCategoriesMain {
+		gap: 10px;
+	}
+
+}

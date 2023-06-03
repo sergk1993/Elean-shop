@@ -1,4 +1,5 @@
 import React from 'react'
+import LinesEllipsis from 'react-lines-ellipsis'
 import { Link } from 'react-router-dom'
 import { CategoryAsideType } from '../../../Redux/Categories-reducer'
 import styles from './SimpleCard.module.css'
@@ -20,7 +21,6 @@ function SimpleCard(props: any) {
 	/* проверка добавленных через сердечко товаров */
 
 	let checkUser = props.cartsProducts.data.find((el: any) => el.id === props.id) !== undefined;
- 
 	return (
 		<div className={styles.simpleCardMain} onClick={() => props.currentProductAC(props)}>
 
@@ -30,7 +30,12 @@ function SimpleCard(props: any) {
 			</Link>
 			<div>
 				<div className={styles.simpleCardTitleBox}>
-					<h3 className={styles.simpleCardTitle}> {props.categoryUsersProperty.title}</h3>
+					<LinesEllipsis className={styles.simpleCardTitle}
+						text={props.categoryUsersProperty.title}
+						maxLine={2}
+						ellipsis='...'
+						basedOn='words'
+					/>
 					<button className={styles.simpleCardBtn}>
 
 						<svg className={checkUser ? styles.simpleCardSvgActive : styles.simpleCardBtnSvg} onClick={() => {

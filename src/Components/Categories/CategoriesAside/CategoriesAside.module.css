@@ -4,6 +4,7 @@
 	font-style: normal;
 	font-weight: 500;
 	font-size: 15px;
+	margin-right: 30px;
 }
 
 /* верхний title у Aside */
@@ -32,7 +33,7 @@
 	margin-bottom: 15px;
 }
 
-.categoryAsideUpLists button{
+.categoryAsideUpLists button {
 	padding: 5px 0;
 	padding-bottom: 10px;
 	display: inline-block;
@@ -46,4 +47,98 @@ button.categoryAsideActive {
 	color: #ae9177;
 	border-bottom: 3px solid currentColor;
 	cursor: pointer;
+}
+
+
+@media screen and (max-width: 1024px) {
+	.categoryAsideUpLists:not(:last-child) {
+		margin-bottom: 5px;
+	}
+
+	.categoryAsideUpList {
+		font-size: 15px;
+	}
+
+	.categoryAsideUpList button {
+		padding-top: 0;
+		padding-bottom: 6px;
+	}
+
+}
+
+
+@media screen and (max-width: 768px) {
+	.categoriesAside {
+		margin-right: 10px;
+	}
+
+	.categoryAsideUpLists:not(:last-child) {
+		margin-bottom: 5px;
+	}
+
+	.categoryAsideUpList {
+		font-size: 13px;
+	}
+
+	.categoryAsideUpList button {
+		padding-bottom: 3px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.categoriesAside {
+		margin-right: 10px;
+		width: 150px;
+	}
+
+	.categoryAsideUpList {
+		font-size: 11px;
+		line-height: 13px;
+	}
+}
+
+
+
+
+@media screen and (max-width: 480px) {
+	.categoriesAside {
+		width: auto;
+		margin-bottom: 15px;
+
+	}
+
+	.categoryAsideUpList {
+		display: flex;
+		justify-content: center;
+		font-size: 9px;
+		line-height: 11px;
+	}
+
+	.categoryAsideUpLists {
+		flex-shrink: 0;
+	}
+	.categoryAsideUpLists:not(:last-child) {
+		margin-bottom: 0;
+		margin-right: 10px;
+	}
+
+}
+
+@media screen and (max-width: 380px) { 
+	
+
+	.categoryAsideUpList button {
+		padding-bottom: 2px;
+	}
+
+	button.categoryAsideActive {
+		border-bottom: 2px solid currentColor;
+	}
+
+	.categoryAsideUpLists:not(:last-child) {
+		margin-bottom: 0;
+		margin-right: 7px;
+		line-height: 10px;
+	}
+
 }
