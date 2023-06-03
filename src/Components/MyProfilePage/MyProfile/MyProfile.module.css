@@ -1,13 +1,12 @@
 .myProfileMain {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: center;
 	min-height: 400px;
 	background-color: #4b4a4a32;
 	box-shadow: -0px 0px 45px 13px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
 	padding: 20px;
-	padding-bottom: 40px;
 	background: rgba(31, 32, 33, 1.0);
 	background: linear-gradient(135deg, rgb(114 120 126), rgb(1 54 71 / 23%));
 	margin-bottom: 20px;
@@ -17,6 +16,7 @@
 
 .myProfileBox {
 	display: flex;
+	align-items: center;
 	position: relative;
 }
 
@@ -164,4 +164,118 @@
 
 .profileInfoContactsLink:not(:last-child) {
 	margin-right: 10px;
+}
+
+
+
+@media screen and (max-width: 850px) {
+
+	.myProfileBoxImgBox {
+		max-width: 200px;
+		height: 300px;
+	}
+
+	.myProfileBoxImg {
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.profileInfoContactsLink {
+		font-size: 15px;
+		line-height: 20px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	.myProfileMain {
+		min-height: auto;
+		padding: 15px;
+	}
+
+	.myProfileBoxImgBox {
+		margin-right: 10px;
+	}
+
+	.myProfileTitleBox {
+		margin-bottom: 0;
+		font-size: 15px;
+		line-height: 20px;
+	}
+
+	.myProfileBoxName {
+		font-size: 15px;
+	}
+
+	.profileInfoContactsLink {
+		font-size: 10px;
+		line-height: 15px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.myProfileTitleBox {
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	.myProfileBoxImgBox {
+		max-width: 120px;
+	}
+
+	.profileInfoBox a {
+		margin-bottom: 5px;
+	}
+
+	.profileInfoContactsLink {
+		font-size: 8px;
+		line-height: 10px;
+		padding: 5px;
+	}
+
+	.profileInfoContactsLink:not(:last-child) {
+		margin-right: 5px;
+	}
+
+
+	.myProfileBoxAboutMeBox .profileInfoLookingForAJobYes {
+		width: 100%;
+		display: inline-block;
+		font-size: 10px;
+		line-height: 15px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.myProfileMain {
+		padding-top: 20px;
+		margin-bottom: 10px;
+	}
+
+	.myProfileSettings {
+		padding: 5px;
+		top: -5px;
+		right: 0px;
+	}
+
+	.myProfileTitleBox {
+		padding-top: 30px;
+		font-size: 12px;
+		line-height: 10px;
+	}
+
+	.myProfileBoxImgBox {
+		height: 100%;
+		object-fit: contain;
+	}
+
+	.myProfileBoxName {
+		margin-bottom: 5px;
+		font-size: 12px;
+	}
+
+	.myProfileBoxAboutMeBox .profileInfoLookingForAJobYes {
+		line-height: 5px;
+		font-size: 9px;
+	}
 }
