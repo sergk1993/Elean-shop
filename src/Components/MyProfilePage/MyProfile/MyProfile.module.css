@@ -172,7 +172,7 @@
 
 	.myProfileBoxImgBox {
 		max-width: 200px;
-		height: 300px;
+		
 	}
 
 	.myProfileBoxImg {
@@ -214,13 +214,17 @@
 }
 
 @media screen and (max-width: 600px) {
+	.myProfileBox{
+		padding-top: 50px;
+		display: block;
+	}
 	.myProfileTitleBox {
-		font-size: 14px;
-		line-height: 20px;
+		font-size: 20px;
+		line-height: 25px;
 	}
 
 	.myProfileBoxImgBox {
-		max-width: 120px;
+		max-width: 100%;
 	}
 
 	.profileInfoBox a {
@@ -228,7 +232,7 @@
 	}
 
 	.profileInfoContactsLink {
-		font-size: 8px;
+		font-size: 12px;
 		line-height: 10px;
 		padding: 5px;
 	}
@@ -260,8 +264,8 @@
 
 	.myProfileTitleBox {
 		padding-top: 30px;
-		font-size: 12px;
-		line-height: 10px;
+		font-size: 16px;
+		line-height: 16px;
 	}
 
 	.myProfileBoxImgBox {
