@@ -96,11 +96,14 @@
 		margin-right: 0;
 	}
 
-
+	.paginationRightLink {
+		display: block;
+		margin-left: 0;
+	}
 
 	.paginationPoints {
 		display: inline-flex;
 	}
 
-	
+
 }
