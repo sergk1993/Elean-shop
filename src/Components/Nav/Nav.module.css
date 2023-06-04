@@ -1,5 +1,4 @@
-.nav {
-}
+.nav {}
 
 .list {
 	display: flex;
@@ -70,9 +69,26 @@ ol .navDropDown {
 	margin-bottom: 5px;
 }
 
+@media screen and (max-width: 600px) {
+	.list>li:not(:last-child) {
+		margin-right: 30px;
+	}
+}
+
 
 @media screen and (max-width: 480px) {
 	.list>li:not(:last-child) {
-		margin-right: 15px;
+		margin-right: 13px;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.list>li:not(:last-child) {
+		margin-right: 9px;
+	}
+
+	.list li {
+		font-size: 12px;
+		line-height: 15px;
 	}
 }

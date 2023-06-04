@@ -39,6 +39,12 @@
 
 
 @media screen and (max-width: 1200px) {
+	
+	.headings {
+		padding-bottom: 20px;
+		padding-top: 20px;
+		margin-bottom: 10px;
+	}
 	.description{
 		display: none;
 	}
@@ -46,6 +52,9 @@
 		display: none;
 	}
 }
+
+
+
 
 @media screen and (max-width: 600px) {
 	.headings {

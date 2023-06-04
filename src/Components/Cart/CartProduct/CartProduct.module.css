@@ -24,12 +24,30 @@
 	text-transform: uppercase;
 	color: var(--whiteTextColor);
 	cursor: pointer;
-	border: 1px solid transparent ;
-} 
+	border: 1px solid transparent;
+}
 
+@media screen and (max-width: 1200px) {
+	.cartProduct {
+		text-align: center;
+	}
+}
 
 @media screen and (max-width: 480px) {
-		.cartProduct {
-			font-size: 15px;
+	.cartProduct {
+		font-size: 15px;
+	}
+
+	.cartProduct h3 {
+		line-height: 15px;
+		margin-bottom: 10px;
+	}
+
+	.cartProductPrice {
+		line-height: 15px;
+	}
+
+	.cartToCart {
+		padding: 3px 9px;
 	}
 }

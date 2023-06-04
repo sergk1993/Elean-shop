@@ -144,3 +144,54 @@
 	line-height: 19px;
 	padding: 10px;
 }
+
+@media (max-width: 1024px) {
+	.categoriesCardProductMain {
+		display: flex;
+		justify-content: center;
+	}
+
+	.categoriesCardProductInfo {
+		display: block;
+	}
+	.categoriesCardProductInfo img  {
+		max-width: 600px;
+		height: 300px;
+	}
+	.categoriesCardProductTitle {
+		margin-bottom: 10px;
+	}
+	.categoriesCardProductDescrBox p {
+		font-size: 17px;
+    margin-bottom: 10px;
+}
+}
+
+
+@media (max-width: 600px) {
+	.categoriesCardProductInfo img {
+		height: 200px;
+	}
+
+	.categoriesCardProductBoxBtn {
+		display: block;
+	}
+	.categoriesCardProductBoxBtn a,
+	.categoriesCardProductBoxBtn button {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+	.categoriesCardProductHasInCartBox p {
+		padding-left: 0;
+	}
+}
+@media (max-width: 480px) {
+	.categoriesCardProductDescrBox h3 {
+		font-size: 19px;
+    margin-bottom: 0px;
+}
+.categoriesCardProductBoxBtn {
+	margin-top: 20px;
+}
+}

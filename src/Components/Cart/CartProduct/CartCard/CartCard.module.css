@@ -69,7 +69,6 @@
 	max-width: 700px;
 	width: 100%;
 	justify-content: space-between;
-	padding: 0 10px;
 }
 
 
@@ -84,17 +83,21 @@
 }
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
 	.cartCard {
 		display: block;
 		padding-bottom: 30px;
-
+		margin: 0 auto;
+		max-width: 614px;
 	}
+
 
 	.cartCardInfoBox {
 		margin-left: 0;
 		margin-right: 0;
 		margin-bottom: 10px;
+		padding: 0;
+		justify-content: flex-start;
 	}
 }
 
@@ -102,6 +105,7 @@
 	.cartCardBtnPrice {
 		margin-right: 0;
 	}
+
 	.cartCardInfoText {
 		margin-left: 10px;
 	}
@@ -112,6 +116,6 @@
 	.cartCard {
 		display: block;
 		padding-bottom: 15px;
-		margin-bottom: 5px;
+		margin-bottom: 15px;
 	}
 }

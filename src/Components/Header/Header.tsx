@@ -20,6 +20,7 @@ import Nav from '../Nav/Nav';
 
 type HeaderType = {
 	carts: {
+		data?: any, 
 		totalCountCartHeart: any,
 	},
 	setOpenModalWindow: any,
@@ -73,7 +74,7 @@ function Header(props: HeaderType): JSX.Element {
 
 
 
-					{openMenu && <CartHoverProductsContainer
+					{openMenu && props.carts.data.length !== 0 && <CartHoverProductsContainer
 						setOpenMenu={setOpenMenu}
 						carts={props.carts}
 						increaseCartProduct={props.increaseCartProduct}

@@ -10,6 +10,7 @@ let initialState: NavCategoryInterface = {
 		{ id: 0, text: 'категории', path: 'categories' },
 		{ id: 1, text: 'Диалоги', path: 'dialogs' },
 		{ id: 2, text: 'пользователи', path: 'users' },
+		{ id: 3, text: 'Корзина', path: 'cart' },
 	],
 
 	dropDownMenu: [
