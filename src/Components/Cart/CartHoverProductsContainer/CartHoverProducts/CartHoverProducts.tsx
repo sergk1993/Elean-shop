@@ -34,16 +34,16 @@ function CartHoverProducts(props: any) {
 									cartUsers={props.callbackProps}
 									increaseCartProduct={props.increaseCartProduct}
 									decreaseCartProduct={props.decreaseCartProduct}
-									width={props.findWidthWindowMediaSize > 800 ? 50 : 25}
-									height={props.findWidthWindowMediaSize > 800 ? 50 : 25}
+									width={50}
+									height={50}
 									id={props.id}
 								/>
 							</div>
 						</div>
 
 						<CartCloseBtn
-							width={props.findWidthWindowMediaSize > 800 ? 50 : 25}
-							height={props.findWidthWindowMediaSize > 800 ? 50 : 25}
+							width={50}
+							height={50}
 							callbackProps={props.callbackProps}
 							deleteProduct={props.deleteProduct}
 							id={props.id}

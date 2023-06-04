@@ -1,7 +1,7 @@
 .cartHoverMenu {
 	position: absolute;
 	display: block;
-	top: 73px;
+	top: 35px;
 	right: 0px;
 	padding: 20px;
 	width: 600px;
@@ -72,7 +72,7 @@
 	.cartHoverMenu {
 		width: 400px;
 		max-height: 400px;
-		top: 100px;
+		top: 28px;
 		right: 5px;
 		padding: 10px;
 		margin-bottom: 10px;
@@ -86,8 +86,8 @@
 @media screen and (max-width: 480px) {
 	.cartHoverMenu {
 		width: 250px;
-		height: 250px;
-		top: 150px;
+		max-height: 200px;
+		top: 127px;
 	}
 
 	.cartHoverPriceBox {

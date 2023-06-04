@@ -21,6 +21,7 @@
 .description {
 	margin-left: 100px;
 	margin-right: 20px;
+	display: block;
 }
 
 .settings {
@@ -34,4 +35,22 @@
 
 .settings p:not(:last-child) {
 	margin-right: 20px;
+}
+
+
+@media screen and (max-width: 1200px) {
+	.description{
+		display: none;
+	}
+	.settings{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.headings {
+		padding-bottom: 15px;
+		padding-top: 15px;
+		margin-bottom: 0;
+	}
 }

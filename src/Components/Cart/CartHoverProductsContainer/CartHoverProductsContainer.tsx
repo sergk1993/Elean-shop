@@ -9,38 +9,15 @@ import styles from './CartHoverProductsContainer.module.css'
 function CartHoverProductsContainer(props: any) {
 	let findSum = Math.floor((props.carts.data.reduce((sum: any, obj: any) => obj.price * obj.count + sum, 0)) * 100) / 100;
 
-	// эта фигня для проверки ширины экрана, для кнопок counter
-	const [findWidthWindowMediaSize, setFindWidthWindowMediaSize] = useState(window.innerWidth)
-
-	useEffect(() => {
-		const handleResize = () => {
-			const screenWidth = window.innerWidth;
-			setFindWidthWindowMediaSize(screenWidth)
-		};
-
-		window.addEventListener('resize', handleResize);
-
-		return () => {
-			window.removeEventListener('resize', handleResize);
-		}
-	}, [])
-
-
-
-
 	return (
 
 		<section onMouseEnter={() => props.setOpenMenu(true)} onMouseLeave={() => props.setOpenMenu(false)} className={styles.cartHoverMenu}>
-
-
 
 			{props.carts.data.length > 0 ? <>
 
 				{props.carts.data.map((items: any) => {
 
 					return (
-
-
 						<CartHoverProducts
 							image={items.image}
 							price={items.price}
@@ -54,10 +31,7 @@ function CartHoverProductsContainer(props: any) {
 							decreaseCartProduct={props.decreaseCartProduct}
 							increaseCartProduct={props.increaseCartProduct}
 							deleteProduct={props.deleteProduct}
-							findWidthWindowMediaSize={findWidthWindowMediaSize}
 						/>
-
-
 					)
 				})}
 

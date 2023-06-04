@@ -77,10 +77,10 @@ button.disabledCartProduct,
 	cursor: initial;
 }
 
-/* @media screen and (max-width: 800px) {
+@media screen and (max-width: 480px) {
 
 	.cartCounterBox button  {
-		width: 40px ;
-		height: 40px ;
+		width: 30px !important;
+		height: 30px !important;
 	}
-} */
+}

@@ -40,3 +40,12 @@ button.cartCloseBtn {
 		transition: box-shadow 4ms ease-in-out;
 	}
 }
+
+
+@media screen and (max-width: 480px) {
+
+	button.cartCloseBtn   {
+		width: 30px !important;
+		height: 30px !important;
+	}
+}
