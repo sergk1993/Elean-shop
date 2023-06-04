@@ -70,7 +70,7 @@ function CategoriesContainer(props: CategoriesAsideType): JSX.Element {
 	return (
 		<div className='container'>
 			{
-				props.categoryAside.categoryProductsIsLoading ? <div style={{ margin: 0 + ' auto', width: 150, marginBottom: 25, marginTop: 10, }} ><Skeleton height={30} duration={1.2} />
+				props.categoryAside.categoryProductsIsLoading ? <div className={styles.categoriesTitleBox} ><Skeleton className={styles.categoriesTitleSkeleton} height={30} duration={1.2} />
 				</div> : <h3 className={styles.categoriesTitle} >{nameTitle}</h3>
 
 			}

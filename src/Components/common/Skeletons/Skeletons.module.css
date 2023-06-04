@@ -8,7 +8,7 @@
 
 .skeletonCard {
 	padding: 20px;
-	border-radius: 20px;
+	border-radius: 10px;
 	text-align: center;
 	font-family: 'FuturaMediumC';
 	font-style: normal;
@@ -16,7 +16,7 @@
 	font-size: 19px;
 
 	background-color: var(--colorCardsBackground);
-	animation: skeleton 600ms ease-in-out infinite ;
+	animation: skeleton 600ms ease-in-out infinite;
 }
 
 .skeletonInfo h3 {
@@ -89,5 +89,65 @@
 	100% {
 		background-color: rgb(161, 159, 159);
 		background-position: cubic-bezier(0, 0, 1, 1);
+	}
+}
+
+
+@media screen and (max-width: 1024px) {
+	.skeletonInfoImg {
+		width: 120px;
+		height: 120px;
+		margin-bottom: 10px;
+	}
+
+	.skeletonCard button {
+		padding: 15px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.skeletons {
+		gap: 10px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.skeletonInfoImg {
+		width: 90px;
+		height: 90px;
+	}
+
+	.skeletonInfo h3 {
+		height: 15px;
+		margin-bottom: 10px;
+	}
+
+	.skeletonCard {
+		padding: 10px;
+	}
+
+	.skeletonCard button {
+		padding: 10px;
+	}
+}
+
+@media screen and (max-width:600px) {
+	.skeletonInfoImg {
+		width: 60px;
+		height: 60px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.skeletonInfoImg {
+		width: 40px;
+		height: 40px;
+	}
+	.skeletonInfo h3 {
+		height: 10px;
+		margin-bottom: 5px;
+	}
+	.skeletonCard button {
+		padding: 5px;
 	}
 }

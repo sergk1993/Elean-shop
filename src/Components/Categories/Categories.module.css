@@ -4,6 +4,15 @@
 
 }
 
+.categoriesTitleBox {
+	margin: 0 auto;
+	width: 150px;
+	margin-bottom: 25px;
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+}
+
 .categoriesTitle {
 	text-align: center;
 	text-transform: lowercase;
@@ -27,12 +36,28 @@
 		margin-bottom: 20px;
 		font-size: 18px;
 	}
+
+	.categoriesTitleBox {
+		margin-bottom: 15px;
+	}
+
+	.categoriesTitleSkeleton {
+		padding: 5px !important;
+		height: 20px !important;
+		width: 100px !important;
+	}
 }
 
 @media screen and (max-width: 600px) {
 	.categoriesTitle {
 		margin-bottom: 10px;
 		font-size: 15px;
+	}
+
+	.categoriesTitleSkeleton {
+		padding: 5px !important;
+		height: 15px !important;
+		width: 90px !important;
 	}
 }
 

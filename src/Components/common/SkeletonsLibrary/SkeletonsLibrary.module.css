@@ -1,8 +1,13 @@
-.cardSkeletonLib {
+.cardSkeletonLib {}
+
+.cardSkeletonLibTopImg {
+	margin-bottom: 30px;
+	width: 250px !important;
+	height: 200px !important;
 }
 
-.cardSkeletonLibTopImg { 
-	margin-bottom: 30px;
+.cardSkeletonTitle {
+	width: 120px !important;
 }
 
 .cardSkeletonLibTitleBox {
@@ -12,4 +17,132 @@
 	margin-bottom: 10px;
 }
 
+.cardSkeletonTitleBtn {
+	height: 25px !important;
+}
+
 .cardSkeletonLibBottomPrice {}
+
+
+
+
+@media screen and (max-width: 1400px) {
+	.cardSkeletonLibTopImg {
+		height: 150px !important;
+	}
+
+
+
+	.cardSkeletonTitle {
+		width: 120px !important;
+	}
+}
+
+
+
+@media screen and (max-width: 1320px) {
+	.cardSkeletonLibTopImg {
+		width: 210px !important;
+		height: 150px !important;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.cardSkeletonLibTopImg {
+		width: 175px !important;
+		height: 150px !important;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.cardSkeletonLibTopImg {
+		height: 150px !important;
+	}
+}
+
+
+
+@media screen and (max-width: 800px) {
+	.cardSkeletonLibTopImg {
+		width: 165px !important;
+		height: 100px !important;
+		margin-bottom: 10px;
+
+	}
+
+
+	.cardSkeletonTitle {
+		width: 100px !important;
+	}
+	
+}
+
+@media screen and (max-width: 700px) { 
+	.cardSkeletonLibTopImg {
+		width: 130px !important;
+		height: 125px !important;
+		margin-bottom: 10px;
+	}	
+	.cardSkeletonTitle {
+		width: 90px !important;
+		
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.cardSkeletonLibTopImg {
+		width: 120px !important;
+		height: 90px !important;
+		margin-bottom: 10px;
+	}
+
+	.cardSkeletonLibTitleBox {
+		margin-bottom: 5px;
+	}
+
+	.cardSkeletonTitle {
+		width: 60px !important;
+		height: 20px !important;
+	}
+
+	.cardSkeletonTitleBtn {
+		height: 20px !important;
+	}
+
+	.cardSkeletonLibBottomPrice {
+		height: 15px !important;
+		width: 40px !important;
+
+	}
+}
+
+@media screen and (max-width: 560px) {
+
+	.cardSkeletonLibTopImg {
+		width: 90px !important;
+		height: 90px !important;
+		margin-bottom: 5px;
+	}
+
+	.cardSkeletonLibTitleBox {
+		display: flex;
+		justify-content: initial;
+		align-items: center;
+		margin-bottom: 10px;
+	}
+	.cardSkeletonTitle {
+		width: 50px !important;
+		margin-right: 10px;
+	}
+ }
+
+
+@media screen and (max-width: 480px) {
+	.cardSkeletonTitleBtn {
+		width: 20px !important;
+	}
+	.cardSkeletonTitle {
+		width: 60px !important;
+		margin-right: 10px;
+	}
+}

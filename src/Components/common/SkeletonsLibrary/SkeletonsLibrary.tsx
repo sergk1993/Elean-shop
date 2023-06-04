@@ -13,18 +13,16 @@ function SkeletonsLibrary({ cards }: any) {
 					.map((_, i: any) => {
 						return (
 							<div className={styles.cardSkeletonLib} key={i}>
-								<div className={styles.cardSkeletonLibTopImg}>
-									<Skeleton width={270} height={270} />
-								</div>
+								<Skeleton className={styles.cardSkeletonLibTopImg} />
+
 								<div className={styles.cardSkeletonLibTitleBox}>
-								<Skeleton width={200} height={25} />
-								<Skeleton width={30} height={30} />
-
+									<Skeleton className={styles.cardSkeletonTitle} width={200} height={25} />
+									<Skeleton className={styles.cardSkeletonTitleBtn} width={30} height={30} />
 								</div>
-								<div className={styles.cardSkeletonLibBottomPrice}>
-								<Skeleton width={70} height={20} />
 
-								</div>
+						
+									<Skeleton className={styles.cardSkeletonLibBottomPrice} width={70} height={20} />
+								
 							</div>
 						);
 
